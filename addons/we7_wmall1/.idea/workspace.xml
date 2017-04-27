@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0e137e70-a83f-46c0-b934-43955a5f7a16" name="Default" comment="" />
+    <ignored path="we7_wmall.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="we7_wmall" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="install.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../we7_wmall1/install.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11187">
+              <caret line="339" column="51" selection-start-line="339" selection-start-column="51" selection-end-line="339" selection-end-column="51" />
+              <folding>
+                <marker date="1492227082990" expanded="true" signature="18:64" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="66:940" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="944:998" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="1000:2275" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="2279:2343" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="2345:3015" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="3019:3080" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="3082:3941" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="3945:3991" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="3993:4724" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="4728:4779" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="4781:5582" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="5586:5637" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="5639:6427" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="6431:6475" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="6477:6915" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="6919:6963" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="6965:7640" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="7644:7689" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="7691:8952" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="8956:9492" placeholder="CREATE TABLE... ims_tiny_wmall_delivery_cards" />
+                <marker date="1492227082990" expanded="true" signature="9495:10299" placeholder="CREATE TABLE... ims_tiny_wmall_delivery_cards_order" />
+                <marker date="1492227082990" expanded="true" signature="10302:11206" placeholder="CREATE TABLE... ims_tiny_wmall_delivery_config" />
+                <marker date="1492227082990" expanded="true" signature="11209:11258" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="11260:12168" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="12172:12233" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="12235:12957" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="12961:13022" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="13024:13791" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="13798:13841" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="13843:14348" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="14352:14396" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="14398:15669" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="15673:15726" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="15728:16258" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="16262:16314" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="16316:16896" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="16900:16943" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="16945:17596" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="17600:17646" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="17648:18987" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="18991:19035" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="19037:22188" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="22192:22241" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="22243:23017" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="23021:23073" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="23075:24110" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="24114:24170" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="24172:25834" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="25838:25891" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="25893:26393" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="26397:27051" placeholder="CREATE TABLE... ims_tiny_wmall_order_print_log" />
+                <marker date="1492227082990" expanded="true" signature="27054:27109" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="27111:27932" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="27936:27985" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="27987:28895" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="28899:28954" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="28956:29542" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="29546:29591" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="29593:30161" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="30165:30211" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="30213:31243" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="31247:31299" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="31301:31724" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="31728:31772" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="31774:32213" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="32217:32262" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="32264:32946" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="32950:32996" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="32998:33461" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="33465:33509" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="33511:33969" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="33973:34024" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="34026:34473" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="34477:34521" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="34523:38645" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="38649:38701" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="38703:39427" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="39431:39484" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="39486:40309" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="40313:40366" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="40368:40791" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="40795:40851" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="40853:41488" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="41492:41547" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="41549:42053" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="42057:42116" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="42118:42520" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="42524:42577" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="42579:43022" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="43026:43082" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="43084:43851" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="43855:43907" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="43909:44823" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="44827:44885" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="44887:45583" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="45587:45632" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="45634:46400" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="46404:46458" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="46460:46910" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="46914:46964" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="46966:47537" placeholder="CREATE TABLE... IF" />
+                <marker date="1492227082990" expanded="true" signature="47541:47584" placeholder="DROP TABLE I... " />
+                <marker date="1492227082990" expanded="true" signature="47586:47902" placeholder="CREATE TABLE... IF" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="version.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../we7_wmall1/version.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="receiver.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../we7_wmall1/receiver.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="site.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../we7_wmall1/site.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+              <folding>
+                <marker date="1492227083366" expanded="true" signature="7335:7465" placeholder="SELECT id, s... ${tablename('tiny_wmall_order')}" />
+                <marker date="1492227083366" expanded="true" signature="13534:13641" placeholder="SELECT * FRO... ${tablename('core_paylog')}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="module.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../we7_wmall1/module.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../we7_wmall1/model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="266" column="38" selection-start-line="266" selection-start-column="38" selection-end-line="266" selection-end-column="38" />
+              <folding>
+                <marker date="1492227083136" expanded="true" signature="1869:1947" placeholder="SELECT * FRO... ${tablename('tiny_wmall_config')}" />
+                <marker date="1492227083136" expanded="true" signature="2555:2646" placeholder="SELECT * FRO... ${tablename('tiny_wmall_store_settle_config')}" />
+                <marker date="1492227083136" expanded="true" signature="3845:4029" placeholder="select id, a... ${tablename('tiny_wmall_order')}" />
+                <marker date="1492227083136" expanded="true" signature="4706:4944" placeholder="select id, s... ${tablename('tiny_wmall_order')}" />
+                <marker date="1492227083136" expanded="true" signature="12003:12161" placeholder="select * fro... ${tablename('uni_verifycode')}" />
+                <marker date="1492227083136" expanded="true" signature="20520:20550" placeholder="..." />
+                <marker date="1492227083136" expanded="true" signature="20623:24610" placeholder="..." />
+                <marker date="1492227083136" expanded="true" signature="20649:21484" placeholder="{&quot;autoClearinitialContent&quot;: false...}" />
+                <marker date="1492227083136" expanded="true" signature="20709:21335" placeholder="[...]" />
+                <marker date="1492227083136" expanded="true" signature="20710:21334" placeholder="[...]" />
+                <marker date="1492227083136" expanded="true" signature="21501:21755" placeholder="{&quot;type&quot;: 'image'...}" />
+                <marker date="1492227083136" expanded="true" signature="21578:21656" placeholder="{&quot;upload&quot;: 'active'...}" />
+                <marker date="1492227083136" expanded="true" signature="21814:23171" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="21852:22651" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="21882:22644" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="21935:22634" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="21973:22617" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="22006:22036" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="22064:22279" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="22110:22266" placeholder="{&quot;width&quot;: '100%'...}" />
+                <marker date="1492227083136" expanded="true" signature="22285:22607" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="22341:22542" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="22367:22528" placeholder="{&quot;width&quot;: '100%'...}" />
+                <marker date="1492227083136" expanded="true" signature="22686:22859" placeholder="{&quot;name&quot;: '插入图片'...}" />
+                <marker date="1492227083136" expanded="true" signature="22808:22852" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="22917:23146" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="22994:23063" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="23069:23139" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="23235:24286" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="23273:23766" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="23303:23759" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="23356:23749" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="23395:23692" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="23418:23448" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="23454:23682" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="23563:23658" placeholder="{&quot;width&quot;: 300...}" />
+                <marker date="1492227083136" expanded="true" signature="23801:23974" placeholder="{&quot;name&quot;: '插入视频'...}" />
+                <marker date="1492227083136" expanded="true" signature="23923:23967" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="24032:24261" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="24109:24178" placeholder="{...}" />
+                <marker date="1492227083136" expanded="true" signature="24184:24254" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uninstall.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../we7_wmall1/uninstall.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../we7_wmall1/manifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-330">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../we7_wmall1/map.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="processor.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../we7_wmall1/processor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2013">
+              <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
+              <folding>
+                <marker date="1492227082707" expanded="true" signature="262:339" placeholder="SELECT * FRO... ${tablename('tiny_wmall_reply')}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/说明.htm" />
+        <option value="$PROJECT_DIR$/manifest.xml" />
+        <option value="$PROJECT_DIR$/admin/common/bootstrap.sys.inc.php" />
+        <option value="$PROJECT_DIR$/admin/common/common.func.php" />
+        <option value="$PROJECT_DIR$/admin/common/template.func.php" />
+        <option value="$PROJECT_DIR$/admin/index.php" />
+        <option value="$PROJECT_DIR$/admin/source/user/login.ctrl.php" />
+        <option value="$PROJECT_DIR$/admin/source/user/loginout.ctrl.php" />
+        <option value="$PROJECT_DIR$/admin/themes/default/common/header.html" />
+        <option value="$PROJECT_DIR$/class/alipay.class.php" />
+        <option value="$PROJECT_DIR$/class/wxpay.class.php" />
+        <option value="$PROJECT_DIR$/function/tpl.app.func.php" />
+        <option value="$PROJECT_DIR$/function/tpl.web.func.php" />
+        <option value="$PROJECT_DIR$/inc/api/delivery/bootstrap.inc.php" />
+        <option value="$PROJECT_DIR$/inc/api/delivery/order-errander.inc.php" />
+        <option value="$PROJECT_DIR$/inc/api/delivery/order.inc.php" />
+        <option value="$PROJECT_DIR$/inc/api/delivery/set.inc.php" />
+        <option value="$PROJECT_DIR$/inc/api/delivery/stat.inc.php" />
+        <option value="$PROJECT_DIR$/inc/api/delivery/trade.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/__init.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/delivery/bootstrap.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/delivery/mine.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/delivery/order.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/delivery/register.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/delivery/trade.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/manage/comment.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/manage/goods.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/manage/home.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/manage/index.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/manage/order.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/manage/stat.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/manage/store.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/manage/trade.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/store/address.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/store/assign.inc.php" />
+        <option value="$PROJECT_DIR$/inc/mobile/store/card.inc.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1924" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we7_wmall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we7_wmall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="we7_wmall1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tejia" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e137e70-a83f-46c0-b934-43955a5f7a16" name="Default" comment="" />
+      <created>1492223807232</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1492223807232</updated>
+      <workItem from="1492223808328" duration="2534000" />
+      <workItem from="1492226951352" duration="345000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2879000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1555794" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/uninstall.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/processor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2013">
+          <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
+          <folding>
+            <marker date="1492227082707" expanded="true" signature="262:339" placeholder="SELECT * FRO... ${tablename('tiny_wmall_reply')}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/说明.htm" />
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/defaultpic.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/icon.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/preview.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/admin/common/bootstrap.sys.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/admin/common/common.func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/admin/common/template.func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/admin/source/user/login.ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/admin/source/user/loginout.ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/admin/themes/default/common/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="5" column="69" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/class/alipay.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/class/wxpay.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/function/tpl.app.func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="42" column="42" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/function/tpl.web.func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/api/delivery/bootstrap.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/api/delivery/order-errander.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/api/delivery/order.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/api/delivery/set.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/api/delivery/stat.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/api/delivery/trade.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/__init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/delivery/bootstrap.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/delivery/mine.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/delivery/order.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/delivery/register.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/delivery/trade.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/manage/comment.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/manage/goods.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/manage/home.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/manage/index.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/manage/order.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/manage/stat.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="21" column="88" selection-start-line="21" selection-start-column="88" selection-end-line="21" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/manage/store.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/manage/trade.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/store/address.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/store/assign.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/inc/mobile/store/card.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <marker date="1492227082695" expanded="true" signature="427:555" placeholder="delete from " />
+            <marker date="1492227082695" expanded="true" signature="894:1030" placeholder="select * fro... ${tablename('tiny_wmall1_delivery_cards')}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/version.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/uninstall.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/site.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding>
+            <marker date="1492227083366" expanded="true" signature="7335:7465" placeholder="SELECT id, s... ${tablename('tiny_wmall_order')}" />
+            <marker date="1492227083366" expanded="true" signature="13534:13641" placeholder="SELECT * FRO... ${tablename('core_paylog')}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/receiver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/processor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2013">
+          <caret line="61" column="51" selection-start-line="61" selection-start-column="51" selection-end-line="61" selection-end-column="51" />
+          <folding>
+            <marker date="1492227082707" expanded="true" signature="262:339" placeholder="SELECT * FRO... ${tablename('tiny_wmall_reply')}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/module.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/map.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/manifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/install.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11187">
+          <caret line="339" column="51" selection-start-line="339" selection-start-column="51" selection-end-line="339" selection-end-column="51" />
+          <folding>
+            <marker date="1492227082990" expanded="true" signature="18:64" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="66:940" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="944:998" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="1000:2275" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="2279:2343" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="2345:3015" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="3019:3080" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="3082:3941" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="3945:3991" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="3993:4724" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="4728:4779" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="4781:5582" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="5586:5637" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="5639:6427" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="6431:6475" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="6477:6915" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="6919:6963" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="6965:7640" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="7644:7689" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="7691:8952" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="8956:9492" placeholder="CREATE TABLE... ims_tiny_wmall_delivery_cards" />
+            <marker date="1492227082990" expanded="true" signature="9495:10299" placeholder="CREATE TABLE... ims_tiny_wmall_delivery_cards_order" />
+            <marker date="1492227082990" expanded="true" signature="10302:11206" placeholder="CREATE TABLE... ims_tiny_wmall_delivery_config" />
+            <marker date="1492227082990" expanded="true" signature="11209:11258" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="11260:12168" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="12172:12233" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="12235:12957" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="12961:13022" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="13024:13791" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="13798:13841" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="13843:14348" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="14352:14396" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="14398:15669" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="15673:15726" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="15728:16258" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="16262:16314" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="16316:16896" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="16900:16943" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="16945:17596" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="17600:17646" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="17648:18987" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="18991:19035" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="19037:22188" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="22192:22241" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="22243:23017" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="23021:23073" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="23075:24110" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="24114:24170" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="24172:25834" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="25838:25891" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="25893:26393" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="26397:27051" placeholder="CREATE TABLE... ims_tiny_wmall_order_print_log" />
+            <marker date="1492227082990" expanded="true" signature="27054:27109" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="27111:27932" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="27936:27985" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="27987:28895" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="28899:28954" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="28956:29542" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="29546:29591" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="29593:30161" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="30165:30211" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="30213:31243" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="31247:31299" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="31301:31724" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="31728:31772" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="31774:32213" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="32217:32262" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="32264:32946" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="32950:32996" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="32998:33461" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="33465:33509" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="33511:33969" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="33973:34024" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="34026:34473" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="34477:34521" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="34523:38645" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="38649:38701" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="38703:39427" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="39431:39484" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="39486:40309" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="40313:40366" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="40368:40791" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="40795:40851" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="40853:41488" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="41492:41547" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="41549:42053" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="42057:42116" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="42118:42520" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="42524:42577" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="42579:43022" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="43026:43082" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="43084:43851" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="43855:43907" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="43909:44823" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="44827:44885" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="44887:45583" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="45587:45632" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="45634:46400" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="46404:46458" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="46460:46910" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="46914:46964" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="46966:47537" placeholder="CREATE TABLE... IF" />
+            <marker date="1492227082990" expanded="true" signature="47541:47584" placeholder="DROP TABLE I... " />
+            <marker date="1492227082990" expanded="true" signature="47586:47902" placeholder="CREATE TABLE... IF" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../we7_wmall1/model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="266" column="38" selection-start-line="266" selection-start-column="38" selection-end-line="266" selection-end-column="38" />
+          <folding>
+            <marker date="1492227083136" expanded="true" signature="1869:1947" placeholder="SELECT * FRO... ${tablename('tiny_wmall_config')}" />
+            <marker date="1492227083136" expanded="true" signature="2555:2646" placeholder="SELECT * FRO... ${tablename('tiny_wmall_store_settle_config')}" />
+            <marker date="1492227083136" expanded="true" signature="3845:4029" placeholder="select id, a... ${tablename('tiny_wmall_order')}" />
+            <marker date="1492227083136" expanded="true" signature="4706:4944" placeholder="select id, s... ${tablename('tiny_wmall_order')}" />
+            <marker date="1492227083136" expanded="true" signature="12003:12161" placeholder="select * fro... ${tablename('uni_verifycode')}" />
+            <marker date="1492227083136" expanded="true" signature="20520:20550" placeholder="..." />
+            <marker date="1492227083136" expanded="true" signature="20623:24610" placeholder="..." />
+            <marker date="1492227083136" expanded="true" signature="20649:21484" placeholder="{&quot;autoClearinitialContent&quot;: false...}" />
+            <marker date="1492227083136" expanded="true" signature="20709:21335" placeholder="[...]" />
+            <marker date="1492227083136" expanded="true" signature="20710:21334" placeholder="[...]" />
+            <marker date="1492227083136" expanded="true" signature="21501:21755" placeholder="{&quot;type&quot;: 'image'...}" />
+            <marker date="1492227083136" expanded="true" signature="21578:21656" placeholder="{&quot;upload&quot;: 'active'...}" />
+            <marker date="1492227083136" expanded="true" signature="21814:23171" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="21852:22651" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="21882:22644" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="21935:22634" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="21973:22617" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="22006:22036" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="22064:22279" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="22110:22266" placeholder="{&quot;width&quot;: '100%'...}" />
+            <marker date="1492227083136" expanded="true" signature="22285:22607" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="22341:22542" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="22367:22528" placeholder="{&quot;width&quot;: '100%'...}" />
+            <marker date="1492227083136" expanded="true" signature="22686:22859" placeholder="{&quot;name&quot;: '插入图片'...}" />
+            <marker date="1492227083136" expanded="true" signature="22808:22852" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="22917:23146" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="22994:23063" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="23069:23139" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="23235:24286" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="23273:23766" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="23303:23759" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="23356:23749" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="23395:23692" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="23418:23448" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="23454:23682" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="23563:23658" placeholder="{&quot;width&quot;: 300...}" />
+            <marker date="1492227083136" expanded="true" signature="23801:23974" placeholder="{&quot;name&quot;: '插入视频'...}" />
+            <marker date="1492227083136" expanded="true" signature="23923:23967" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="24032:24261" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="24109:24178" placeholder="{...}" />
+            <marker date="1492227083136" expanded="true" signature="24184:24254" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

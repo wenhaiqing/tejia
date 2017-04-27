@@ -1,0 +1,111 @@
+2017-04-26 10:13:16 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_e902fe9bde76]]></ToUserName>
+<FromUserName><![CDATA[o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA]]></FromUserName>
+<CreateTime>1493172796</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[任务大厅]]></EventKey>
+</xml>
+
+2017-04-26 10:13:16 params :
+------------
+String:
+array (
+  'message' => 
+  array (
+    'tousername' => 'gh_e902fe9bde76',
+    'fromusername' => 'o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA',
+    'createtime' => '1493172796',
+    'msgtype' => 'event',
+    'event' => 'CLICK',
+    'eventkey' => '任务大厅',
+    'from' => 'o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA',
+    'to' => 'gh_e902fe9bde76',
+    'time' => '1493172796',
+    'type' => 'text',
+    'content' => '任务大厅',
+    'redirection' => true,
+    'source' => 'click',
+  ),
+  'module' => 'cover',
+  'rule' => '10',
+  'priority' => '0',
+  'keyword' => 
+  array (
+    'id' => '15',
+    'rid' => '10',
+    'uniacid' => '2',
+    'module' => 'cover',
+    'content' => '任务大厅',
+    'type' => '1',
+    'displayorder' => '0',
+    'status' => '1',
+  ),
+)
+
+2017-04-26 10:13:16 response :
+------------
+Array:
+FromUserName : gh_e902fe9bde76 ;
+ToUserName : o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA ;
+MsgType : news ;
+ArticleCount : 1 ;
+Articles : Array ;
+
+2017-04-26 10:13:36 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_e902fe9bde76]]></ToUserName>
+<FromUserName><![CDATA[o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA]]></FromUserName>
+<CreateTime>1493172816</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[配送]]></Content>
+<MsgId>6413128412413977534</MsgId>
+</xml>
+
+2017-04-26 10:13:36 params :
+------------
+String:
+array (
+  'message' => 
+  array (
+    'tousername' => 'gh_e902fe9bde76',
+    'fromusername' => 'o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA',
+    'createtime' => '1493172816',
+    'msgtype' => 'text',
+    'content' => '配送',
+    'msgid' => '6413128412413977534',
+    'from' => 'o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA',
+    'to' => 'gh_e902fe9bde76',
+    'time' => '1493172816',
+    'type' => 'text',
+    'event' => NULL,
+    'redirection' => false,
+    'source' => NULL,
+  ),
+  'module' => 'secaikeji_runner',
+  'rule' => '9',
+  'priority' => '0',
+  'keyword' => 
+  array (
+    'id' => '14',
+    'rid' => '9',
+    'uniacid' => '2',
+    'module' => 'secaikeji_runner',
+    'content' => '配送',
+    'type' => '1',
+    'displayorder' => '0',
+    'status' => '1',
+  ),
+)
+
+2017-04-26 10:13:36 response :
+------------
+Array:
+FromUserName : gh_e902fe9bde76 ;
+ToUserName : o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA ;
+MsgType : text ;
+Content : 抱歉，任务完成失败，请确认！ ;
+
