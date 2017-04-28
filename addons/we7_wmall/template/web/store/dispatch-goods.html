@@ -25,7 +25,11 @@
 				<ul class="list-group">
 					{loop $stat $row}
 						<li class="list-group-item">
-							<span class="badge">{$row['num']}</span>
+							<span class="badge">{$row['num']} <select name="stores" class="badge">
+								{loop $stores $s}
+								<option value="{$s['id']}"><font color="black">{$s['title']}</font></option>
+								{/loop}
+							</select></span>
 							{$row['goods_title']}
 						</li>
 						{if !empty($goods[$row['goods_id']])}
@@ -37,6 +41,8 @@
 									<span class="label label-success toggle-goods-status" data-id="{$da['id']}" data-status="{php echo $da['status'] == 1 ? 0 : 1}">{$da['username']}</span>
 								{/if}
 							{/loop}
+								<span onclick="supplier({$row['goods_id']},{php echo json_encode($goods[$row['goods_id']])});" id="supplier" data-id="{$row['goods_id']}" data-status="{php echo $da['status'] == 1 ? 0 : 1}">给供应商下单</span>
+
 							</li>
 						{/if}
 					{/loop}
@@ -91,6 +97,28 @@
 	{/if}
 </div>
 <script>
+
+	function supplier(id,goods){
+
+
+
+			alert(JSON.stringify(goods));
+
+			if(!id) {
+				return false;
+			}
+			tiny.confirm($(this), '确定该订单的商品都配好了?', function(){
+				$.post("{php echo $this->createWebUrl('dispatch', array('op' => 'supplier'));}", {id: id,allids:allids}, function(data){
+					var result = $.parseJSON(data);
+					if(result.message.errno != 0) {
+						util.message(result.message.message, '', 'error');
+						return;
+					}
+					location.reload();
+				});
+			});
+
+	}
 require(['jquery.wookmark'], function(){
 	$('#order-container .water').wookmark({
 		align: 'center',
@@ -116,6 +144,8 @@ require(['jquery.wookmark'], function(){
 		});
 	});
 
+
+
 	$('.toggle-goods-status').click(function(){
 		var id = $(this).data('id');
 		var status = $(this).data('status');
@@ -134,10 +164,10 @@ require(['jquery.wookmark'], function(){
 		});
 	});
 
-	setInterval(function(){
-		location.reload();
-		return false;
-	}, 15000);
+//	setInterval(function(){
+//		location.reload();
+//		return false;
+//	}, 15000);
 });
 </script>
 {template 'common'}

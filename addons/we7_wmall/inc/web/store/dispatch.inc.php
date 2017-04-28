@@ -16,6 +16,7 @@ $op = trim($_GPC['op']) ?  trim($_GPC['op']) : 'goods';
 
 if($op == 'goods' || $op == 'category') {
 	$orders = pdo_fetchall('SELECT id, username, mobile, addtime FROM ' . tablename('tiny_wmall_order') . ' WHERE uniacid = :uniacid AND sid = :sid AND status = 2 ORDER BY id ASC', array(':sid' => $sid, ':uniacid' => $_W['uniacid']), 'id');
+	$stores = pdo_fetchall('SELECT id,title FROM ' . tablename('tiny_wmall1_store') . ' WHERE uniacid = :uniacid AND status = 1 ORDER BY id ASC', array( ':uniacid' => $_W['uniacid']), 'id');
 	if(!empty($orders)) {
 		$str = implode(',', array_keys($orders));
 		$stat = pdo_fetchall('SELECT *,SUM(goods_num) AS num, SUM(goods_price) AS price FROM ' . tablename('tiny_wmall_order_stat') . " WHERE uniacid = :uniacid AND sid = :sid AND status = 0 AND oid IN ({$str}) GROUP BY goods_id", array(':uniacid' => $_W['uniacid'], ':sid' => $sid));
@@ -42,12 +43,19 @@ if($op == 'goods' || $op == 'category') {
 			$cate_stat[$stai['goods_cid']][] = $stai;
 		}
 	}
+	//var_dump($goods);
 	if($op == 'goods') {
 		include $this->template('store/dispatch-goods');
 	} else {
 		include $this->template('store/dispatch-category');
 	}
 	die;
+}
+
+if ($op == 'supplier'){
+	$goodsid = $_GPC['id'];
+	$goods = $_GPC['allids'];
+	var_dump($goods);exit;
 }
 
 if($op == 'order_status') {
