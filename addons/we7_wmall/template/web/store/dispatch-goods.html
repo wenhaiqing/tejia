@@ -1,4 +1,8 @@
+{if $_W['role'] != 'operator'}
 {template 'public/header'}
+{else}
+{template 'public/header-base1'}
+{/if}
 {template 'store/nav'}
 <div class="alert alert-info alert-dismissible">
 	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-times" style="font-size: 26px"></i></button>
@@ -8,7 +12,7 @@
 	<div class="panel-body">
 		<ul class="nav nav-pills">
 			<li {if $op == 'goods'}class="active"{/if}><a href="{php echo $this->createWebUrl('dispatch', array('op' => 'goods'));}">按商品统计</a></li>
-			<li {if $op == 'category'}class="active"{/if}><a href="{php echo $this->createWebUrl('dispatch', array('op' => 'category'));}">按分类统计</a></li>
+			<!-- <li {if $op == 'category'}class="active"{/if}><a href="{php echo $this->createWebUrl('dispatch', array('op' => 'category'));}">按分类统计</a></li> -->
 			<li><a href="javascript:;" onclick="location.reload();">刷新</a></li>
 		</ul>
 	</div>
@@ -24,11 +28,14 @@
 			<div class="col-lg-3">
 				<ul class="list-group">
 					{loop $stat $row}
-						<li class="list-group-item">
-							<span class="badge">{$row['num']} <select name="stores" class="badge">
+						<li class="list-group-item" id="storecategorystores{$row['goods_id']}">
+							<span class="badge">{$row['num']} <select name="stores1"  class="badge">
+								{if !empty($stores)}
+								<option value="0">请选择</option>
 								{loop $stores $s}
-								<option value="{$s['id']}"><font color="black">{$s['title']}</font></option>
+								<option value="{$s['id']}" data-id="stores{$row['goods_id']}"><font color="black">{$s['title']}</font></option>
 								{/loop}
+								{/if}
 							</select></span>
 							{$row['goods_title']}
 						</li>
@@ -41,7 +48,7 @@
 									<span class="label label-success toggle-goods-status" data-id="{$da['id']}" data-status="{php echo $da['status'] == 1 ? 0 : 1}">{$da['username']}</span>
 								{/if}
 							{/loop}
-								<span onclick="supplier({$row['goods_id']},{php echo json_encode($goods[$row['goods_id']])});" id="supplier" data-id="{$row['goods_id']}" data-status="{php echo $da['status'] == 1 ? 0 : 1}">给供应商下单</span>
+								<a href="javascript:;"></a><span onclick="supplier({$row['goods_id']})" id="supplier" data-id="{$row['goods_id']}" data-status="{php echo $da['status'] == 1 ? 0 : 1}">给供应商下单</span></a>
 
 							</li>
 						{/if}
@@ -98,26 +105,55 @@
 </div>
 <script>
 
-	function supplier(id,goods){
+$(document).ready(function(){
+		$('select').change(function(){
+			var p1=$(this).children('option:selected').val();//这就是selected的值
+			var dataid = $(this).children('option:selected').attr('data-id');
+			$(".stores").hide();
+			$.ajax({
+				url:"{php echo $this->createWebUrl('dispatch', array('op' => 'stores'));}",
+				type:'POST', //GET
+				async:true,    //或false,是否异步
+				data:{
+					id: p1
+				},
+				dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+				success:function(data){
+					if (data.length>0){
+						var html = '';
+						html+='<span class="badge stores">';
+						html+='<select name="stores" id="'+dataid+'"  class="badge">';
+						html+='<option value="0">请选择</option>';
+						for(var i=0;i<data.length;i++){
+							html+='<option value="'+data[i].id+'"><font color="black">'+data[i].title+'</font></option>';
+						}
+						html+='</select></span>';
+						var sid = "#storecategory"+dataid;
 
+						$(sid).after(html);
+					}
 
-
-			alert(JSON.stringify(goods));
-
+				}
+			})
+		});
+	});
+	function supplier(id){
+		var sid = $("#stores"+id).val();
+		//console.log(sid);
 			if(!id) {
 				return false;
 			}
-			tiny.confirm($(this), '确定该订单的商品都配好了?', function(){
-				$.post("{php echo $this->createWebUrl('dispatch', array('op' => 'supplier'));}", {id: id,allids:allids}, function(data){
+			if(!sid){
+				return false;
+			}
+				$.post("{php echo $this->createWebUrl('dispatch', array('op' => 'supplier'));}", {id: id,sid:sid}, function(data) {
 					var result = $.parseJSON(data);
-					if(result.message.errno != 0) {
+					if (result.message.errno != 0) {
 						util.message(result.message.message, '', 'error');
 						return;
 					}
 					location.reload();
-				});
-			});
-
+				})
 	}
 require(['jquery.wookmark'], function(){
 	$('#order-container .water').wookmark({

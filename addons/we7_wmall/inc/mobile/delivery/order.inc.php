@@ -147,6 +147,7 @@ if($op == 'success') {
 	$content = "配送员:{$deliveryer['title']}, 手机号:{$deliveryer['mobile']}";
 	order_insert_status_log($id, $order['sid'], 'delivery_success', $content);
 	order_status_notice($order['sid'], $id, 'end');
+	order_update_extension_logs($id,$order['uid'],$order['final_fee']);
 	message(error(0, '变更配送状态成功'), '', 'ajax');
 }
 

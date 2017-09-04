@@ -1,0 +1,1131 @@
+2017-09-02 07:18:18 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wpMG8YGOn4CLlg4yoU53Enk]]></FromUserName>
+<CreateTime>1504307899</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-09-02 07:18:18 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wpMG8YGOn4CLlg4yoU53Enk',
+    'createtime' => '1504307899',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wpMG8YGOn4CLlg4yoU53Enk',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504307899',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-09-02 07:18:18 response :
+------------
+
+2017-09-02 08:34:31 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wqgej-B0leBNgf9SNpIxRXU]]></FromUserName>
+<CreateTime>1504312472</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567721</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:34:31 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'createtime' => '1504312472',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567721',
+    'status' => 'success',
+    'from' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312472',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:34:31 response :
+------------
+
+2017-09-02 08:34:31 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wp94r3_u5BHjSxVewj2_McA]]></FromUserName>
+<CreateTime>1504312472</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567722</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:34:31 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'createtime' => '1504312472',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567722',
+    'status' => 'success',
+    'from' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312472',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:34:31 response :
+------------
+
+2017-09-02 08:34:31 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wr3bskeUmcBJFAWlHZIAO8U]]></FromUserName>
+<CreateTime>1504312473</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567723</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:34:31 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'createtime' => '1504312473',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567723',
+    'status' => 'success',
+    'from' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312473',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:34:31 response :
+------------
+
+2017-09-02 08:34:43 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wqgej-B0leBNgf9SNpIxRXU]]></FromUserName>
+<CreateTime>1504312485</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567725</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:34:43 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'createtime' => '1504312485',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567725',
+    'status' => 'success',
+    'from' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312485',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:34:43 response :
+------------
+
+2017-09-02 08:34:44 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wp94r3_u5BHjSxVewj2_McA]]></FromUserName>
+<CreateTime>1504312485</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567726</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:34:44 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'createtime' => '1504312485',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567726',
+    'status' => 'success',
+    'from' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312485',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:34:44 response :
+------------
+
+2017-09-02 08:34:44 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wr3bskeUmcBJFAWlHZIAO8U]]></FromUserName>
+<CreateTime>1504312485</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567727</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:34:44 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'createtime' => '1504312485',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567727',
+    'status' => 'success',
+    'from' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312485',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:34:44 response :
+------------
+
+2017-09-02 08:34:54 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wqgej-B0leBNgf9SNpIxRXU]]></FromUserName>
+<CreateTime>1504312495</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567730</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:34:54 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'createtime' => '1504312495',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567730',
+    'status' => 'success',
+    'from' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312495',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:34:54 response :
+------------
+
+2017-09-02 08:34:54 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wp94r3_u5BHjSxVewj2_McA]]></FromUserName>
+<CreateTime>1504312495</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567731</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:34:54 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'createtime' => '1504312495',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567731',
+    'status' => 'success',
+    'from' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312495',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:34:54 response :
+------------
+
+2017-09-02 08:34:54 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wr3bskeUmcBJFAWlHZIAO8U]]></FromUserName>
+<CreateTime>1504312495</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567732</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:34:54 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'createtime' => '1504312495',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567732',
+    'status' => 'success',
+    'from' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312495',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:34:54 response :
+------------
+
+2017-09-02 08:35:11 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wqgej-B0leBNgf9SNpIxRXU]]></FromUserName>
+<CreateTime>1504312512</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567736</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:35:11 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'createtime' => '1504312512',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567736',
+    'status' => 'success',
+    'from' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312512',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:35:11 response :
+------------
+
+2017-09-02 08:35:11 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wp94r3_u5BHjSxVewj2_McA]]></FromUserName>
+<CreateTime>1504312513</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567737</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:35:11 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'createtime' => '1504312513',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567737',
+    'status' => 'success',
+    'from' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312513',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:35:11 response :
+------------
+
+2017-09-02 08:35:12 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wr3bskeUmcBJFAWlHZIAO8U]]></FromUserName>
+<CreateTime>1504312513</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567738</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:35:12 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'createtime' => '1504312513',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567738',
+    'status' => 'success',
+    'from' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312513',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:35:12 response :
+------------
+
+2017-09-02 08:35:58 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wqgej-B0leBNgf9SNpIxRXU]]></FromUserName>
+<CreateTime>1504312559</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567744</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:35:58 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'createtime' => '1504312559',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567744',
+    'status' => 'success',
+    'from' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312559',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:35:58 response :
+------------
+
+2017-09-02 08:35:58 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wp94r3_u5BHjSxVewj2_McA]]></FromUserName>
+<CreateTime>1504312559</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567745</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:35:58 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'createtime' => '1504312559',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567745',
+    'status' => 'success',
+    'from' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312559',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:35:58 response :
+------------
+
+2017-09-02 08:35:58 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wr3bskeUmcBJFAWlHZIAO8U]]></FromUserName>
+<CreateTime>1504312559</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416567746</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 08:35:58 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'createtime' => '1504312559',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416567746',
+    'status' => 'success',
+    'from' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504312559',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 08:35:58 response :
+------------
+
+2017-09-02 09:51:12 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wqgej-B0leBNgf9SNpIxRXU]]></FromUserName>
+<CreateTime>1504317074</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416569413</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 09:51:12 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'createtime' => '1504317074',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416569413',
+    'status' => 'success',
+    'from' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504317074',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 09:51:12 response :
+------------
+
+2017-09-02 09:51:13 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wp94r3_u5BHjSxVewj2_McA]]></FromUserName>
+<CreateTime>1504317074</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416569414</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 09:51:13 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'createtime' => '1504317074',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416569414',
+    'status' => 'success',
+    'from' => 'ohRa2wp94r3_u5BHjSxVewj2_McA',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504317074',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 09:51:13 response :
+------------
+
+2017-09-02 09:51:13 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wr3bskeUmcBJFAWlHZIAO8U]]></FromUserName>
+<CreateTime>1504317075</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416569415</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 09:51:13 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'createtime' => '1504317075',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416569415',
+    'status' => 'success',
+    'from' => 'ohRa2wr3bskeUmcBJFAWlHZIAO8U',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504317075',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 09:51:13 response :
+------------
+
+2017-09-02 13:56:51 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wpq88qpQwlu8rHQrep1D_bM]]></FromUserName>
+<CreateTime>1504331812</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-09-02 13:56:51 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wpq88qpQwlu8rHQrep1D_bM',
+    'createtime' => '1504331812',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wpq88qpQwlu8rHQrep1D_bM',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504331812',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-09-02 13:56:51 response :
+------------
+
+2017-09-02 13:56:54 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wpq88qpQwlu8rHQrep1D_bM]]></FromUserName>
+<CreateTime>1504331815</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-09-02 13:56:54 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wpq88qpQwlu8rHQrep1D_bM',
+    'createtime' => '1504331815',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wpq88qpQwlu8rHQrep1D_bM',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504331815',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-09-02 13:56:54 response :
+------------
+
+2017-09-02 13:57:20 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wpq88qpQwlu8rHQrep1D_bM]]></FromUserName>
+<CreateTime>1504331841</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-09-02 13:57:20 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wpq88qpQwlu8rHQrep1D_bM',
+    'createtime' => '1504331841',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wpq88qpQwlu8rHQrep1D_bM',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504331841',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-09-02 13:57:20 response :
+------------
+
+2017-09-02 14:00:39 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2whBdMPzJcoZvKnTQULjcVcE]]></FromUserName>
+<CreateTime>1504332041</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416574810</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 14:00:39 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2whBdMPzJcoZvKnTQULjcVcE',
+    'createtime' => '1504332041',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416574810',
+    'status' => 'success',
+    'from' => 'ohRa2whBdMPzJcoZvKnTQULjcVcE',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504332041',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 14:00:39 response :
+------------
+
+2017-09-02 14:00:39 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wo9YPgs8PQjnMUATaCRQxFY]]></FromUserName>
+<CreateTime>1504332041</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416574811</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 14:00:39 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wo9YPgs8PQjnMUATaCRQxFY',
+    'createtime' => '1504332041',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416574811',
+    'status' => 'success',
+    'from' => 'ohRa2wo9YPgs8PQjnMUATaCRQxFY',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504332041',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 14:00:39 response :
+------------
+
+2017-09-02 14:10:32 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wqOjFHnc5uZFoQTTuxtRKBA]]></FromUserName>
+<CreateTime>1504332634</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416575119</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 14:10:32 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wqOjFHnc5uZFoQTTuxtRKBA',
+    'createtime' => '1504332634',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416575119',
+    'status' => 'success',
+    'from' => 'ohRa2wqOjFHnc5uZFoQTTuxtRKBA',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504332634',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 14:10:32 response :
+------------
+
+2017-09-02 14:10:32 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wpMG8YGOn4CLlg4yoU53Enk]]></FromUserName>
+<CreateTime>1504332634</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416575120</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 14:10:33 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wpMG8YGOn4CLlg4yoU53Enk',
+    'createtime' => '1504332634',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416575120',
+    'status' => 'success',
+    'from' => 'ohRa2wpMG8YGOn4CLlg4yoU53Enk',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504332634',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 14:10:33 response :
+------------
+
+2017-09-02 14:12:05 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wjm9nmNBD3DS8hDX9Opy1ns]]></FromUserName>
+<CreateTime>1504332726</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[TEMPLATESENDJOBFINISH]]></Event>
+<MsgID>416575135</MsgID>
+<Status><![CDATA[success]]></Status>
+</xml>
+
+2017-09-02 14:12:05 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wjm9nmNBD3DS8hDX9Opy1ns',
+    'createtime' => '1504332726',
+    'msgtype' => 'event',
+    'event' => 'TEMPLATESENDJOBFINISH',
+    'msgid' => '416575135',
+    'status' => 'success',
+    'from' => 'ohRa2wjm9nmNBD3DS8hDX9Opy1ns',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504332726',
+    'type' => 'event',
+  ),
+)
+
+2017-09-02 14:12:05 response :
+------------
+
+2017-09-02 15:28:46 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wjm9nmNBD3DS8hDX9Opy1ns]]></FromUserName>
+<CreateTime>1504337327</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-09-02 15:28:46 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wjm9nmNBD3DS8hDX9Opy1ns',
+    'createtime' => '1504337327',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wjm9nmNBD3DS8hDX9Opy1ns',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504337327',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-09-02 15:28:46 response :
+------------
+
+2017-09-02 15:29:59 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wjm9nmNBD3DS8hDX9Opy1ns]]></FromUserName>
+<CreateTime>1504337400</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-09-02 15:29:59 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wjm9nmNBD3DS8hDX9Opy1ns',
+    'createtime' => '1504337400',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wjm9nmNBD3DS8hDX9Opy1ns',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504337400',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-09-02 15:29:59 response :
+------------
+
+2017-09-02 15:30:43 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wjm9nmNBD3DS8hDX9Opy1ns]]></FromUserName>
+<CreateTime>1504337444</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-09-02 15:30:43 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wjm9nmNBD3DS8hDX9Opy1ns',
+    'createtime' => '1504337444',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wjm9nmNBD3DS8hDX9Opy1ns',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1504337444',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-09-02 15:30:43 response :
+------------
+

@@ -164,7 +164,9 @@
 								{$link['title']}
 							</li>
 							{else}
-							<a class="list-group-item{$link['active']}" href="{$link['url']}" kw="{$link['title']}">{$link['title']}</a>
+								{if $link['title']!='商品分类' && $link['title']!='商品列表' && $link['title']!='配送员管理' && $link['title']!='评价管理' && $link['title']!='顾客管理' && $link['title']!='营销活动' && $link['title']!='顾客统计'}
+								<a class="list-group-item{$link['active']}" href="{$link['url']}" kw="{$link['title']}">{$link['title']}</a>
+								{/if}
 							{/if}
 							{/loop}
 						</ul>

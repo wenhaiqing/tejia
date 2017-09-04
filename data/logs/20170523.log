@@ -1,0 +1,40 @@
+2017-05-23 09:01:47 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_e902fe9bde76]]></ToUserName>
+<FromUserName><![CDATA[o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA]]></FromUserName>
+<CreateTime>1495501308</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=guide&m=we7_wmall]]></EventKey>
+<MenuId>418041604</MenuId>
+</xml>
+
+2017-05-23 09:01:47 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_e902fe9bde76',
+    'fromusername' => 'o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA',
+    'createtime' => '1495501308',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=guide&m=we7_wmall',
+    'menuid' => '418041604',
+    'from' => 'o2qkdvzsdNqZ3J5Xb8QKH4n8BqbA',
+    'to' => 'gh_e902fe9bde76',
+    'time' => '1495501308',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=guide&m=we7_wmall',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-05-23 09:01:47 response :
+------------
+

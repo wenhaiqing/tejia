@@ -8,7 +8,7 @@
 	<div class="panel-body">
 		<ul class="nav nav-pills">
 			<li {if $op == 'goods'}class="active"{/if}><a href="{php echo $this->createWebUrl('dispatch', array('op' => 'goods'));}">按商品统计</a></li>
-			<li {if $op == 'category'}class="active"{/if}><a href="{php echo $this->createWebUrl('dispatch', array('op' => 'category'));}">按分类统计</a></li>
+			<!-- <li {if $op == 'category'}class="active"{/if}><a href="{php echo $this->createWebUrl('dispatch', array('op' => 'category'));}">按分类统计</a></li> -->
 			<li><a href="javascript:;" onclick="location.reload();">刷新</a></li>
 		</ul>
 	</div>

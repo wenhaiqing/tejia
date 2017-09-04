@@ -23,7 +23,7 @@ if($op == 'list') {
 	$params[':aid'] = $_W['uniacid'];
 	$params[':sid'] = $sid;
 
-	$status = isset($_GPC['status']) ? intval($_GPC['status']) : 1;
+	$status = isset($_GPC['status']) ? intval($_GPC['status']) : 2;
 	if($status > 0) {
 		$condition .= ' AND status = :stu';
 		$params[':stu'] = $status;
@@ -32,7 +32,7 @@ if($op == 'list') {
 	$min = 0;
 	if(!empty($orders)) {
 		foreach($orders as &$da) {
-			$da['goods'] = order_fetch_goods($da['id']);
+			$da['goods'] = order_fetch_goods($da['id'],$da['sid']);
 		}
 		$min = min(array_keys($orders));
 	}
@@ -70,7 +70,8 @@ if($op == 'detail') {
 	if(empty($order)) {
 		message('订单不存在或已删除', '', 'error');
 	}
-	$goods = order_fetch_goods($order['id']);
+	$goods = order_fetch_goods($order['id'],$order['sid']);
+
 	$log = pdo_fetch('select * from ' . tablename('tiny_wmall1_order_status_log') . ' where uniacid = :uniacid and oid = :oid order by id desc', array(':uniacid' => $_W['uniacid'], ':oid' => $id));
 	if($order['discount_fee'] > 0) {
 		$activityed = order_fetch_discount($id);

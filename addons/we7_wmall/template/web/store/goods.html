@@ -1,4 +1,8 @@
+{if $_W['role'] != 'operator'}
 {template 'public/header'}
+{else}
+{template 'public/header-base1'}
+{/if}
 {template 'store/nav'}
 {if $op == 'post'}
 <form class="form-horizontal form" id="form1" action="" method="post" enctype="multipart/form-data">
@@ -24,16 +28,31 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>商品简短介绍</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" class="form-control"  name="title_description" value="{$item['title_description']}">
+						<div class="help-block">该介绍是显示在APP首页商品名称下面的</div>
+					</div>
+				</div>	
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>厨师年龄</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" class="form-control"  name="age" value="{$item['age']}">
+						<div class="help-block">如果添加的不是厨师，请忽略</div>
+					</div>
+				</div>	
+				<div class="form-group">
 					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>商品缩略图</label>
 					<div class="col-sm-9 col-xs-12">
 						{php echo tpl_form_field_image('thumb', $item['thumb']);}
+						<div class="help-block">推荐大小: 220*220</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>商品幻灯片</label>
 					<div class="col-sm-9 col-xs-12">
 						{php echo tpl_form_field_multi_image('slides', $item['slides']);}
-						<div class="help-block">推荐大小: 640*230, 最多不能超过4张图片</div>
+						<div class="help-block">推荐大小: 220*220, 最多不能超过4张图片</div>
 					</div>
 				</div>
 				<div class="form-group">
@@ -51,6 +70,20 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>会员价</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" class="form-control" name="member_price" value="{$item['member_price']}">
+						<div class="help-block"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>饭店专区批发价</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" class="form-control" name="hotel_price" value="{$item['hotel_price']}">
+						<div class="help-block"></div>
+					</div>
+				</div>
+				<div class="form-group hide">
 					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require"> 启用规格</span></label>
 					<div class="col-sm-9 col-xs-12">
 						<label class="checkbox-inline"><input type="checkbox" name="is_options" value="1" {if $item['is_options'] == 1}checked{/if} onclick="$('#options').toggle();"> 启用</label>
@@ -111,6 +144,12 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>饭店专区商品批发单位</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" class="form-control" name="hotel_unitname" value="{$item['hotel_unitname']}">
+					</div>
+				</div>
+				<div class="form-group">
 					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>自定义标签</label>
 					<div class="col-sm-9 col-xs-9 col-md-9">
 						<input type="text" class="form-control" name="label" value="{$item['label']}">
@@ -136,6 +175,13 @@
 						<div class="help-block">-1为库存无限制</div>
 					</div>	
 				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>人气</label>
+					<div class="col-sm-9 col-xs-9 col-md-9">
+						<input type="text" class="form-control" name="buzz" value="{$item['buzz']}">
+						<div class="help-block">显示在商品列表页的人气，可自定义</div>
+					</div>	
+				</div>
 				{if $store_config['custom_goods_sailed_status'] == 1}
 					<div class="form-group">
 						<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>已卖出</label>
@@ -158,6 +204,22 @@
 						<label class="radio-inline"><input type="radio" name="is_hot" value="1" {if $item['is_hot'] == 1}checked{/if}> 设置</label>
 						<label class="radio-inline"><input type="radio" name="is_hot" value="0" {if !$item['is_hot']}checked{/if}> 不设置</label>
 						<div class="help-block">设为热销后,将在门店信息列表页显示</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>设置为店长推荐</label>
+					<div class="col-sm-9 col-xs-9 col-md-9">
+						<label class="radio-inline"><input type="radio" name="is_shopowner" value="1" {if $item['is_shopowner'] == 1}checked{/if}> 设置</label>
+						<label class="radio-inline"><input type="radio" name="is_shopowner" value="0" {if !$item['is_shopowner']}checked{/if}> 不设置</label>
+						<div class="help-block">设为店长推荐后,将在首页店长推荐里边显示</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>设置为今日特价</label>
+					<div class="col-sm-9 col-xs-9 col-md-9">
+						<label class="radio-inline"><input type="radio" name="is_today" value="1" {if $item['is_today'] == 1}checked{/if}> 设置</label>
+						<label class="radio-inline"><input type="radio" name="is_today" value="0" {if !$item['is_today']}checked{/if}> 不设置</label>
+						<div class="help-block">设为今日特卖后,将在首页今日特价里边显示</div>
 					</div>
 				</div>
 				<div class="form-group">

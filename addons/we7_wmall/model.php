@@ -145,6 +145,7 @@ function sys_store_cron()
 				order_update_current_log($order['id'], 5);
 				order_insert_status_log($order['id'], $sid, 'end', '系统自动完成订单');
 				order_status_notice($sid, $order['id'], 'end', '系统自动完成订单');
+				order_update_extension_logs($order['id'],$order['uid'],$order['final_fee']);
 			}
 		}
 	}

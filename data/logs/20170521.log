@@ -1,0 +1,35 @@
+2017-05-21 03:19:21 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_e902fe9bde76]]></ToUserName>
+<FromUserName><![CDATA[o2qkdvzgKAm2koeb1a_ymlitP_ns]]></FromUserName>
+<CreateTime>1495307962</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[verify_expired]]></Event>
+<ExpiredTime>1495185369</ExpiredTime>
+</xml>
+
+2017-05-21 03:19:21 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_e902fe9bde76',
+    'fromusername' => 'o2qkdvzgKAm2koeb1a_ymlitP_ns',
+    'createtime' => '1495307962',
+    'msgtype' => 'event',
+    'event' => 'verify_expired',
+    'expiredtime' => '1495185369',
+    'from' => 'o2qkdvzgKAm2koeb1a_ymlitP_ns',
+    'to' => 'gh_e902fe9bde76',
+    'time' => '1495307962',
+    'type' => 'event',
+  ),
+)
+
+2017-05-21 03:19:21 response :
+------------
+

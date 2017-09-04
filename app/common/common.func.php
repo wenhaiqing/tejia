@@ -11,6 +11,15 @@ function url($segment, $params = array(), $noredirect = false) {
 }
 
 
+function returnjson($msg,$data=array(),$status=0){
+	$res = array(
+		'info'=>$msg,
+		'data'=>$data,
+		'status'=>$status
+	);
+	exit(json_encode($res));
+}
+
 function message($msg, $redirect = '', $type = '') {
 	global $_W;
 	if($redirect == 'refresh') {

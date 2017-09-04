@@ -1,0 +1,792 @@
+2017-07-09 08:36:38 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wvFh5ERjHuAIG0hyqOB6VdM]]></FromUserName>
+<CreateTime>1499560599</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2017-07-09 08:36:38 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wvFh5ERjHuAIG0hyqOB6VdM',
+    'createtime' => '1499560599',
+    'msgtype' => 'event',
+    'event' => 'subscribe',
+    'eventkey' => '',
+    'from' => 'ohRa2wvFh5ERjHuAIG0hyqOB6VdM',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499560599',
+    'type' => 'text',
+    'redirection' => true,
+    'source' => 'subscribe',
+  ),
+)
+
+2017-07-09 08:36:38 response :
+------------
+
+2017-07-09 08:37:19 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wpPZ28GMoC8VUy3XfaUoJ3U]]></FromUserName>
+<CreateTime>1499560641</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 08:37:19 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wpPZ28GMoC8VUy3XfaUoJ3U',
+    'createtime' => '1499560641',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wpPZ28GMoC8VUy3XfaUoJ3U',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499560641',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 08:37:19 response :
+------------
+
+2017-07-09 09:13:49 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wpmuvwAfhtiET_fGAOEWJQ0]]></FromUserName>
+<CreateTime>1499562830</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2017-07-09 09:13:49 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wpmuvwAfhtiET_fGAOEWJQ0',
+    'createtime' => '1499562830',
+    'msgtype' => 'event',
+    'event' => 'subscribe',
+    'eventkey' => '',
+    'from' => 'ohRa2wpmuvwAfhtiET_fGAOEWJQ0',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499562830',
+    'type' => 'text',
+    'redirection' => true,
+    'source' => 'subscribe',
+  ),
+)
+
+2017-07-09 09:13:49 response :
+------------
+
+2017-07-09 10:20:42 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wlhtpQZvEnzMx37cwynljA0]]></FromUserName>
+<CreateTime>1499566843</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 10:20:42 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wlhtpQZvEnzMx37cwynljA0',
+    'createtime' => '1499566843',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wlhtpQZvEnzMx37cwynljA0',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499566843',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 10:20:42 response :
+------------
+
+2017-07-09 10:25:20 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wlhtpQZvEnzMx37cwynljA0]]></FromUserName>
+<CreateTime>1499567121</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 10:25:20 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wlhtpQZvEnzMx37cwynljA0',
+    'createtime' => '1499567121',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wlhtpQZvEnzMx37cwynljA0',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499567121',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 10:25:20 response :
+------------
+
+2017-07-09 11:33:41 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wpQ1uk7sVrtRU6NM4w2Gi_o]]></FromUserName>
+<CreateTime>1499571222</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 11:33:41 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wpQ1uk7sVrtRU6NM4w2Gi_o',
+    'createtime' => '1499571222',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wpQ1uk7sVrtRU6NM4w2Gi_o',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499571222',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 11:33:41 response :
+------------
+
+2017-07-09 11:57:15 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wqgej-B0leBNgf9SNpIxRXU]]></FromUserName>
+<CreateTime>1499572636</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 11:57:15 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'createtime' => '1499572636',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499572636',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 11:57:15 response :
+------------
+
+2017-07-09 12:19:34 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wqgej-B0leBNgf9SNpIxRXU]]></FromUserName>
+<CreateTime>1499573975</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 12:19:34 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'createtime' => '1499573975',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wqgej-B0leBNgf9SNpIxRXU',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499573975',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 12:19:34 response :
+------------
+
+2017-07-09 16:17:26 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wlhtpQZvEnzMx37cwynljA0]]></FromUserName>
+<CreateTime>1499588247</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 16:17:26 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wlhtpQZvEnzMx37cwynljA0',
+    'createtime' => '1499588247',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wlhtpQZvEnzMx37cwynljA0',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499588247',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 16:17:26 response :
+------------
+
+2017-07-09 16:23:34 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wjszh_6Z7p7q6f9F5hL17ss]]></FromUserName>
+<CreateTime>1499588615</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>414806443</MenuId>
+</xml>
+
+2017-07-09 16:23:34 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wjszh_6Z7p7q6f9F5hL17ss',
+    'createtime' => '1499588615',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '414806443',
+    'from' => 'ohRa2wjszh_6Z7p7q6f9F5hL17ss',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499588615',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 16:23:34 response :
+------------
+
+2017-07-09 16:24:24 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wlhtpQZvEnzMx37cwynljA0]]></FromUserName>
+<CreateTime>1499588665</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 16:24:24 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wlhtpQZvEnzMx37cwynljA0',
+    'createtime' => '1499588665',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wlhtpQZvEnzMx37cwynljA0',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499588665',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 16:24:24 response :
+------------
+
+2017-07-09 18:13:43 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wjszh_6Z7p7q6f9F5hL17ss]]></FromUserName>
+<CreateTime>1499595224</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 18:13:43 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wjszh_6Z7p7q6f9F5hL17ss',
+    'createtime' => '1499595224',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wjszh_6Z7p7q6f9F5hL17ss',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499595224',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 18:13:43 response :
+------------
+
+2017-07-09 18:14:01 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wjszh_6Z7p7q6f9F5hL17ss]]></FromUserName>
+<CreateTime>1499595242</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 18:14:01 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wjszh_6Z7p7q6f9F5hL17ss',
+    'createtime' => '1499595242',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wjszh_6Z7p7q6f9F5hL17ss',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499595242',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 18:14:01 response :
+------------
+
+2017-07-09 18:14:11 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wjszh_6Z7p7q6f9F5hL17ss]]></FromUserName>
+<CreateTime>1499595252</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 18:14:11 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wjszh_6Z7p7q6f9F5hL17ss',
+    'createtime' => '1499595252',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wjszh_6Z7p7q6f9F5hL17ss',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499595252',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=dyorder&m=we7_wmall2',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 18:14:11 response :
+------------
+
+2017-07-09 20:32:06 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wlri-vzPnJD0W6m-wzPPFPc]]></FromUserName>
+<CreateTime>1499603527</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 20:32:06 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wlri-vzPnJD0W6m-wzPPFPc',
+    'createtime' => '1499603527',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wlri-vzPnJD0W6m-wzPPFPc',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499603527',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall2&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 20:32:06 response :
+------------
+
+2017-07-09 20:32:11 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wlri-vzPnJD0W6m-wzPPFPc]]></FromUserName>
+<CreateTime>1499603532</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 20:32:11 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wlri-vzPnJD0W6m-wzPPFPc',
+    'createtime' => '1499603532',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wlri-vzPnJD0W6m-wzPPFPc',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499603532',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 20:32:11 response :
+------------
+
+2017-07-09 20:53:41 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wmZsMRD8sDLxqXz8hpQt1bY]]></FromUserName>
+<CreateTime>1499604822</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[【收到不支持的消息类型，暂无法显示】]]></Content>
+<MsgId>6440753667829132781</MsgId>
+</xml>
+
+2017-07-09 20:53:41 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wmZsMRD8sDLxqXz8hpQt1bY',
+    'createtime' => '1499604822',
+    'msgtype' => 'text',
+    'content' => '【收到不支持的消息类型，暂无法显示】',
+    'msgid' => '6440753667829132781',
+    'from' => 'ohRa2wmZsMRD8sDLxqXz8hpQt1bY',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499604822',
+    'type' => 'text',
+    'event' => NULL,
+    'redirection' => false,
+    'source' => NULL,
+  ),
+)
+
+2017-07-09 20:53:41 response :
+------------
+
+2017-07-09 20:57:24 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wmZsMRD8sDLxqXz8hpQt1bY]]></FromUserName>
+<CreateTime>1499605045</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 20:57:24 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wmZsMRD8sDLxqXz8hpQt1bY',
+    'createtime' => '1499605045',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wmZsMRD8sDLxqXz8hpQt1bY',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499605045',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 20:57:24 response :
+------------
+
+2017-07-09 20:57:32 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wlri-vzPnJD0W6m-wzPPFPc]]></FromUserName>
+<CreateTime>1499605053</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 20:57:32 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wlri-vzPnJD0W6m-wzPPFPc',
+    'createtime' => '1499605053',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wlri-vzPnJD0W6m-wzPPFPc',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499605053',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 20:57:32 response :
+------------
+
+2017-07-09 22:54:37 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wjszh_6Z7p7q6f9F5hL17ss]]></FromUserName>
+<CreateTime>1499612078</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex]]></EventKey>
+<MenuId>415187293</MenuId>
+</xml>
+
+2017-07-09 22:54:37 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wjszh_6Z7p7q6f9F5hL17ss',
+    'createtime' => '1499612078',
+    'msgtype' => 'event',
+    'event' => 'VIEW',
+    'eventkey' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'menuid' => '415187293',
+    'from' => 'ohRa2wjszh_6Z7p7q6f9F5hL17ss',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1499612078',
+    'type' => 'text',
+    'content' => 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&m=we7_wmall1&do=mgindex',
+    'redirection' => true,
+    'source' => 'VIEW',
+  ),
+)
+
+2017-07-09 22:54:37 response :
+------------
+

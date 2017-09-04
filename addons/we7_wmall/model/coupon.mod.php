@@ -35,6 +35,30 @@ function coupon_fetchall_user_available($sid, $uid) {
 	return $data;
 }
 
+function coupon_fetchall_user_available_app($sid, $uid) {
+	global $_W;
+	$condition = ' where uniacid = :uniacid and sid = :sid and status = 1';
+	$is_first = pdo_get('tiny_wmall_store_members', array('uniacid' => $_W['uniacid'], 'sid' => $sid, 'uid' => $uid));
+	if(empty($is_first)) {
+		$condition .= ' and (type_limit = 1 or type_limit = 2)';
+	} else {
+		$condition .= ' and type_limit = 1';
+	}
+
+	$filter1 = ' grant_type = 1 and id not in (select couponid from  ' . tablename('tiny_wmall_activity_coupon_grant_log') . ' where sid = :sid and uid = :uid and grant_type = 1)';
+	$filter2 = ' grant_type = 2 and id not in (select couponid from  ' . tablename('tiny_wmall_activity_coupon_grant_log') . ' where sid = :sid and uid = :uid and grant_type = 2 and addtime > :todaytime)';
+	$condition .= " and (amount-dosage > 0) and starttime <= :time and endtime >= :time and (({$filter1}) or ({$filter2}))";
+	$params = array(
+		':uniacid' => $_W['uniacid'],
+		':sid' => $sid,
+		':time' => TIMESTAMP,
+		':uid' => $uid,
+		':todaytime' => strtotime(date('Y-m-d'))
+	);
+	$data = pdo_fetchall('select *, amount-dosage as residue from ' . tablename('tiny_wmall_activity_coupon') . $condition, $params);
+	return $data;
+}
+
 function coupon_grant($sid, $couponid, $uid, $remark = '') {
 	global $_W;
 	$token = coupon_fetch($couponid);

@@ -16,17 +16,19 @@ $op = trim($_GPC['op']) ?  trim($_GPC['op']) : 'goods';
 
 if($op == 'goods' || $op == 'category') {
 	$orders = pdo_fetchall('SELECT id, username, mobile, addtime FROM ' . tablename('tiny_wmall_order') . ' WHERE uniacid = :uniacid AND sid = :sid AND status = 2 ORDER BY id ASC', array(':sid' => $sid, ':uniacid' => $_W['uniacid']), 'id');
-	$stores = pdo_fetchall('SELECT id,title FROM ' . tablename('tiny_wmall1_store') . ' WHERE uniacid = :uniacid AND status = 1 ORDER BY id ASC', array( ':uniacid' => $_W['uniacid']), 'id');
+	$stores = pdo_fetchall('SELECT id,title FROM ' . tablename('tiny_wmall1_store_category') . ' WHERE uniacid = :uniacid ORDER BY id ASC', array( ':uniacid' => $_W['uniacid']), 'id');
 	if(!empty($orders)) {
 		$str = implode(',', array_keys($orders));
+		
 		$stat = pdo_fetchall('SELECT *,SUM(goods_num) AS num, SUM(goods_price) AS price FROM ' . tablename('tiny_wmall_order_stat') . " WHERE uniacid = :uniacid AND sid = :sid AND status = 0 AND oid IN ({$str}) GROUP BY goods_id", array(':uniacid' => $_W['uniacid'], ':sid' => $sid));
+	
 		if(!empty($stat)) {
 			$goods = array();
 			foreach($stat as &$sta) {
 				$tmp = pdo_fetchall('SELECT a.id,a.goods_num,a.goods_id,a.oid,a.addtime,b.username FROM ' . tablename('tiny_wmall_order_stat') . " AS a LEFT JOIN ". tablename('tiny_wmall_order')." AS b ON a.oid = b.id WHERE a.uniacid = :uniacid AND a.goods_id = :goods_id  AND a.status = 0 AND a.oid IN ($str) ORDER BY a.id ASC", array(':uniacid' => $_W['uniacid'], ':goods_id' => $sta['goods_id']));
 				$arr_detail = array();
 				foreach($tmp as $tm) {
-					$arr_detail[] = array('username' => $tm['username'], 'id' => $tm['id'], 'oid' => $tm['oid'], 'goods_num' => $sta['goods_num']);
+					$arr_detail[] = array('username' => $tm['username'], 'id' => $tm['id'], 'oid' => $tm['oid'], 'goods_num' => $tm['goods_num']);
 				}
 				$goods[$sta['goods_id']] = $arr_detail;
 			}
@@ -52,10 +54,64 @@ if($op == 'goods' || $op == 'category') {
 	die;
 }
 
+if ($op == 'stores'){
+	$id = intval($_GPC['id']);
+	$stores = pdo_fetchall('SELECT id,title FROM ' . tablename('tiny_wmall1_store') . ' WHERE uniacid = :uniacid and cid = :cid  ORDER BY id ASC', array( ':uniacid' => $_W['uniacid'],':cid'=>$id));
+	exit(json_encode($stores));
+
+}
+
 if ($op == 'supplier'){
 	$goodsid = $_GPC['id'];
-	$goods = $_GPC['allids'];
-	var_dump($goods);exit;
+	$oldsid = $_GPC['sid'];
+	$orders = pdo_fetchall('SELECT id, username, mobile, addtime FROM ' . tablename('tiny_wmall_order') . ' WHERE uniacid = :uniacid AND sid = :sid AND status = 2 ORDER BY id ASC', array(':sid' => $sid, ':uniacid' => $_W['uniacid']), 'id');
+	if(!empty($orders)) {
+		$str = implode(',', array_keys($orders));
+		$stat = pdo_fetchall('SELECT *,SUM(goods_num) AS num, SUM(goods_price) AS price FROM ' . tablename('tiny_wmall_order_stat') . " WHERE uniacid = :uniacid AND sid = :sid AND status = 0 AND oid IN ({$str}) GROUP BY goods_id", array(':uniacid' => $_W['uniacid'], ':sid' => $sid));
+		if (!empty($stat)) {
+			$goods = array();
+			foreach ($stat as &$sta) {
+				$tmp = pdo_fetchall('SELECT a.id,a.goods_num,a.goods_id,a.oid,a.addtime,b.username FROM ' . tablename('tiny_wmall_order_stat') . " AS a LEFT JOIN " . tablename('tiny_wmall_order') . " AS b ON a.oid = b.id WHERE a.uniacid = :uniacid AND a.goods_id = :goods_id  AND a.status = 0 AND a.oid IN ($str) ORDER BY a.id ASC", array(':uniacid' => $_W['uniacid'], ':goods_id' => $sta['goods_id']));
+				$arr_detail = array();
+				foreach ($tmp as $tm) {
+					$arr_detail[] = array('username' => $tm['username'], 'id' => $tm['id'], 'oid' => $tm['oid'], 'goods_num' => $sta['goods_num']);
+				}
+				$goods[$sta['goods_id']] = $arr_detail;
+			}
+		}
+	}
+	if (!empty($goods)){
+		$goodscount = count($goods[$goodsid]);
+		for ($i=0;$i<$goodscount;$i++){
+			$orderid[] = $goods[$goodsid][$i]['oid'];
+			$orderstat[] = $goods[$goodsid][$i]['id'];
+		}
+	}
+	$gorders = pdo_getall('tiny_wmall_order',array('id'=>$orderid));
+	$gorderstat = pdo_getall('tiny_wmall_order_stat',array('id'=>$orderstat));
+	$gorderscount = count($gorders);
+	for ($i=0;$i<$gorderscount;$i++){
+
+		$gorderstat[$i]['oldsid'] = $gorderstat[$i]['sid'];
+		$gorderstat[$i]['sid'] = $oldsid;
+		pdo_insert('tiny_wmall1_order_stat',$gorderstat[$i]);
+
+	
+		$gorders[$i]['oldsid'] = $gorders[$i]['sid'];
+		$gorders[$i]['sid'] = $oldsid;
+		pdo_insert('tiny_wmall1_order',$gorders[$i]);
+		$id = pdo_insertid();
+		order_deliveryer_notice_wmall1($oldsid,$id,'new_delivery');
+		order_insert_current_log($id, $oldsid, $gorders[$i]['final_fee'], '', '');
+		order_insert_status_log($id, $oldsid, 'place_order');
+		order_update_goods_info($id, $oldsid);
+		order_print($id);
+		if ($goods[$goodsid][$i]['oid'] == $gorders[$i]['id']){
+			$goods_statid = $goods[$goodsid][$i]['id'];
+		}
+		update_goods($goods_statid,1,$gorders[$i]['oldsid'],$_W['uniacid']);
+	}
+	message(error(0, ''), '', 'ajax');
 }
 
 if($op == 'order_status') {
@@ -86,4 +142,19 @@ if($op == 'goods_status') {
 }
 
 
+function update_goods($id,$status,$sid,$uniacid) {
+//	$id = intval($_GPC['id']);
+//	$status = intval($_GPC['status']);
+	pdo_update('tiny_wmall_order_stat', array('status' => $status), array('uniacid' => $uniacid, 'sid' => $sid, 'id' => $id));
+	$stat = pdo_get('tiny_wmall_order_stat', array('uniacid' => $uniacid, 'sid' => $sid, 'id' => $id));
+	if(!empty($stat)) {
+		$others = pdo_get('tiny_wmall_order_stat', array('uniacid' => $uniacid, 'sid' => $sid, 'oid' => $stat['oid'], 'status' => 0));
+		if(empty($others)) {
+			pdo_update('tiny_wmall_order', array('status' => 3), array('uniacid' => $uniacid, 'sid' => $sid, 'id' => $stat['oid']));
+			order_insert_status_log($stat['oid'], $sid, 'delivery_wait');
+			order_status_notice($sid, $stat['oid'], 'delivery_wait');
+			order_deliveryer_notice($sid, $stat['oid'], 'delivery_wait');
+		}
+	}
+}
 

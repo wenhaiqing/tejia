@@ -278,7 +278,7 @@ if($op == 'export') {
 		$oid_str = implode(',', $oids);
 		$goods_temp = pdo_fetchall('select * from ' . tablename('tiny_wmall_order_stat') . " where uniacid = :uniacid and oid in ({$oid_str})", array(':uniacid' => $_W['uniacid']));
 		foreach($goods_temp as $row) {
-			$goods[$row['oid']][] = $row['goods_title'] . ' X ' . $row['goods_num'] . '份';
+			$goods[$row['oid']][] = $row['goods_title'] . ' X ' . $row['goods_num'] . ' / ' .$row['unitname'];
 		}
 		for($i = 0, $length = count($list); $i < $length; $i++) {
 			$row = $list[$i];

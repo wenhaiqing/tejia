@@ -35,6 +35,7 @@ if($op == 'post') {
 		} else {
 			$item['map'] = array('lat' => $item['location_x'], 'lng' => $item['location_y']);
 			$item['cid'] = array_filter(explode('|', $item['cid']));
+			$item['slides']=iunserializer($item['slides']);
 		}
 		$delivery_times = pdo_getall('tiny_wmall_store_delivery_times', array('uniacid' => $_W['uniacid'], 'sid' => $id));
 		$sys_url = murl('entry', array('m' => 'we7_wmall', 'do' => 'store', 'sid' => $item['id']), true, true);
@@ -59,6 +60,7 @@ if($op == 'post') {
 		$data = array(
 			'title' => trim($_GPC['title']),
 			'logo' => trim($_GPC['logo']),
+			'slides' => trim($_GPC['slides']),
 			'telephone' => trim($_GPC['telephone']),
 			'description' => htmlspecialchars_decode($_GPC['description']),
 			'send_price' =>intval($_GPC['send_price']),
@@ -160,6 +162,15 @@ if($op == 'post') {
 		} else {
 			$data['thumbs'] = '';
 		}
+$data['slides'] = array();
+		if(!empty($_GPC['slides'])) {
+			foreach($_GPC['slides'] as $slides) {
+				if(empty($slides)) continue;
+				$data['slides'][] = $slides;
+			}
+		}
+		$data['slides'] = iserializer($data['slides']);
+		
 		if(!empty($_GPC['remind_reply'])) {
 			$remind_reply = array();
 			foreach($_GPC['remind_reply'] as $reply) {
@@ -291,7 +302,6 @@ if($op == 'list') {
 	if(!empty($_GPC['keyword'])) {
 		$condition .= " AND title LIKE '%{$_GPC['keyword']}%'";
 	}
-
 	$pindex = max(1, intval($_GPC['page']));
 	$psize = 20;
 

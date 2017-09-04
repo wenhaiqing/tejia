@@ -19,12 +19,12 @@
 	<div class="panel-body">
 		<ul class="nav nav-pills">
 			<li role="presentation" {if $_GPC['type'] == 'basic' || !$_GPC['type']}class="active"{/if}><a href="#basic" aria-controls="basic" role="tab" data-toggle="pill">基本信息</a></li>
-			<li role="presentation" {if $_GPC['type'] == 'instore'}class="active"{/if}><a href="#instore" aria-controls="takeout" role="tab" data-toggle="pill">店内点餐设置</a></li>
+			<!-- <li role="presentation" {if $_GPC['type'] == 'instore'}class="active"{/if}><a href="#instore" aria-controls="takeout" role="tab" data-toggle="pill">店内点餐设置</a></li>
 			<li role="presentation" {if $_GPC['type'] == 'takeout'}class="active"{/if}><a href="#takeout" aria-controls="takeout" role="tab" data-toggle="pill">配送费&配送区域</a></li>
-			<li role="presentation" {if $_GPC['type'] == 'page'}class="active"{/if}><a href="#page" aria-controls="page" role="tab" data-toggle="pill">页面设置</a></li>
+			<li role="presentation" {if $_GPC['type'] == 'page'}class="active"{/if}><a href="#page" aria-controls="page" role="tab" data-toggle="pill">页面设置</a></li> -->
 			<li role="presentation" {if $_GPC['type'] == 'high'}class="active"{/if}><a href="#high" aria-controls="" role="tab" data-toggle="pill">支付设置</a></li>
-			<li role="presentation" {if $_GPC['type'] == 'remind'}class="active"{/if}><a href="#remind" aria-controls="" role="tab" data-toggle="pill">催单回复</a></li>
-			<li role="presentation" {if $_GPC['type'] == 'comment'}class="active"{/if}><a href="#comment" aria-controls="" role="tab" data-toggle="pill">评价回复</a></li>
+			<!-- <li role="presentation" {if $_GPC['type'] == 'remind'}class="active"{/if}><a href="#remind" aria-controls="" role="tab" data-toggle="pill">催单回复</a></li>
+			<li role="presentation" {if $_GPC['type'] == 'comment'}class="active"{/if}><a href="#comment" aria-controls="" role="tab" data-toggle="pill">评价回复</a></li> -->
 			<li role="presentation" {if $_GPC['type'] == 'template'}class="active"{/if}><a href="#template" aria-controls="" role="tab" data-toggle="pill">模板配置</a></li>
 		</ul>
 	</div>
@@ -56,7 +56,7 @@
 				<div class="checkbox">
 					{loop $categorys $category}
 						{if $category['is_sys'] == 1}
-							<label><input type="checkbox" name="cid[]" value="{$category['id']}" {if in_array($category['id'], $item['cid'])}checked{/if}> {$category['title']} &nbsp;&nbsp;</label>
+							<label><input type="radio" name="cid" value="{$category['id']}" {if $category['id'] == $item['cid']}checked{/if}> {$category['title']} &nbsp;&nbsp;</label>
 						{/if}
 					{/loop}
 				</div>

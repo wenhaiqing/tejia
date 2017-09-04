@@ -250,7 +250,8 @@
 				<thead class="navbar-inner">
 					<tr>
 						<th>商品</th>
-						<th>份数</th>
+						<th>数量</th>
+						<th>单位</th>
 						<th>小计(元)</th>
 						<th></th>
 					</tr>
@@ -258,7 +259,8 @@
 						<?php  if(is_array($order['goods'])) { foreach($order['goods'] as $or) { ?>
 							<tr>
 								<td><?php  echo $or['goods_title'];?></td>
-								<td><?php  echo $or['goods_num'];?> 份</td>
+								<td><?php  echo $or['goods_num'];?></td>
+								<td><?php  echo $or['unitname'];?></td>
 								<td><?php  echo $or['goods_price'];?> 元</td>
 								<td>
 									<a class="btn btn-success" target="_blank" href="<?php  echo $this->createWeburl('goods', array('op' => 'post', 'id' => $or['goods_id']));?>">商品信息</a>

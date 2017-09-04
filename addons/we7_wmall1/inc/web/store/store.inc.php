@@ -34,7 +34,8 @@ if($op == 'post') {
 			message('门店信息不存在或已删除', 'referer', 'error');
 		} else {
 			$item['map'] = array('lat' => $item['location_x'], 'lng' => $item['location_y']);
-			$item['cid'] = array_filter(explode('|', $item['cid']));
+			//$item['cid'] = array_filter(explode('|', $item['cid']));
+			//$item['cid'] = $_GPC['cid'];
 		}
 		$delivery_times = pdo_getall('tiny_wmall1_store_delivery_times', array('uniacid' => $_W['uniacid'], 'sid' => $id));
 		$sys_url = murl('entry', array('m' => 'we7_wmall1', 'do' => 'store', 'sid' => $item['id']), true, true);
@@ -101,17 +102,18 @@ if($op == 'post') {
 			'is_reserve' => intval($_GPC['is_reserve']),
 			'forward_mode' => intval($_GPC['forward_mode']),
 		);
-		$cids = array();
-		if(!empty($_GPC['cid'])) {
-			foreach($_GPC['cid'] as $cid) {
-				$cid = intval($cid);
-				if($cid > 0) {
-					$cids[] = $cid;
-				}
-			}
-		}
-		$cids = implode('|', $cids);
-		$data['cid'] = "|{$cids}|";
+		// $cids = array();
+		// if(!empty($_GPC['cid'])) {
+		// 	foreach($_GPC['cid'] as $cid) {
+		// 		$cid = intval($cid);
+		// 		if($cid > 0) {
+		// 			$cids[] = $cid;
+		// 		}
+		// 	}
+		// }
+		// $cids = implode('|', $cids);
+		// $data['cid'] = "|{$cids}|";
+		$data['cid'] = $_GPC['cid'];
 
 		$serve_fee = array(
 			'type' => intval($_GPC['serve_fee']['type']),

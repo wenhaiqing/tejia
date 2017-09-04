@@ -5,7 +5,7 @@
  */
 defined('IN_IA') or exit('Access Denied');
 $openid = $_W['openid'];
-$dos = array('basic', 'uc', 'mobile_exist');
+$dos = array('basic', 'uc', 'mobile_exist','basic1','app','basic2');
 $do = in_array($do, $dos) ? $do : 'basic';
 
 $setting = uni_setting($_W['uniacid'], array('uc', 'passport'));
@@ -15,9 +15,9 @@ $audit = @intval($setting['passport']['audit']);
 $item = !empty($setting['passport']['item']) ? $setting['passport']['item'] : 'random';
 $type = trim($_GPC['type']) ? trim($_GPC['type']) : 'email';
 $forward = url('mc');
-if(!empty($_GPC['forward'])) {
-	$forward = './index.php?' . base64_decode($_GPC['forward']) . '#wechat_redirect';
-}
+// if(!empty($_GPC['forward'])) {
+// 	$forward = './index.php?' . base64_decode($_GPC['forward']) . '#wechat_redirect';
+// }
 
 if($do == 'mobile_exist') {
 	if($_W['ispost'] && $_W['isajax']) {
@@ -29,10 +29,10 @@ if($do == 'mobile_exist') {
 		}
 	}
 }
-if(!empty($_W['member']) && (!empty($_W['member']['mobile']) || !empty($_W['member']['email']))) {
-	header('location: ' . $forward);
-	exit;
-}
+// if(!empty($_W['member']) && (!empty($_W['member']['mobile']) || !empty($_W['member']['email']))) {
+// 	header('location: ' . $forward);
+// 	exit;
+// }
 if($do == 'basic') {
 	if($_W['ispost'] && $_W['isajax']) {
 		$username = trim($_GPC['username']);
@@ -56,7 +56,7 @@ if($do == 'basic') {
 				pdo_delete('uni_verifycode', array('receiver' => $username));
 			}
 		}
-		$sql = 'SELECT `uid`,`salt`,`password` FROM ' . tablename('mc_members') . ' WHERE `uniacid`=:uniacid';
+		$sql = 'SELECT `uid`,`salt`,`password`,`mobile` FROM ' . tablename('mc_members') . ' WHERE `uniacid`=:uniacid';
 		$pars = array();
 		$pars[':uniacid'] = $_W['uniacid'];
 		if ($item == 'mobile') {
@@ -93,7 +93,7 @@ if($do == 'basic') {
 			message('该帐号尚未注册', '', 'error');
 		}
 		if (_mc_login($user)) {
-			message('登录成功！', referer(), 'success');
+			message('登录成功！', 'http://tejia.zdxinfo.com/app/index.php?i=2&c=entry&do=updategoods&m=we7_wmall', 'success');
 		}
 		message('未知错误导致登陆失败', '', 'error');
 	}
@@ -153,5 +153,148 @@ if($do == 'basic') {
 		}
 	}
 	template('auth/uc-login');
+	exit;
+}
+
+if($do == 'basic1') {
+		$username = trim($_GPC['username']);
+		$password = trim($_GPC['password']);
+		$mode = trim($_GPC['mode']);
+		if (empty($username)) {
+			returnjson('用户名不能为空', '', 'error');
+		}
+		if (empty($password)) {
+			if ($mode == 'code') {
+				returnjson('验证码不能为空', '', 'error');
+			} else {
+				returnjson('密码不能为空', '', 'error');
+			}
+		}
+		if ($mode == 'code') {
+			load()->model('utility');
+			if (!code_verify($_W['uniacid'], $username, $password)) {
+				returnjson('验证码错误', '', 'error');
+			} else {
+				pdo_delete('uni_verifycode', array('receiver' => $username));
+			}
+		}
+		$sql = 'SELECT `uid`,`salt`,`password`,`credit2`,`credit3`,`bloodtype` FROM ' . tablename('mc_members') . ' WHERE `uniacid`=:uniacid';
+		$pars = array();
+		$pars[':uniacid'] = $_W['uniacid'];
+		if ($item == 'mobile') {
+			if (preg_match(REGULAR_MOBILE, $username)) {
+				$sql .= ' AND `mobile`=:mobile';
+				$pars[':mobile'] = $username;
+			} else {
+				returnjson('请输入正确的手机', '', 'error');
+			}
+		} elseif ($item == 'email') {
+			if (preg_match(REGULAR_EMAIL, $username)) {
+				$sql .= ' AND `email`=:email';
+				$pars[':email'] = $username;
+			} else {
+				message('请输入正确的邮箱', '', 'error');
+			}
+		} else {
+			if (preg_match(REGULAR_MOBILE, $username)) {
+				$sql .= ' AND `mobile`=:mobile';
+				$pars[':mobile'] = $username;
+			} else {
+				$sql .= ' AND `email`=:email';
+				$pars[':email'] = $username;
+			}
+		}
+		$user = pdo_fetch($sql, $pars);
+		if ($mode == 'basic') {
+			$hash = md5($password . $user['salt'] . $_W['config']['setting']['authkey']);
+			if ($user['password'] != $hash) {
+				returnjson('密码错误', '', 'error');
+			}
+		}
+		if (empty($user)) {
+			returnjson('该帐号尚未注册', '', 'error');
+		}
+		if (_mc_login($user)) {
+			$whq_user = array();
+			$whq_user['uid'] = $user['uid'];
+			$whq_user['credit2'] = $user['credit2'];
+			$whq_user['credit3'] = $user['credit3'];
+			$whq_user['bloodtype'] = $user['bloodtype'];
+			returnjson('登录成功！', $whq_user, 'success');
+		}
+		returnjson('未知错误导致登陆失败', '', 'error');
+	
+	//template('auth/login');
+	exit;
+}
+if($do == 'basic2') {
+		$username = trim($_GPC['username']);
+		$password = trim($_GPC['password']);
+		$mode = trim($_GPC['mode']);
+		if (empty($username)) {
+			returnjson('用户名不能为空', '', 'error');
+		}
+		if (empty($password)) {
+			if ($mode == 'code') {
+				returnjson('验证码不能为空', '', 'error');
+			} else {
+				returnjson('密码不能为空', '', 'error');
+			}
+		}
+		if ($mode == 'code') {
+			load()->model('utility');
+			if (!code_verify($_W['uniacid'], $username, $password)) {
+				returnjson('验证码错误', '', 'error');
+			} else {
+
+				pdo_delete('uni_verifycode', array('receiver' => $username));
+				returnjson('验证码正确','','success');
+			}
+		}
+		returnjson('未知错误导致登陆失败', '', 'error');
+	
+	//template('auth/login');
+	exit;
+}
+if($do == 'app') {
+		$nickname = trim($_GPC['nickname']);
+		$avatar = trim($_GPC['avatar']);
+		$openid = trim($_GPC['openid']);
+		$unionid = trim($_GPC['unionid']);
+		$sql = 'SELECT `uid`,`salt`,`password`,`credit2`,`credit3`,`bloodtype` FROM ' . tablename('mc_members') . ' WHERE `uniacid`=:uniacid AND `openid`=:openid';
+		$pars = array();
+		$pars[':uniacid'] = $_W['uniacid'];
+		$pars[':openid'] = $openid;
+		
+		$user = pdo_fetch($sql, $pars);
+		
+		if (empty($user)) {
+			$w_data = array();
+			$w_data['nickname'] = $nickname;
+			$w_data['openid'] = $openid;
+			$w_data['avatar'] = $avatar;
+			$w_data['unionid'] = $unionid;
+			$w_data['uniacid'] = $_W['uniacid'];
+			$w_data['groupid'] = 2;
+			$w_data['createtime'] = time();
+			pdo_insert('mc_members',$w_data);
+			$w_id = pdo_insertid();
+			$whq_user = array();
+			$whq_user['uid'] = $w_id;
+			$whq_user['credit2'] = 0;
+			$whq_user['credit3'] = 0;
+			$whq_user['bloodtype'] = '';
+			returnjson('登录成功！', $whq_user, 'success');
+		}else{
+			$whq_user = array();
+			$whq_user['uid'] = $user['uid'];
+			$whq_user['credit2'] = $user['credit2'];
+			$whq_user['credit3'] = $user['credit3'];
+			$whq_user['bloodtype'] = $user['bloodtype'];
+			returnjson('登录成功！', $whq_user, 'success');
+		}
+		returnjson('未知错误导致登陆失败', '', 'error');
+	
+	//template('auth/login');
 	exit;
 }

@@ -1,4 +1,8 @@
+{if $_W['role'] != 'operator'}
 {template 'public/header'}
+{else}
+{template 'public/header-base1'}
+{/if}
 {template 'store/nav'}
 <style type="text/css">
 	.order-detail-info>div{margin-bottom:10px; padding-left:15px;}
@@ -159,11 +163,14 @@
 												{/if}
 												{if $dca['order_type'] == 1}
 													{if $dca['status'] == 2 || $dca['status'] == 3}
-														<li><a href="{php echo $this->createWeburl('order', array('op' => 'status', 'id' => $dca['id'], 'status' => 3, 'type' => 'delivery_wait'));}" onclick="if(!confirm('确定通知配送员配送?')) return false;">通知配送员配送</a></li>
-														<li><a href="{php echo $this->createWeburl('order', array('op' => 'status', 'id' => $dca['id'], 'status' => 4, 'type' => 'delivery_ing'));}" onclick="if(!confirm('确定修改订单状态?')) return false;">设为配送中</a></li>
-														{if $account['delivery_type'] == 1}
-															<li><a href="javascript:;" class="select-deliveryer" data-type="single" data-id="{$dca['id']}">指定配送员配送</a><li>
+												
+														{if $dca['status'] == 2}
+														<li><a href="{php echo $this->createWeburl('order', array('op' => 'status', 'id' => $dca['id'], 'status' => 3, 'type' => 'delivery_wait'));}" onclick="if(!confirm('确定收到供应商供货?')) return false;">已收到供应商供货</a></li>
 														{/if}
+														<!-- <li><a href="{php echo $this->createWeburl('order', array('op' => 'status', 'id' => $dca['id'], 'status' => 4, 'type' => 'delivery_ing'));}" onclick="if(!confirm('确定修改订单状态?')) return false;">设为配送中</a></li> -->
+														
+															<li><a href="javascript:;" class="select-deliveryer" data-type="single" data-id="{$dca['id']}">指定配送站配送</a><li>
+													
 													{/if}
 													{if $dca['status'] == 4}
 														<li><a href="{php echo $this->createWeburl('order', array('op' => 'status', 'id' => $dca['id'], 'status' => 5, 'type' => 'end'));}" onclick="if(!confirm('确定修改订单状态?')) return false;">设为已完成</a></li>
@@ -410,7 +417,8 @@ require(['util'], function(u){
 				<thead class="navbar-inner">
 					<tr>
 						<th>商品</th>
-						<th>份数</th>
+						<th>数量</th>
+						<th>单位</th>
 						<th>小计(元)</th>
 						<th></th>
 					</tr>
@@ -418,7 +426,8 @@ require(['util'], function(u){
 						{loop $order['goods'] $or}
 							<tr>
 								<td>{$or['goods_title']}</td>
-								<td>{$or['goods_num']} 份</td>
+								<td>{$or['goods_num']}</td>
+								<td>{$or['unitname']}</td>
 								<td>{$or['goods_price']} 元</td>
 								<td>
 									<a class="btn btn-success" target="_blank" href="{php echo $this->createWeburl('goods', array('op' => 'post', 'id' => $or['goods_id']));}">商品信息</a>

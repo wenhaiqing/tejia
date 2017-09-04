@@ -38,13 +38,19 @@ if($op == 'post') {
 			'sid' => $sid,
 			'uniacid' => $_W['uniacid'],
 			'title' => trim($_GPC['title']),
+			'title_description'=>trim($_GPC['title_description']),
 			'price' => trim($_GPC['price']),
+			'age' => trim($_GPC['age']),
 			'discount_price' => trim($_GPC['discount_price']),
+			'member_price' => trim($_GPC['member_price']),
 			'unitname' => trim($_GPC['unitname']),
+			'hotel_price' => trim($_GPC['hotel_price']),
+			'hotel_unitname' => trim($_GPC['hotel_unitname']),
 			'total' => intval($_GPC['total']),
 			'sailed' => intval($_GPC['sailed']),
 			'status' => intval($_GPC['status']),
 			'cid' => intval($_GPC['cid']),
+			'buzz' =>intval($_GPC['buzz']),
 			'min_buy_limit' => intval($_GPC['min_buy_limit']),
 			'box_price' => trim($_GPC['box_price']),
 			'thumb' => trim($_GPC['thumb']),
@@ -53,6 +59,8 @@ if($op == 'post') {
 			'description' => htmlspecialchars_decode($_GPC['description']),
 			'is_options' => intval($_GPC['is_options']),
 			'is_hot' => intval($_GPC['is_hot']),
+			'is_shopowner' => intval($_GPC['is_shopowner']),
+			'is_today' => intval($_GPC['is_today']),
 			'print_label' => intval($_GPC['print_label']),
 		);
 		$data['slides'] = array();
@@ -129,7 +137,7 @@ if($op == 'list') {
 	$psize = 20;
 
 	$total = pdo_fetchcolumn('SELECT COUNT(*) FROM ' . tablename('tiny_wmall_goods') . ' WHERE ' . $condition, $params);
-	$lists = pdo_fetchall('SELECT * FROM ' . tablename('tiny_wmall_goods') . ' WHERE ' . $condition . ' ORDER BY displayorder DESC,id ASC LIMIT '.($pindex - 1) * $psize.','.$psize, $params);
+	$lists = pdo_fetchall('SELECT * FROM ' . tablename('tiny_wmall_goods') . ' WHERE ' . $condition . ' ORDER BY displayorder DESC,id DESC LIMIT '.($pindex - 1) * $psize.','.$psize, $params);
 	if(!empty($lists)) {
 	}
 	$pager = pagination($total, $pindex, $psize);

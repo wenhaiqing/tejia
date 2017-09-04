@@ -3,13 +3,13 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">选择配送员</h4>
+				<h4 class="modal-title">选择配送站</h4>
 			</div>
 			<div class="modal-body">
 				<table class="table table-hover table-bordered">
 					<thead>
 					<tr>
-						<th>姓名</th>
+						<th>配送站名</th>
 						<th>手机号</th>
 						<th style="text-align: right">操作</th>
 					</tr>
@@ -29,10 +29,10 @@
 <script id="tpl-select-deliveryer" type="text/html">
 	<{# for(var i = 0, len = d.length; i < len; i++){ }>
 	<tr>
-		<td><{d[i].deliveryer.title}></td>
-		<td><{d[i].deliveryer.mobile}></td>
+		<td><{d[i].title}></td>
+		<td><{d[i].telephone}></td>
 		<td style="text-align: right">
-			<a href="javascript:;" data-id="<{d[i].deliveryer_id}>" class="btn btn-default js-select-deliveryer">选择</a>
+			<a href="javascript:;" data-id="<{d[i].id}>" class="btn btn-default js-select-deliveryer">选择</a>
 		</td>
 	</tr>
 	<{# } }>
@@ -57,6 +57,7 @@ $(function(){
 		var $deliveryer_containter = $('#select-deliveryer-containter');
 		$.get("{php echo $this->createWebUrl('utility', array('op' => 'deliveryer', 'sid' => $sid));}", function(data){
 			var result = $.parseJSON(data);
+			//util.message(result.message.message);
 			if(result.message.errno != 0) {
 				util.message('获取配送员信息失败', '', 'error');
 				return false;
@@ -85,15 +86,19 @@ $(function(){
 				return false;
 			}
 			$(this).html('处理中...').attr('disabled', true);
-			$.post("{php echo $this->createWebUrl('order', array('op' => 'set_deliveryer'));}", {deliveryer_id: deliveryer_id, order_ids: order_ids}, function(data){
+			$.post("{php echo $this->createWebUrl('order', array('op' => 'set_deliveryer1'));}", {deliveryer_id: deliveryer_id, order_ids: order_ids}, function(data){
 				var result = $.parseJSON(data);
 				if(result.message.errno != 0) {
 					$(this).html('确定').attr('disabled', false);
 					util.message(result.message.message, '', 'error');
+
 					return false;
 				} else {
 					location.reload();
 				}
+			});
+			$.post("{php echo $this->createWeburl('order', array('op' => 'status', 'status' => 4, 'type' => 'delivery_ing'))}",{id:order_ids}, function(data){
+				
 			});
 		});
 	});

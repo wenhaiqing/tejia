@@ -84,9 +84,9 @@
 							<th>支付方式</th>
 							<th>订单状态</th>
 							<th>打印(份数)</th>
-							<th>份数/总价</th>
+							<!-- <th>份数/总价</th>
 							<th>优惠金额</th>
-							<th>优惠后价格</th>
+							<th>优惠后价格</th> -->
 							<th>下单时间</th>
 							<th style="width:250px; text-align:right;">详情</th>
 						</tr>
@@ -138,11 +138,11 @@
 									{/if}
 								)</a>
 							</td>
-							<td>
+							<!-- <td>
 								{$dca['num']}份/{$dca['total_fee']}元
 							</td>
 							<td>{$dca['discount_fee']}元</td>
-							<td><span class="label label-info">{$dca['final_fee']}元</span></td>
+							<td><span class="label label-info">{$dca['final_fee']}元</span></td> -->
 							<td>{php echo date('Y-m-d H:i', $dca['addtime'])}</td>
 							<td style="text-align:right; overflow:visible;">
 								<div class="btn-group">
@@ -159,11 +159,11 @@
 												{/if}
 												{if $dca['order_type'] == 1}
 													{if $dca['status'] == 2 || $dca['status'] == 3}
-														<li><a href="{php echo $this->createWeburl('order', array('op' => 'status', 'id' => $dca['id'], 'status' => 3, 'type' => 'delivery_wait'));}" onclick="if(!confirm('确定通知配送员配送?')) return false;">通知配送员配送</a></li>
+														<!-- <li><a href="{php echo $this->createWeburl('order', array('op' => 'status', 'id' => $dca['id'], 'status' => 3, 'type' => 'delivery_wait'));}" onclick="if(!confirm('确定通知配送员配送?')) return false;">通知配送员配送</a></li> -->
 														<li><a href="{php echo $this->createWeburl('order', array('op' => 'status', 'id' => $dca['id'], 'status' => 4, 'type' => 'delivery_ing'));}" onclick="if(!confirm('确定修改订单状态?')) return false;">设为配送中</a></li>
-														{if $account['delivery_type'] == 1}
+														<!-- {if $account['delivery_type'] == 1}
 															<li><a href="javascript:;" class="select-deliveryer" data-type="single" data-id="{$dca['id']}">指定配送员配送</a><li>
-														{/if}
+														{/if} -->
 													{/if}
 													{if $dca['status'] == 4}
 														<li><a href="{php echo $this->createWeburl('order', array('op' => 'status', 'id' => $dca['id'], 'status' => 5, 'type' => 'end'));}" onclick="if(!confirm('确定修改订单状态?')) return false;">设为已完成</a></li>
@@ -196,11 +196,11 @@
 										<a href="javascript:;" data-id="2" data-type="handel" class="btn btn-primary btn-order">确定接单</a>
 									{/if}
 									{if $status == 2 || $status == 3}
-										<a href="javascript:;" data-id="3" data-type="delivery_wait" class="btn btn-primary btn-order">通知配送员配送</a>
+										<!-- <a href="javascript:;" data-id="3" data-type="delivery_wait" class="btn btn-primary btn-order">通知配送员配送</a> -->
 										<a href="javascript:;" data-id="4" data-type="delivery_ing" class="btn btn-primary btn-order">设为配送中</a>
-										{if $account['delivery_type'] == 1}
+										<!-- {if $account['delivery_type'] == 1}
 											<a href="javascript:;" class="btn btn-success select-deliveryer" data-type="mutil">指定配送员配送</a>
-										{/if}
+										{/if} -->
 									{/if}
 									{if $status == 4}
 										<a href="javascript:;" data-id="5" data-type="end" class="btn btn-primary btn-order">设为已完成</a>
@@ -208,12 +208,12 @@
 								</td>
 							</tr>
 						{/if}
-						<tr>
+						<!-- <tr>
 							<td colspan="12">
 								<p class="text-danger">通知配送员配送: 系统将会把选中的订单状态设置为"待配送", 并通知该门店的所有配送员有新的订单需要配送</p>
 								<p class="text-danger">指定配送员配送: 系统将会把选中的订单状态设置为"配送中", 并通知指定的配送员有新的订单需要配送</p>
 							</td>
-						</tr>
+						</tr> -->
 					</tbody>
 				</table>
 			</div>
@@ -339,12 +339,12 @@ require(['util'], function(u){
 									{/if}
 								</div>
 							</div>
-							<div class="form-group clearfix">
+							<!-- <div class="form-group clearfix">
 								<label class="col-md-3 control-label">下单人信息：</label>
 								<div class="col-md-9 form-control-static">
 									{$order['username']} {$order['mobile']}
 								</div>
-							</div>
+							</div> -->
 							<div class="form-group clearfix">
 								<label class="col-md-3 control-label">配送地址：</label>
 								<div class="col-md-9 form-control-static">
@@ -360,7 +360,7 @@ require(['util'], function(u){
 							</div>
 						</div>
 
-						<div class="col-xs-12 col-sm-6">
+						<!-- <div class="col-xs-12 col-sm-6">
 							<h4>订单费用</h4>
 							<div class="form-group clearfix">
 								<label class="col-md-3 control-label">商品价格：</label>
@@ -380,7 +380,7 @@ require(['util'], function(u){
 									￥ {$order['delivery_fee']}
 								</div>
 							</div>
-							{if $order['discount_fee'] > 0}
+							 {if $order['discount_fee'] > 0}
 								{loop $discount $row}
 									<div class="form-group clearfix">
 										<label class="col-md-3 control-label">{$row['name']}：</label>
@@ -389,14 +389,14 @@ require(['util'], function(u){
 										</div>
 									</div>
 								{/loop}
-							{/if}
-							<div class="form-group clearfix">
+							{/if} 
+							 <div class="form-group clearfix">
 								<label class="col-md-3 control-label">合计：</label>
 								<div class="col-md-9 form-control-static">
 									￥ {$order['final_fee']}
 								</div>
-							</div>
-						</div>
+							</div> 
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -404,25 +404,27 @@ require(['util'], function(u){
 	</div>
 
 	<div class="panel panel-default">
-		<div class="panel-heading">商品信息【共 <strong>{$order['num']}</strong> 份,总价 <strong>{$order['price']}</strong> 元】</div>
+		<div class="panel-heading">商品信息</strong> 元】</div>
 		<div class="panel-body table-responsive">
 			<table class="table table-hover">
 				<thead class="navbar-inner">
 					<tr>
 						<th>商品</th>
-						<th>份数</th>
-						<th>小计(元)</th>
-						<th></th>
+						<th>数量</th>
+						<th>单位</th>
+						<!-- <th>小计(元)</th> -->
+						<!-- <th></th> -->
 					</tr>
 					{if !empty($order['goods'])}
 						{loop $order['goods'] $or}
 							<tr>
 								<td>{$or['goods_title']}</td>
-								<td>{$or['goods_num']} 份</td>
-								<td>{$or['goods_price']} 元</td>
-								<td>
+								<td>{$or['goods_num']}</td>
+								<td>{$or['unitname']}</td>
+								<!-- <td>{$or['goods_price']} 元</td> -->
+								<!-- <td>
 									<a class="btn btn-success" target="_blank" href="{php echo $this->createWeburl('goods', array('op' => 'post', 'id' => $or['goods_id']));}">商品信息</a>
-								</td>
+								</td> -->
 							</tr>
 						{/loop}
 					{/if}

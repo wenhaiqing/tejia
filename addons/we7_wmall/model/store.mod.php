@@ -193,6 +193,22 @@ function store_fetchall_goods_category($store_id, $status = '-1')
 	$data = pdo_fetchall('select * from ' . tablename('tiny_wmall_goods_category') . $condition . ' order by displayorder desc, id asc', $params, 'id');
 	return $data;
 }
+
+function store_fetchall_goods_categoryapp($store_id, $status = '-1')
+{
+	global $_W;
+	$condition = ' where uniacid = :uniacid and sid = :sid';
+	$params = array(':uniacid' => $_W['uniacid'], ':sid' => $store_id);
+	if ($status >= 0) {
+		$condition .= ' and status = :status';
+		$params[':status'] = $status;
+	}
+	$data = pdo_fetchall('select id,title as name,thumb from ' . tablename('tiny_wmall_goods_category') . $condition . ' order by displayorder desc, id asc', $params);
+	for ($i=0; $i <count($data) ; $i++) { 
+		$data[$i]['thumb'] = 'http://'.$_SERVER['HTTP_HOST'].'/attachment/'.$data[$i]['thumb'];
+	}
+	return $data;
+}
 function store_fetch_goods($id, $field = array('basic', 'options'))
 {
 	global $_W;

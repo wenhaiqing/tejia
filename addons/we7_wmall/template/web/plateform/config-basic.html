@@ -67,6 +67,20 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>一级分销比例</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" name="w_first" value="{$config['w_first']}" class="form-control">
+						<div class="help-block text-danger">这里只要填入数字就行，例如一级分销商占订单金额的1成,这里就填1就行，系统会自动按1%算</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>二级分销比例</label>
+					<div class="col-sm-9 col-xs-12">
+						<input type="text" name="w_second" value="{$config['w_second']}" class="form-control">
+						<div class="help-block text-danger">这里只要填入数字就行，例如二级分销商占订单金额的1成,这里就填1就行，系统会自动按1%算</div>
+					</div>
+				</div>
+				<div class="form-group">
 					<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span class="require">* </span>首页商家排序方式</label>
 					<div class="col-sm-9 col-xs-12">
 						<label class="radio-inline">

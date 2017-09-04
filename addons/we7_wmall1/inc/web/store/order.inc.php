@@ -18,6 +18,7 @@ $store = store_fetch($sid);
 $do = 'order';
 $op = trim($_GPC['op']) ? trim($_GPC['op']) : 'list';
 
+
 if($op == 'list') {
 	$condition = ' WHERE uniacid = :aid AND sid = :sid and order_type < 3';
 	$params[':aid'] = $_W['uniacid'];
@@ -168,7 +169,7 @@ if($op == 'detail') {
 	if(empty($order)) {
 		message('订单不存在或已经删除', $this->createWebUrl('manage', array('op' => 'order')), 'error');
 	} 
-	$order['goods'] = order_fetch_goods($order['id']);
+	$order['goods'] = order_fetch_goods($order['id'],$sid);
 	if($order['is_comment'] == 1) {
 		$comment = pdo_fetch('SELECT * FROM ' . tablename('tiny_wmall1_order_comment') .' WHERE uniacid = :aid AND oid = :oid', array(':aid' => $_W['uniacid'], ':oid' => $id));
 		if(!empty($comment)) {

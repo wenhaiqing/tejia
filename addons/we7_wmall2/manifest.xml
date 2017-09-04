@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="0.6">
+	<application setting="false">
+		<name><![CDATA[啦啦外卖]]></name>
+		<identifie><![CDATA[we7_wmall2]]></identifie>
+		<version><![CDATA[2.2.5]]></version>
+		<type><![CDATA[business]]></type>
+		<ability><![CDATA[啦啦外卖|微外卖|扫码点餐|微餐饮|微点餐|微外送|生鲜|便利店|超市系统|跑腿|随意购|配送员]]></ability>
+		<description><![CDATA[啦啦外卖]]></description>
+		<author><![CDATA[不错吧]]></author>
+		<url><![CDATA[http://bbs.bcb5.com]]></url>
+	</application>
+	<platform>
+		<subscribes>
+		</subscribes>
+		<handles>
+			<message type="location" />
+			<message type="text" />
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+	</platform>
+	<bindings>
+		<cover>
+			<entry title="外卖入口" do="guide" state="" direct="true" />
+			<entry title="门店管理入口" do="mgindex" state="" direct="true" />
+			<entry title="配送员管理入口" do="dyindex" state="" direct="true" />
+			<entry title="商户入驻" do="settle" state="" direct="true" />
+			<entry title="我的订单" do="order" state="" direct="true" />
+			<entry title="会员中心" do="mine" state="" direct="true" />
+		</cover>
+		<menu>
+			<entry title="订单处理中心" do="ptforder-stat" state="" direct="false" />
+			<entry title="门店管理" do="store" state="" direct="false" />
+			<entry title="全屏引导页" do="ptfad" state="" direct="false" />
+			<entry title="首页幻灯片" do="ptfslide" state="" direct="false" />
+			<entry title="门店分类" do="ptfcategory" state="" direct="false" />
+			<entry title="首页图片导航设置" do="ptfnav" state="" direct="false" />
+			<entry title="会员管理" do="ptfmember" state="" direct="false" />
+			<entry title="商户入驻" do="ptfsettle" state="" direct="false" />
+			<entry title="配送员" do="ptfdeliveryer" state="" direct="false" />
+			<entry title="财务中心" do="ptftrade" state="" direct="false" />
+			<entry title="商户投诉" do="ptfreport" state="" direct="false" />
+			<entry title="短信平台" do="ptfsms" state="" direct="false" />
+			<entry title="参数设置" do="ptfconfig" state="" direct="false" />
+		</menu>
+		<home>
+			<entry title="点外卖" do="index" state="" direct="false" />
+		</home>
+		<profile>
+			<entry title="点外卖" do="index" state="" direct="false" />
+		</profile>
+	</bindings>
+	<permissions>
+	</permissions>
+	<install><![CDATA[install.php]]></install>
+	<uninstall><![CDATA[DROP TABLE IF EXISTS `tiny_wmall2_account`;
+DROP TABLE IF EXISTS `tiny_wmall2_activity_coupon`;
+DROP TABLE IF EXISTS `tiny_wmall2_activity_coupon_grant_log`;
+DROP TABLE IF EXISTS `tiny_wmall2_activity_coupon_record`;
+DROP TABLE IF EXISTS `tiny_wmall2_address`;
+DROP TABLE IF EXISTS `tiny_wmall2_assign_board`;
+DROP TABLE IF EXISTS `tiny_wmall2_assign_queue`;
+DROP TABLE IF EXISTS `tiny_wmall2_black`;
+DROP TABLE IF EXISTS `tiny_wmall2_clerk`;
+DROP TABLE IF EXISTS `tiny_wmall2_config`;
+DROP TABLE IF EXISTS `tiny_wmall2_delivery_cards`;
+DROP TABLE IF EXISTS `tiny_wmall2_delivery_cards_order`;
+DROP TABLE IF EXISTS `tiny_wmall2_delivery_config`;
+DROP TABLE IF EXISTS `tiny_wmall2_deliveryer`;
+DROP TABLE IF EXISTS `tiny_wmall2_deliveryer_current_log`;
+DROP TABLE IF EXISTS `tiny_wmall2_deliveryer_getcash_log`;
+DROP TABLE IF EXISTS `tiny_wmall2_fans`;
+DROP TABLE IF EXISTS `tiny_wmall2_goods`;
+DROP TABLE IF EXISTS `tiny_wmall2_goods_category`;
+DROP TABLE IF EXISTS `tiny_wmall2_goods_options`;
+DROP TABLE IF EXISTS `tiny_wmall2_help`;
+DROP TABLE IF EXISTS `tiny_wmall2_members`;
+DROP TABLE IF EXISTS `tiny_wmall2_order`;
+DROP TABLE IF EXISTS `tiny_wmall2_order_cart`;
+DROP TABLE IF EXISTS `tiny_wmall2_order_comment`;
+DROP TABLE IF EXISTS `tiny_wmall2_order_current_log`;
+DROP TABLE IF EXISTS `tiny_wmall2_order_discount`;
+DROP TABLE IF EXISTS `tiny_wmall2_order_refund_log`;
+DROP TABLE IF EXISTS `tiny_wmall2_order_stat`;
+DROP TABLE IF EXISTS `tiny_wmall2_order_status_log`;
+DROP TABLE IF EXISTS `tiny_wmall2_paylog`;
+DROP TABLE IF EXISTS `tiny_wmall2_printer`;
+DROP TABLE IF EXISTS `tiny_wmall2_printer_label`;
+DROP TABLE IF EXISTS `tiny_wmall2_reply`;
+DROP TABLE IF EXISTS `tiny_wmall2_report`;
+DROP TABLE IF EXISTS `tiny_wmall2_reserve`;
+DROP TABLE IF EXISTS `tiny_wmall2_slide`;
+DROP TABLE IF EXISTS `tiny_wmall2_sms_send_log`;
+DROP TABLE IF EXISTS `tiny_wmall2_store`;
+DROP TABLE IF EXISTS `tiny_wmall2_store_account`;
+DROP TABLE IF EXISTS `tiny_wmall2_store_activity`;
+DROP TABLE IF EXISTS `tiny_wmall2_store_category`;
+DROP TABLE IF EXISTS `tiny_wmall2_store_current_log`;
+DROP TABLE IF EXISTS `tiny_wmall2_store_delivery_times`;
+DROP TABLE IF EXISTS `tiny_wmall2_store_deliveryer`;
+DROP TABLE IF EXISTS `tiny_wmall2_store_favorite`;
+DROP TABLE IF EXISTS `tiny_wmall2_store_getcash_log`;
+DROP TABLE IF EXISTS `tiny_wmall2_store_members`;
+DROP TABLE IF EXISTS `tiny_wmall2_store_settle_config`;
+DROP TABLE IF EXISTS `tiny_wmall2_tables`;
+DROP TABLE IF EXISTS `tiny_wmall2_tables_category`;
+DROP TABLE IF EXISTS `tiny_wmall2_tables_scan`;
+DROP TABLE IF EXISTS `tiny_wmall2_text`;
+]]></uninstall>
+	<upgrade><![CDATA[upgrade.php]]></upgrade>
+</manifest>

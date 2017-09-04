@@ -1,0 +1,113 @@
+2017-06-12 10:40:25 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wkK77TfXFcv3OToW69UCB9c]]></FromUserName>
+<CreateTime>1497235226</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2017-06-12 10:40:25 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wkK77TfXFcv3OToW69UCB9c',
+    'createtime' => '1497235226',
+    'msgtype' => 'event',
+    'event' => 'subscribe',
+    'eventkey' => '',
+    'from' => 'ohRa2wkK77TfXFcv3OToW69UCB9c',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1497235226',
+    'type' => 'text',
+    'redirection' => true,
+    'source' => 'subscribe',
+  ),
+)
+
+2017-06-12 10:40:25 response :
+------------
+
+2017-06-12 10:40:36 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wkK77TfXFcv3OToW69UCB9c]]></FromUserName>
+<CreateTime>1497235237</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[介绍一下]]></Content>
+<MsgId>6430576377748461890</MsgId>
+</xml>
+
+2017-06-12 10:40:36 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wkK77TfXFcv3OToW69UCB9c',
+    'createtime' => '1497235237',
+    'msgtype' => 'text',
+    'content' => '介绍一下',
+    'msgid' => '6430576377748461890',
+    'from' => 'ohRa2wkK77TfXFcv3OToW69UCB9c',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1497235237',
+    'type' => 'text',
+    'event' => NULL,
+    'redirection' => false,
+    'source' => NULL,
+  ),
+)
+
+2017-06-12 10:40:36 response :
+------------
+
+2017-06-12 10:41:06 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wkK77TfXFcv3OToW69UCB9c]]></FromUserName>
+<CreateTime>1497235267</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[app]]></Content>
+<MsgId>6430576506597480797</MsgId>
+</xml>
+
+2017-06-12 10:41:06 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wkK77TfXFcv3OToW69UCB9c',
+    'createtime' => '1497235267',
+    'msgtype' => 'text',
+    'content' => 'app',
+    'msgid' => '6430576506597480797',
+    'from' => 'ohRa2wkK77TfXFcv3OToW69UCB9c',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1497235267',
+    'type' => 'text',
+    'event' => NULL,
+    'redirection' => false,
+    'source' => NULL,
+  ),
+)
+
+2017-06-12 10:41:06 response :
+------------
+

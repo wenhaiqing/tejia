@@ -78,6 +78,7 @@
 		<ul class="order-nav order-nav-tabs">
 			<li{if $orderby == 'num'} class="active"{/if}><a href="{php echo $this->createWebUrl('stat', array('op' => 'day', 'addtime[start]' => date('Y-m-d', $starttime), 'addtime[end]' => date('Y-m-d', $endtime), 'orderby' => 'num'))}">按照销量排序</a></li>
 			<li{if $orderby == 'price'} class="active"{/if}><a href="{php echo $this->createWebUrl('stat', array('op' => 'day', 'addtime[start]' => date('Y-m-d', $starttime), 'addtime[end]' => date('Y-m-d', $endtime), 'orderby' => 'price'))}">按照收入排序</a></li>
+			<li><a class="btn btn-primary btn-export" href="{php echo $this->createWebUrl('stat', array('op' => 'excel', 'addtime[start]' => date('Y-m-d', $starttime), 'addtime[end]' => date('Y-m-d', $endtime), 'orderby' => 'num'))}"> <i class="fa fa-download"></i> 导出订单</a></li>
 		</ul>
 		<div class="panel panel-default">
 			<div class="panel-body">

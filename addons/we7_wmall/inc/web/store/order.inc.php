@@ -19,6 +19,7 @@ $do = 'order';
 $op = trim($_GPC['op']) ? trim($_GPC['op']) : 'list';
 
 if($op == 'list') {
+
 	$condition = ' WHERE uniacid = :aid AND sid = :sid and order_type < 3';
 	$params[':aid'] = $_W['uniacid'];
 	$params[':sid'] = $sid;
@@ -118,6 +119,10 @@ if($op == 'status') {
 			pdo_update('tiny_wmall_order', array('delivery_type' => $account['delivery_type']), array('uniacid' => $_W['uniacid'], 'id' => $id));
 			pdo_update('tiny_wmall_order_current_log', array('delivery_type' => $account['delivery_type']), array('uniacid' => $_W['uniacid'], 'orderid' => $id));
 			order_deliveryer_notice($sid, $id, $type);
+		}
+		if ($status == 5) {
+			$w_orders = pdo_get('tiny_wmall_order',array('id'=>$id));
+			order_update_extension_logs($id,$w_orders['uid'],$w_orders['final_fee']);
 		}
 	}
 	message('更新订状态成功', referer(), 'success');
@@ -253,6 +258,31 @@ if($op == 'set_deliveryer') {
 		order_insert_status_log($id, $sid, 'delivery_ing', $content);
 		order_status_notice($sid, $id, 'delivery_ing', "配送　员：{$deliveryer['title']}\n手机　号：{$deliveryer['mobile']}");
 		order_deliveryer_notice($sid, $id, 'new_delivery', $deliveryer_id);
+		message(error(0, ''), '', 'ajax');
+	}
+}
+if($op == 'set_deliveryer1') {
+	if(!$_W['isajax']) {
+		return false;
+	}
+	$deliveryer_id = intval($_GPC['deliveryer_id']);
+	$order_ids = $_GPC['order_ids'];
+	$gorders = pdo_getall('tiny_wmall_order',array('id'=>$order_ids));
+	$gorderscount = count($gorders);
+	for ($i=0;$i<$gorderscount;$i++){
+		$gorders[$i]['oldsid'] = $gorders[$i]['sid'];
+		$gorders[$i]['sid'] = $deliveryer_id;
+		$wmall2order = pdo_get('tiny_wmall2_order',array('id'=>$gorders[$i]['id']));
+		if ($wmall2order) {
+			message(error(-1, '该订单已经分配配送站'), '', 'ajax');
+		}
+		pdo_insert('tiny_wmall2_order',$gorders[$i]);
+		$id = pdo_insertid();
+		order_deliveryer_notice_wmall2($deliveryer_id,$id,'new_delivery');
+		order_insert_current_log($id, $oldsid, $gorders[$i]['final_fee'], '', '');
+		order_insert_status_log($id, $oldsid, 'place_order');
+		order_update_goods_info($id, $oldsid);
+		//order_print($id);
 		message(error(0, ''), '', 'ajax');
 	}
 }

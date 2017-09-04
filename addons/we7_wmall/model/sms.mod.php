@@ -61,6 +61,54 @@ function sms_send($type, $mobile, $content, $sid = 0) {
 	return true;
 }
 
+function sms_send_app($type, $mobile, $content, $sid = 0) {
+	global $_W;
+	if(!is_array($_W['we7_wmall']['config']['sms']) || !$_W['we7_wmall']['config']['sms']['status']) {
+		return error(-1, '没有设置短信参数或已关闭短信功能');
+	}
+	$post = array(
+		'method' => 'alibaba.aliqin.fc.sms.num.send',
+		'app_key' => $_W['we7_wmall']['config']['sms']['key'],
+		'timestamp' => date('Y-m-d H:i:s'),
+		'format' => 'json',
+		'v' => '2.0',
+		'sign_method' => 'md5',
+		'sms_type' => 'normal',
+		'sms_free_sign_name' => $_W['we7_wmall']['config']['sms']['sign'],
+		'rec_num' => $mobile,
+		'sms_template_code' => $type,
+		'sms_param' => json_encode($content)
+	);
+
+	ksort($post);
+	$str = '';
+	foreach($post as $key => $val) {
+		$str .= $key.$val;
+	}
+	$secret = $_W['we7_wmall']['config']['sms']['secret'];
+	$post['sign'] = strtoupper(md5($secret . $str . $secret));
+	$query = '';
+	foreach($post as $key => $val) {
+		$query .= "{$key}=" . urlencode($val) . "&";
+	}	$query = substr($query, 0, -1);
+	$url = 'http://gw.api.taobao.com/router/rest?' . $query;
+	$result = ihttp_get($url);
+	if(is_error($result)) {
+		return $result;
+	}
+	$result = @json_decode($result['content'], true);
+	if(!empty($result['error_response'])) {
+		if(isset($result['error_response']['sub_code'])) {
+			$msg = sms_error_code($result['error_response']['sub_code']);
+		} else {
+			$msg['msg'] = $result['error_response']['msg'];
+		}
+		return error(-1, $msg['msg']);
+	}
+	sms_insert_send_log($sid, $type, $mobile);
+	return true;
+}
+
 function sms_singlecall($called_num, $content, $type = 'clerk') {
 	global $_W;
 	$config = $_W['we7_wmall']['config']['sms'];

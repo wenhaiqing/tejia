@@ -40,9 +40,9 @@ function _login($forward = '') {
 		if($record['status'] == 2) {
 			message('您的账号正在审核或是已经被系统禁止，请联系网站管理员解决！');
 		}
-		if($record['role'] == 'clerk') {
-			message('您的申请是店员身份,没有权限管理店铺！');
-		}
+		// if($record['role'] == 'clerk') {
+		// 	message('您的申请是店员身份,没有权限管理店铺！');
+		// }
 		if (!empty($_W['siteclose'])) {
 			message('站点已关闭，关闭原因：' . $_W['setting']['copyright']['reason']);
 		}

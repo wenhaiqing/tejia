@@ -27,6 +27,8 @@ if($op == 'basic') {
 			'title' => trim($_GPC['title']),
 			'mobile' => trim($_GPC['mobile']),
 			'content' => trim($_GPC['content']),
+			'w_first' => trim($_GPC['w_first']),
+			'w_second' => trim($_GPC['w_second']),
 			'thumb' => trim($_GPC['thumb']),
 			'follow_guide_status' => intval($_GPC['follow_guide_status']),
 			'followurl' => trim($_GPC['followurl']),

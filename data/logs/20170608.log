@@ -1,0 +1,224 @@
+2017-06-08 08:50:52 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wk0_iFb3DFbLY3uzS6O-C4M]]></FromUserName>
+<CreateTime>1496883053</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2017-06-08 08:50:52 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wk0_iFb3DFbLY3uzS6O-C4M',
+    'createtime' => '1496883053',
+    'msgtype' => 'event',
+    'event' => 'subscribe',
+    'eventkey' => '',
+    'from' => 'ohRa2wk0_iFb3DFbLY3uzS6O-C4M',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1496883053',
+    'type' => 'text',
+    'redirection' => true,
+    'source' => 'subscribe',
+  ),
+)
+
+2017-06-08 08:50:52 response :
+------------
+
+2017-06-08 09:14:16 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wsix3bQWmSeLJuxjyoIaOcs]]></FromUserName>
+<CreateTime>1496884457</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2017-06-08 09:14:16 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wsix3bQWmSeLJuxjyoIaOcs',
+    'createtime' => '1496884457',
+    'msgtype' => 'event',
+    'event' => 'subscribe',
+    'eventkey' => '',
+    'from' => 'ohRa2wsix3bQWmSeLJuxjyoIaOcs',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1496884457',
+    'type' => 'text',
+    'redirection' => true,
+    'source' => 'subscribe',
+  ),
+)
+
+2017-06-08 09:14:16 response :
+------------
+
+2017-06-08 10:12:08 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wnY2XwOS7XMQc2UEx2fhEXk]]></FromUserName>
+<CreateTime>1496887929</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2017-06-08 10:12:08 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wnY2XwOS7XMQc2UEx2fhEXk',
+    'createtime' => '1496887929',
+    'msgtype' => 'event',
+    'event' => 'subscribe',
+    'eventkey' => '',
+    'from' => 'ohRa2wnY2XwOS7XMQc2UEx2fhEXk',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1496887929',
+    'type' => 'text',
+    'redirection' => true,
+    'source' => 'subscribe',
+  ),
+)
+
+2017-06-08 10:12:08 response :
+------------
+
+2017-06-08 10:52:28 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2woGAGbdoi8ShHY6FcyFkweE]]></FromUserName>
+<CreateTime>1496890349</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+
+2017-06-08 10:52:28 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2woGAGbdoi8ShHY6FcyFkweE',
+    'createtime' => '1496890349',
+    'msgtype' => 'event',
+    'event' => 'subscribe',
+    'eventkey' => '',
+    'from' => 'ohRa2woGAGbdoi8ShHY6FcyFkweE',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1496890349',
+    'type' => 'text',
+    'redirection' => true,
+    'source' => 'subscribe',
+  ),
+)
+
+2017-06-08 10:52:28 response :
+------------
+
+2017-06-08 12:17:30 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wpjjmz4Lh3xs74AKR0t5QYc]]></FromUserName>
+<CreateTime>1496895451</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[好的，我是想卖水果的]]></Content>
+<MsgId>6429117007990764141</MsgId>
+</xml>
+
+2017-06-08 12:17:30 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wpjjmz4Lh3xs74AKR0t5QYc',
+    'createtime' => '1496895451',
+    'msgtype' => 'text',
+    'content' => '好的，我是想卖水果的',
+    'msgid' => '6429117007990764141',
+    'from' => 'ohRa2wpjjmz4Lh3xs74AKR0t5QYc',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1496895451',
+    'type' => 'text',
+    'event' => NULL,
+    'redirection' => false,
+    'source' => NULL,
+  ),
+)
+
+2017-06-08 12:17:30 response :
+------------
+
+2017-06-08 14:43:17 trace :
+------------
+String:
+<xml><ToUserName><![CDATA[gh_693cbb2a3e71]]></ToUserName>
+<FromUserName><![CDATA[ohRa2wqaXkKvH48Wf5tHgpytV30Y]]></FromUserName>
+<CreateTime>1496904198</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[18110690178]]></Content>
+<MsgId>6429154576069704237</MsgId>
+</xml>
+
+2017-06-08 14:43:17 params :
+------------
+String:
+array (
+  'rule' => -2,
+  'module' => '',
+  'message' => 
+  array (
+    'tousername' => 'gh_693cbb2a3e71',
+    'fromusername' => 'ohRa2wqaXkKvH48Wf5tHgpytV30Y',
+    'createtime' => '1496904198',
+    'msgtype' => 'text',
+    'content' => '18110690178',
+    'msgid' => '6429154576069704237',
+    'from' => 'ohRa2wqaXkKvH48Wf5tHgpytV30Y',
+    'to' => 'gh_693cbb2a3e71',
+    'time' => '1496904198',
+    'type' => 'text',
+    'event' => NULL,
+    'redirection' => false,
+    'source' => NULL,
+  ),
+)
+
+2017-06-08 14:43:17 response :
+------------
+

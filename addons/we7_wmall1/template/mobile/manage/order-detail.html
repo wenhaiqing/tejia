@@ -6,26 +6,7 @@
 		<h1 class="title">{$store['title']}({$order['order_type_cn']})</h1>
 		<a class="pull-right refresh" href="javascript:;">刷新</a>
 	</header>
-	{if $order['status'] < 5}
-	<nav class="bar bar-tab footer-bar">
-		{if $order['status'] == 1}
-			<a href="javascript:;" class="tab-item order-status" data-id="{$order['id']}" data-status="2" data-type="handel"> 确认接单</a>
-			<a href="javascript:;" class="tab-item order-cancel" data-id="{$order['id']}" data-status="6" data-pay="{$order['is_pay']}" data-pay-type="{$order['pay_type']}"> 取消订单</a>
-		{elseif $order['status'] == 2 || $order['status'] == 3}
-			<a href="javascript:;" class="tab-item order-status" data-id="{$order['id']}" data-status="3" data-type="delivery_wait"> 通知配送员</a>
-			{if $account['delivery_type'] == 1}
-				<a href="javascript:;" class="tab-item order-delivery" data-id="{$order['id']}" data-status="2" data-type="handel"> 指定配送员</a>
-			{/if}
-			<a href="javascript:;" class="tab-item order-status" data-id="{$order['id']}" data-status="4" data-type="delivery_ing"> 设为配送中</a>
-		{elseif $order['status'] == 4}
-			<a href="javascript:;" class="tab-item order-status" data-id="{$order['id']}" data-status="5" data-type="end"> 订单完成</a>
-		{/if}
-		{if $order['is_remind'] == 1}
-			<a href="javascript:;" class="tab-item order-remind" data-id="{$order['id']}"> 回复</a>
-		{/if}
-		<a href="javascript:;" class="tab-item order-other" data-id="{$order['id']}" data-pay="{$order['is_pay']}" data-pay-type="{$order['pay_type']}"> 更多</a>
-	</nav>
-	{/if}
+	
 	<div class="content">
 		<div class="buttons-tab">
 			<a href="#order-detail" class="tab-link active button">订单详情</a>
@@ -67,11 +48,12 @@
 							<div class="row no-gutter">
 								<div class="col-60">{$good['goods_title']}</div>
 								<div class="col-20 text-right color-muted">×{$good['goods_num']}</div>
-								<div class="col-20 text-right color-black">￥{$good['goods_price']}</div>
+								<div class="col-20 text-right color-black">/{$good['unitname']}</div>
+								<!-- <div class="col-20 text-right color-black">￥{$good['goods_price']}</div> -->
 							</div>
 							{/loop}
 						</div>
-						<div class="inner-con">
+						<!-- <div class="inner-con">
 							<div class="row no-gutter">
 								<div class="col-80">包装费</div>
 								<div class="col-20 text-right color-black">￥{$order['pack_fee']}</div>
@@ -80,7 +62,7 @@
 								<div class="col-80">配送费</div>
 								<div class="col-20 text-right color-black">￥{$order['delivery_fee']}</div>
 							</div>
-						</div>
+						</div> -->
 						{if !empty($activityed)}
 						<div class="inner-con">
 							{loop $activityed $row}
@@ -94,13 +76,13 @@
 							{/loop}
 						</div>
 						{/if}
-						<div class="inner-con">
+						<!-- <div class="inner-con">
 							<div class="row no-gutter">
 								<div class="col-60 color-muted">订单 <span class="color-black">￥{$order['total_fee']}</span> - 优惠<span class="color-black">￥{$order['discount_fee']}</span></div>
 								<div class="col-20 text-right color-muted">总计</div>
 								<div class="col-20 text-right color-black">￥{$order['final_fee']}</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="content-block-title">其他信息</div>
@@ -131,7 +113,7 @@
 									<div class="item-after">{$order['delivery_day']}~{$order['delivery_time']}</div>
 								</div>
 							</li>
-							<li class="item-content">
+							<!-- <li class="item-content">
 								<div class="item-inner">
 									<div class="item-title">下单人</div>
 									<div class="item-after">{$order['username']}{$order['sex']}</div>
@@ -142,7 +124,7 @@
 									<div class="item-title">手机</div>
 									<a class="item-after" href="tel:{$order['mobile']}">{$order['mobile']}</a>
 								</div>
-							</li>
+							</li> -->
 							{if $order['order_type'] == 1}
 								<li class="item-content">
 									<div class="item-inner">

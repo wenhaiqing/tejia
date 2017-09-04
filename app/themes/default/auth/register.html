@@ -91,9 +91,10 @@
 		});
 		$(document).on('click', '.register-basic', function() {
 			var username = $('#register-basic input[name="username"]').val();
+			var name = $('#name').val();
 			var password = $('#register-basic input[name="password"]').val();
 			var repassword = $('#register-basic input[name="repassword"]').val();
-			if (!username || !password || !repassword) {
+			if (!username || !password || !repassword || !name) {
 				util.toast('用户名或密码为空', '', 'error');
 				return;
 			}
@@ -109,6 +110,7 @@
 			params.username = username;
 			params.password = password;
 			params.repassword = repassword;
+			params.name = name;
 			var href = "{php echo url('auth/register', array('code' => '0'))}";
 			$.post(href, params, function(data) {
 				data = $.parseJSON(data);
@@ -128,6 +130,14 @@
 			<img src="{if tomedia('headimg_'.$_W['acid'].'.jpg')}{php echo tomedia('headimg_'.$_W['acid'].'.jpg');}{else}resource/images/weizan.ico{/if}" class="mui-img-circle"/>
 		</div>
 		<div class="mui-input-group" id="register-basic">
+			<div class="mui-input-row">
+				<label class="mui-label-icon"><i class="fa fa-user"></i></label>
+				<select name="name" id="name">
+					{loop $category $v}
+					<option value="{$v['title']}">{$v['title']}</option>
+					{/loop}
+				</select>
+			</div>
 			<div class="mui-input-row">
 				<label class="mui-label-icon"><i class="fa fa-user"></i></label>
 				<input name="username" type="text" placeholder="{if $item == 'random'}请填写手机号/邮箱{elseif $item == 'email'}请填写邮箱{else}请填写手机号{/if}"/>

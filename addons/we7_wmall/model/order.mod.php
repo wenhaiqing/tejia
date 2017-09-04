@@ -52,6 +52,52 @@ function order_fetch_discount($id)
 	$data = pdo_getall('tiny_wmall_order_discount', array('uniacid' => $_W['uniacid'], 'oid' => $id));
 	return $data;
 }
+function order_update_extension_logs($id,$uid,$final_fee){
+	global $_W;
+	$w_data = array();
+	$w_data['uniacid'] = $_W['uniacid'];
+	$w_data['orderid'] = $id;
+	$w_data['final_fee'] = $final_fee;
+	$w_data['addtime'] = time();
+	$w_config = pdo_get('tiny_wmall_config',array('uniacid'=>$_W['uniacid']));
+	//获取下单会员的手机号
+	$w_member = pdo_get('mc_members',array('uid'=>$uid),array('mobile'));
+	//根据手机号查询上级分销商的UID
+	$w_extension1 = pdo_get('tiny_wmall_extension',array('mobile'=>$w_member['mobile']),array('uid'));
+	if ($w_extension1) {
+		//根据上级分销商UID查询他的手机号和余额
+		$w_extension2 = pdo_get('mc_members',array('uid'=>$w_extension1['uid']),array('mobile','credit2'));
+		//把这笔订单的给他上级的分销商的佣金写入logs表并更新余额
+		$w_data['bili'] = $w_config['w_first'];
+		$w_data['pid'] = $w_extension1['uid'];
+		$w_data['bili_fee'] = $final_fee*($w_config['w_first']/100);
+		$w_data['bili_fee'] = round($w_data['bili_fee'],2);
+		$w_data['type'] = 1;
+		pdo_insert('tiny_wmall_extension_logs',$w_data);
+		$m_data['credit2'] = $w_extension2['credit2']+$w_data['bili_fee'];
+		$m_data['credit2'] = round($m_data['credit2'], 2);
+		pdo_update('mc_members',$m_data,array('uid'=>$w_extension1['uid']));
+		
+		if ($w_extension2) {
+			//根据上级分销商的手机号查询他的上上级分销商
+			$w_extension3 = pdo_get('tiny_wmall_extension',array('mobile'=>$w_extension2['mobile']),array('uid'));
+			if ($w_extension3) {
+				$w_credit2 = pdo_get('mc_members',array('uid'=>$w_extension3['uid']),array('credit2'));
+				$w_data['bili'] = $w_config['w_second'];
+				$w_data['pid'] = $w_extension3['uid'];
+				$w_data['bili_fee'] = $final_fee*($w_config['w_second']/100);
+				$w_data['bili_fee'] = round($w_data['bili_fee'],2);
+				$w_data['type'] = 2;
+				pdo_insert('tiny_wmall_extension_logs',$w_data);
+				$m_data['credit2'] = $w_credit2['credit2']+$w_data['bili_fee'];
+				$m_data['credit2'] = round($m_data['credit2'], 2);
+				pdo_update('mc_members',$m_data,array('uid'=>$w_extension3['uid']));
+			}
+		}
+	}
+	
+	
+}
 function order_place_again($sid, $order_id)
 {
 	global $_W;
@@ -113,6 +159,13 @@ function order_fetch_status_log($id)
 {
 	global $_W;
 	$data = pdo_fetchall("SELECT * FROM " . tablename('tiny_wmall_order_status_log') . ' WHERE uniacid = :uniacid and oid = :oid order by id asc', array(':uniacid' => $_W['uniacid'], ':oid' => $id), 'id');
+	return $data;
+}
+
+function order_fetch_status_log_app($id)
+{
+	global $_W;
+	$data = pdo_fetchall("SELECT * FROM " . tablename('tiny_wmall_order_status_log') . ' WHERE uniacid = :uniacid and oid = :oid order by id desc', array(':uniacid' => $_W['uniacid'], ':oid' => $id));
 	return $data;
 }
 function order_fetch_refund_status_log($id)
@@ -456,6 +509,62 @@ function order_deliveryer_notice($sid, $id, $type, $deliveryer_id = 0, $note = '
 	}
 	return true;
 }
+function order_deliveryer_notice_wmall1($sid, $id, $type, $deliveryer_id = 0, $note = '')
+{
+	global $_W;
+	//$store = store_fetch($sid, array('title', 'id'));
+	$store = pdo_get('tiny_wmall1_store',array('id'=>$sid),array('title','id'));
+	//$order = order_fetch($id);
+	$order = pdo_get('tiny_wmall1_order',array('id'=>$id));
+
+	$wmall1_clerks = pdo_getall('tiny_wmall1_clerk',array('uniacid' => $_W['uniacid'], 'sid' => $sid));
+
+	$acc = WeAccount::create($order['acid']);
+	$type == 'new_delivery';
+		$title = '您有新的配送订单,订单号: ' . $order['ordersn'];
+		$remark = array("门店名称: {$store['title']}");
+		$remark = implode("\n", $remark);
+		$url = $_W['siteroot'] . 'app' . ltrim(murl('entry', array('do' => 'mgindex', 'm' => 'we7_wmall1')), '.');
+		$title = "店铺{$store['title']}有新的外卖配送订单, 配送地址为{$order['address']}, 快去处理吧";
+		Jpush_deliveryman_send('您有新的外卖配送订单', $title, array('voice_play_nums' => 2, 'voice_text' => $title));
+	
+	$send = tpl_format($title, $order['ordersn'], $order['status_cn'], $remark);
+	mload()->model('sms');
+	foreach ($wmall1_clerks as $deliveryer) {
+		
+		$acc->sendTplNotice($deliveryer['openid'], $_W['we7_wmall']['config']['public_tpl'], $send, $url);
+	}
+	return true;
+}
+function order_deliveryer_notice_wmall2($sid, $id, $type, $deliveryer_id = 0, $note = '')
+{
+	global $_W;
+	//$store = store_fetch($sid, array('title', 'id'));
+	$store = pdo_get('tiny_wmall2_store',array('id'=>$sid),array('title','id'));
+	//$order = order_fetch($id);
+	$order = pdo_get('tiny_wmall2_order',array('id'=>$id));
+
+	$wmall1_clerks = pdo_getall('tiny_wmall2_clerk',array('uniacid' => $_W['uniacid'], 'sid' => $sid));
+	//var_dump($sid);var_dump($id);var_dump($store);var_dump($order);var_dump($wmall1_clerks);exit;
+
+	$acc = WeAccount::create($order['acid']);
+	$type == 'new_delivery';
+		$title = '您有新的配送订单,订单号: ' . $order['ordersn'];
+		$remark = array("门店名称: {$store['title']}", "下单时间: " . date('Y-m-d H:i', $order['addtime']),  "下单　人: {$order['username']}", "送货地址: {$order['address']}");
+		$remark = implode("\n", $remark);
+		$url = $_W['siteroot'] . 'app' . ltrim(murl('entry', array('do' => 'mgorder', 'm' => 'we7_wmall2', 'op' => 'detail', 'id' => $order['id'])), '.');
+		$title = "店铺{$store['title']}有新的外卖配送订单, 配送地址为{$order['address']}, 快去处理吧";
+		Jpush_deliveryman_send('您有新的外卖配送订单', $title, array('voice_play_nums' => 2, 'voice_text' => $title));
+	
+	$send = tpl_format($title, $order['ordersn'], $order['status_cn'], $remark);
+	mload()->model('sms');
+	foreach ($wmall1_clerks as $deliveryer) {
+		
+		$acc->sendTplNotice($deliveryer['openid'], $_W['we7_wmall']['config']['public_tpl'], $send, $url);
+	}
+	return true;
+}
+
 function order_current_fetch($order_id)
 {
 	global $_W;
@@ -574,6 +683,89 @@ function order_insert_member_cart($sid)
 	}
 	return true;
 }
+
+function order_insert_member_cart_app($sid,$tgoods,$uid)
+{
+	global $_W, $_GPC;
+	if (!empty($tgoods)) {
+		$num = 0;
+		$price = 0;
+		$ids_str = implode(',', array_keys($tgoods));
+		$whq_member = pdo_get('mc_members',array('uid'=>$uid));
+		$goods_info = pdo_fetchall('SELECT * FROM ' . tablename('tiny_wmall_goods') . " WHERE uniacid = :aid AND sid = :sid AND id IN ({$ids_str})", array(':aid' => $_W['uniacid'], ':sid' => $sid), 'id');
+		$num_data = array();
+		foreach ($tgoods as $k => $v) {
+			$k = intval($k);
+			if (!$goods_info[$k]['is_options']) {
+				$w_v = $v['options'][1];
+				$v = intval($v['options'][0]);
+				
+				if ($v > 0) {
+					if ($whq_member['credit3']>0) {
+						if ($w_v == 2) {
+							$goods[$k][0] = array('title' => $goods_info[$k]['title'], 'num' => $v, 'price' => $goods_info[$k]['hotel_price'], 'unitname' => $goods_info[$k]['hotel_unitname']);
+							$num_data[$k] = $v;
+							$num += $v;
+							$price += $goods_info[$k]['hotel_price'] * $v;
+							
+						}else{
+							$goods[$k][0] = array('title' => $goods_info[$k]['title'], 'num' => $v, 'price' => $goods_info[$k]['member_price'], 'unitname' => $goods_info[$k]['unitname']);
+							$num_data[$k] = $v;
+							$num += $v;
+							$price += $goods_info[$k]['member_price'] * $v;
+							
+						}
+						
+					}else{
+						if ($w_v == 2) {
+							$goods[$k][0] = array('title' => $goods_info[$k]['title'], 'num' => $v, 'price' => $goods_info[$k]['hotel_price'], 'unitname' => $goods_info[$k]['hotel_unitname']);
+							$num_data[$k] = $v;
+							$num += $v;
+							$price += $goods_info[$k]['hotel_price'] * $v;
+							
+						}else{
+							$goods[$k][0] = array('title' => $goods_info[$k]['title'], 'num' => $v, 'price' => $goods_info[$k]['price'], 'unitname' => $goods_info[$k]['unitname']);
+							$num_data[$k] = $v;
+							$num += $v;
+							$price += $goods_info[$k]['price'] * $v;
+							
+						}
+						
+					}
+					
+				}
+				
+			} else {
+				foreach ($v['options'] as $key => $val) {
+					$key = intval($key);
+					$val = intval($val);
+					if ($key > 0 && $val > 0) {
+						$option = pdo_get('tiny_wmall_goods_options', array('uniacid' => $_W['uniacid'], 'id' => $key));
+						if (empty($option)) {
+							continue;
+						}
+						$goods[$k][$key] = array('title' => $goods_info[$k]['title'] . "({$option['name']})", 'num' => $val, 'price' => $option['price']);
+						$num_data[$k] += $val;
+						$num += $val;
+						$price += $option['price'] * $val;
+					}
+				}
+			}
+		}
+		$isexist = pdo_fetchcolumn('SELECT id FROM ' . tablename('tiny_wmall_order_cart') . " WHERE uniacid = :aid AND sid = :sid AND uid = :uid", array(':aid' => $_W['uniacid'], ':sid' => $sid, ':uid' => $uid));
+		$data = array('uniacid' => $_W['uniacid'], 'sid' => $sid, 'uid' => $uid, 'groupid' => 2, 'num' => $num, 'price' => $price, 'data' => iserializer($goods), 'num_data' => iserializer($num_data), 'addtime' => TIMESTAMP);
+		if (empty($isexist)) {
+			pdo_insert('tiny_wmall_order_cart', $data);
+		} else {
+			pdo_update('tiny_wmall_order_cart', $data, array('uniacid' => $_W['uniacid'], 'id' => $isexist, 'uid' => $uid));
+		}
+		$data['data'] = $goods;
+		return $data;
+	} else {
+		return returnjson('商品信息错误');
+	}
+	return true;
+}
 function order_fetch_member_cart($sid)
 {
 	global $_W, $_GPC;
@@ -588,10 +780,32 @@ function order_fetch_member_cart($sid)
 	$cart['num_data'] = iunserializer($cart['num_data']);
 	return $cart;
 }
+
+function order_fetch_member_cart_app($sid,$uid)
+{
+	global $_W, $_GPC;
+	$cart = pdo_fetch('SELECT * FROM ' . tablename('tiny_wmall_order_cart') . " WHERE uniacid = :aid AND sid = :sid AND uid = :uid", array(':aid' => $_W['uniacid'], ':sid' => $sid, ':uid' => $uid));
+	if (empty($cart)) {
+		return false;
+	}
+	if (TIMESTAMP - $cart['addtime'] > 7 * 86400) {
+		pdo_delete('tiny_wmall_order_cart', array('id' => $cart['id']));
+	}
+	$cart['data'] = iunserializer($cart['data']);
+	$cart['num_data'] = iunserializer($cart['num_data']);
+	return $cart;
+}
 function order_del_member_cart($sid)
 {
 	global $_W;
 	pdo_delete('tiny_wmall_order_cart', array('sid' => $sid, 'uid' => $_W['member']['uid']));
+	return true;
+}
+
+function order_del_member_cart_app($sid,$uid)
+{
+	global $_W;
+	pdo_delete('tiny_wmall_order_cart', array('sid' => $sid, 'uid' => $uid));
 	return true;
 }
 function order_update_goods_info($order_id, $sid, $cart = array())
@@ -638,6 +852,52 @@ function order_update_goods_info($order_id, $sid, $cart = array())
 	pdo_query('UPDATE ' . tablename('tiny_wmall_store') . " set sailed = sailed + {$cart['num']} WHERE uniacid = :uniacid AND id = :id", array(':uniacid' => $_W['uniacid'], ':id' => $cart['sid']));
 	return true;
 }
+
+function order_update_goods_info_app($order_id, $sid, $cart = array(),$uid)
+{
+	global $_W;
+	if (empty($cart)) {
+		$cart = order_fetch_member_cart_app($sid,$uid);
+	}
+	if (empty($cart['data'])) {
+		return false;
+	}
+	$ids_str = implode(',', array_keys($cart['data']));
+	$goods_info = pdo_fetchall('SELECT id,cid,title,price,total,print_label FROM ' . tablename('tiny_wmall_goods') . " WHERE uniacid = :aid AND sid = :sid AND id IN ({$ids_str})", array(':aid' => $_W['uniacid'], ':sid' => $sid), 'id');
+	foreach ($cart['data'] as $k => $v) {
+		foreach ($v as $k1 => $v1) {
+			pdo_query('UPDATE ' . tablename('tiny_wmall_goods') . " set sailed = sailed + {$v1['num']} WHERE uniacid = :aid AND id = :id", array(':aid' => $_W['uniacid'], ':id' => $k));
+			if (!$k1) {
+				if ($goods_info[$k]['total'] != -1 && $goods_info[$k]['total'] > 0) {
+					pdo_query('UPDATE ' . tablename('tiny_wmall_goods') . " set total = total - {$v1['num']} WHERE uniacid = :aid AND id = :id", array(':aid' => $_W['uniacid'], ':id' => $k));
+				}
+			} else {
+				$option = pdo_get('tiny_wmall_goods_options', array('uniacid' => $_W['uniacid'], 'id' => $k1));
+				if (!empty($option) && $option['total'] != -1 && $option['total'] > 0) {
+					pdo_query('UPDATE ' . tablename('tiny_wmall_goods') . " set total = total - {$v1['num']} WHERE uniacid = :aid AND id = :id", array(':aid' => $_W['uniacid'], ':id' => $k1));
+				}
+			}
+			$stat = array();
+			if ($k && $v1) {
+				$stat['oid'] = $order_id;
+				$stat['uniacid'] = $_W['uniacid'];
+				$stat['sid'] = $sid;
+				$stat['goods_id'] = $k;
+				$stat['goods_cid'] = $goods_info[$k]['cid'];
+				$stat['goods_num'] = $v1['num'];
+				$stat['unitname'] = $v1['unitname'];
+				$stat['goods_title'] = $v1['title'];
+				$stat['goods_unit_price'] = $v1['price'];
+				$stat['goods_price'] = $v1['num'] * $v1['price'];
+				$stat['print_label'] = $goods_info[$k]['print_label'];
+				$stat['addtime'] = TIMESTAMP;
+				pdo_insert('tiny_wmall_order_stat', $stat);
+			}
+		}
+	}
+	pdo_query('UPDATE ' . tablename('tiny_wmall_store') . " set sailed = sailed + {$cart['num']} WHERE uniacid = :uniacid AND id = :id", array(':uniacid' => $_W['uniacid'], ':id' => $cart['sid']));
+	return true;
+}
 function order_stat_member($sid)
 {
 	global $_W;
@@ -648,6 +908,20 @@ function order_stat_member($sid)
 	} else {
 		$update = array('last_order_time' => TIMESTAMP);
 		pdo_update('tiny_wmall_store_members', $update, array('uniacid' => $_W['uniacid'], 'sid' => $sid, 'uid' => $_W['member']['uid']));
+	}
+	return false;
+}
+
+function order_stat_member_app($sid,$uid)
+{
+	global $_W;
+	$is_exist = pdo_get('tiny_wmall_store_members', array('uniacid' => $_W['uniacid'], 'sid' => $sid, 'uid' => $uid));
+	if (empty($is_exist)) {
+		$insert = array('uniacid' => $_W['uniacid'], 'sid' => $sid, 'uid' => $uid, 'openid' => $uid, 'first_order_time' => TIMESTAMP, 'last_order_time' => TIMESTAMP);
+		pdo_insert('tiny_wmall_store_members', $insert);
+	} else {
+		$update = array('last_order_time' => TIMESTAMP);
+		pdo_update('tiny_wmall_store_members', $update, array('uniacid' => $_W['uniacid'], 'sid' => $sid, 'uid' => $uid));
 	}
 	return false;
 }
@@ -757,6 +1031,97 @@ function order_count_activity($sid, $cart, $recordid = 0)
 	}
 	return $activityed;
 }
+
+function order_count_activity_app($sid, $cart, $recordid = 0,$uid)
+{
+	global $_W, $_GPC;
+	$activityed = array('list' => '', 'total' => 0, 'activity' => 0, 'token' => 0);
+	$iscan_use_coupon = 0;
+	if ($recordid > 0) {
+		$record = pdo_get('tiny_wmall_activity_coupon_record', array('uniacid' => $_W['uniacid'], 'sid' => $sid, 'uid' => $uid, 'status' => 1, 'id' => $recordid));
+		if (!empty($record)) {
+			$coupon = pdo_get('tiny_wmall_activity_coupon', array('uniacid' => $_W['uniacid'], 'sid' => $sid, 'id' => $record['couponid']));
+			if (!empty($coupon) && $coupon['starttime'] <= TIMESTAMP && $coupon['endtime'] >= TIMESTAMP && $cart['price'] >= $coupon['condition']) {
+				$iscan_use_coupon = 1;
+			}
+		}
+	}
+	if ($iscan_use_coupon == 1) {
+		if ($coupon['use_limit'] == 2) {
+			$activityed['list'] = array('token' => array('text' => "-￥{$coupon['discount']}", 'value' => $coupon['discount'], 'type' => 'token', 'name' => '代金券优惠', 'icon' => 'coupon_b.png', 'recordid' => $recordid));
+			$activityed['total'] = $coupon['discount'];
+			$activityed['token'] = $coupon['discount'];
+			return $activityed;
+		} else {
+			$activityed['list']['token'] = array('text' => "-￥{$coupon['discount']}", 'value' => $coupon['discount'], 'type' => 'token', 'name' => '代金券优惠', 'icon' => 'coupon_b.png', 'recordid' => $recordid, 'coupon' => $coupon);
+			$activityed['total'] += $coupon['discount'];
+			$activityed['token'] = $coupon['discount'];
+		}
+	}
+	$activity = store_fetch_activity($sid);
+	if (!empty($activity)) {
+		if (!empty($activity['first_order_status'])) {
+			$is_first = pdo_get('tiny_wmall_store_members', array('uniacid' => $_W['uniacid'], 'sid' => $sid, 'uid' => $uid));
+			if (empty($is_first)) {
+				$discount = array_compare($cart['price'], $activity['first_order_data']);
+				if (!empty($discount)) {
+					$activityed['list']['first_order'] = array('text' => "-￥{$discount['back']}", 'value' => $discount['back'], 'type' => 'first_order', 'name' => '新用户优惠', 'icon' => 'xin_b.png');
+					$activityed['total'] += $discount['back'];
+					$activityed['activity'] += $discount['back'];
+				}
+			}
+		}
+		if (empty($activityed['list']['first_order']) && !empty($activity['discount_status'])) {
+			$discount = array_compare($cart['price'], $activity['discount_data']);
+			if (!empty($discount)) {
+				$activityed['list']['discount'] = array('text' => "-￥{$discount['back']}", 'value' => $discount['back'], 'type' => 'discount', 'name' => '满减优惠', 'icon' => 'jian_b.png');
+				$activityed['total'] += $discount['back'];
+				$activityed['activity'] += $discount['back'];
+			}
+		}
+		if (!empty($activity['grant_status'])) {
+			$discount = array_compare($cart['price'], $activity['grant_data']);
+			if (!empty($discount)) {
+				$activityed['list']['grant'] = array('text' => "{$discount['back']}", 'value' => 0, 'type' => 'grant', 'name' => '满赠优惠', 'icon' => 'zeng_b.png');
+				$activityed['total'] += 0;
+				$activityed['activity'] += 0;
+			}
+		}
+		if (!empty($activity['amount_status'])) {
+			$goods_ids = array_keys($cart['data']);
+			if (!empty($goods_ids) && !empty($activity['amount_data']['goods'])) {
+				$intersect = array_intersect($activity['amount_data']['goods'], $goods_ids);
+				if (!empty($intersect)) {
+					$total_num = 0;
+					foreach ($intersect as $val) {
+						$total_num += $cart['num_data'][$val];
+					}
+					$discount = array_compare($total_num, $activity['amount_data']['data']);
+					if (!empty($discount)) {
+						$activityed['list']['amount'] = array('text' => "-￥{$discount['back']}", 'value' => $discount['back'], 'type' => 'amount', 'name' => '数量满减', 'icon' => 'shu_b.png');
+						$activityed['total'] += $discount['back'];
+						$activityed['activity'] += $discount['back'];
+					}
+				}
+			}
+		}
+	}
+	if ($_GPC['do'] == 'appsubmit') {
+		$store = store_fetch($sid, array('delivery_price', 'delivery_mode'));
+		if ($store['delivery_mode'] == 2 && $store['delivery_price'] > 0) {
+			$gmember = pdo_get('tiny_wmall_members',array('uniacid'=>$_W['uniacid'],'uid'=>$uid));
+			if ($gmember['setmeal_id'] > 0 && $gmember['setmeal_endtime'] >= TIMESTAMP) {
+				$nums = pdo_fetchcolumn('select count(*) from ' . tablename('tiny_wmall_order') . ' where uniacid = :uniacid and uid = :uid and vip_free_delivery_fee = 1 and status != 6 and addtime >= :addtime', array(':uniacid' => $_W['uniacid'], ':uid' => $uid, ':addtime' => strtotime(date('Y-m-d'))));
+				if ($nums < $_W['member']['setmeal_day_free_limit']) {
+					$activityed['list']['delivery'] = array('text' => "-￥{$store['delivery_price']}", 'value' => $store['delivery_price'], 'type' => 'delivery', 'name' => '会员免配送费', 'icon' => 'mian_b.png');
+					$activityed['total'] += $store['delivery_price'];
+					$activityed['activity'] += $store['delivery_price'];
+				}
+			}
+		}
+	}
+	return $activityed;
+}
 function order_check_payment($sid)
 {
 	global $_W;
@@ -796,6 +1161,15 @@ function order_coupon_available($sid, $price)
 	global $_W;
 	$condition = ' on a.couponid = b.id where a.uniacid = :uniacid and a.sid = :sid and a.uid = :uid and a.status = 1 and b.condition <= :price and b.starttime <= :time and b.endtime >= :time';
 	$params = array(':uniacid' => $_W['uniacid'], ':sid' => $sid, ':price' => $price, ':uid' => $_W['member']['uid'], ':time' => TIMESTAMP);
+	$coupons = pdo_fetchall('select a.*,b.title,b.starttime,b.endtime,b.use_limit,b.discount,b.condition from ' . tablename('tiny_wmall_activity_coupon_record') . ' as a left join ' . tablename('tiny_wmall_activity_coupon') . ' as b ' . $condition, $params);
+	return $coupons;
+}
+
+function order_coupon_available_app($sid, $price,$uid)
+{
+	global $_W;
+	$condition = ' on a.couponid = b.id where a.uniacid = :uniacid and a.sid = :sid and a.uid = :uid and a.status = 1 and b.condition <= :price and b.starttime <= :time and b.endtime >= :time';
+	$params = array(':uniacid' => $_W['uniacid'], ':sid' => $sid, ':price' => $price, ':uid' => $uid, ':time' => TIMESTAMP);
 	$coupons = pdo_fetchall('select a.*,b.title,b.starttime,b.endtime,b.use_limit,b.discount,b.condition from ' . tablename('tiny_wmall_activity_coupon_record') . ' as a left join ' . tablename('tiny_wmall_activity_coupon') . ' as b ' . $condition, $params);
 	return $coupons;
 }

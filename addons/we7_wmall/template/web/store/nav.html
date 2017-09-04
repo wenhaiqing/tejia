@@ -1,4 +1,12 @@
 <ul class="nav nav-tabs">
+	{if $_W['we7_wmall']['clerk']['title'] == '太原店客服'}
+	<li {if $do == 'order'}class="active"{/if}><a href="{php echo $this->createWebUrl('order');}">订单列表</a></li>
+	<li {if $do == 'category'}class="active"{/if}><a href="{php echo $this->createWebUrl('category');}">商品分类</a></li>
+	<li {if $do == 'goods'}class="active"{/if}><a href="{php echo $this->createWebUrl('goods');}">商品列表</a></li>
+	{else if $_W['we7_wmall']['clerk']['title'] == '太原店派单'}
+	<li {if $do == 'order'}class="active"{/if}><a href="{php echo $this->createWebUrl('order');}">订单列表</a></li>
+	<li {if $do == 'dispatch'}class="active"{/if}><a href="{php echo $this->createWebUrl('dispatch');}">配货中心</a></li>
+	{else}
 	<li {if $do == 'store' && $op == 'post'}class="active"{/if}><a href="{php echo $this->createWebUrl('store', array('op' => 'post', 'id' => $sid));}">门店信息</a></li>
 	<li {if $do == 'order'}class="active"{/if}><a href="{php echo $this->createWebUrl('order');}">订单列表</a></li>
 	<li {if $do == 'activity' || $do == 'token'}class="active"{/if}><a href="{php echo $this->createWebUrl('activity');}">营销活动</a></li>
@@ -24,6 +32,7 @@
 	<li {if $do == 'trade'}class="active"{/if}><a href="{php echo $this->createWebUrl('trade', array('op' => 'index'));}">收入/提现</a></li>
 	<li {if $do == 'table_order'}class="active"{/if}><a href="{php echo $this->createWebUrl('table_order');}">店内点餐</a></li>
 	<li {if $do == 'place'}class="active"{/if}><a href="{php echo $this->createWebUrl('place');}">店员代客下单</a></li>
+	{/if}
 </ul>
 {if $store['status'] > 1}
 <div class="alert alert-danger">

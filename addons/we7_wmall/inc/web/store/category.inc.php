@@ -16,6 +16,7 @@ $do = 'category';
 $op = trim($_GPC['op']) ? trim($_GPC['op']) : 'list';
 
 if($op == 'post') {
+	$category = pdo_getall('tiny_wmall_goods_category',array('status'=>1,'sid'=>$sid,'pid'=>0));
 	if(checksubmit('submit')) {
 		if(!empty($_GPC['title'])) {
 			foreach($_GPC['title'] as $k => $v) {
@@ -24,11 +25,38 @@ if($op == 'post') {
 				$data['sid'] = $sid;
 				$data['uniacid'] = $_W['uniacid'];
 				$data['title'] = $v;
+				$data['description'] = $_GPC['description'][$k];
+				$data['pid'] = $_GPC['pid'];
+				$data['district'] = $_GPC['district'];
+				$data['city'] = $_GPC['city'];
 				$data['displayorder'] = intval($_GPC['displayorder'][$k]);
+				$data['thumb'] = $_GPC['thumb'];
 				pdo_insert('tiny_wmall_goods_category', $data);
 			}
 		}
 		message('添加商品分类成功', $this->createWebUrl('category'), 'success');
+	}
+}
+
+if($op == 'update') {
+	if($_W['ispost']) {
+				$data['sid'] = $sid;
+				$data['uniacid'] = $_W['uniacid'];
+				$data['title'] = $_GPC['title'];
+				$data['description'] = $_GPC['description'];
+				$data['pid'] = $_GPC['pid'];
+				$data['district'] = $_GPC['district'];
+				$data['city'] = $_GPC['city'];
+				$data['displayorder'] = intval($_GPC['displayorder']);
+		$data['thumb'] = $_GPC['thumb'];
+		pdo_update('tiny_wmall_goods_category', $data, array('uniacid' => $_W['uniacid'], 'id' => $_GPC['id']));
+		message('更新商品分类成功', $this->createWebUrl('category'), 'success');
+	}else{
+		$id = $_GPC['cid'];
+		$category = pdo_getall('tiny_wmall_goods_category',array('status'=>1,'sid'=>$sid,'pid'=>0));
+		$info = pdo_get('tiny_wmall_goods_category',array('id'=>$id));
+		include $this->template('store/category1');
+		exit;
 	}
 }
 
@@ -40,10 +68,18 @@ if($op == 'list') {
 	$psize = 20;
 
 	$total = pdo_fetchcolumn('SELECT COUNT(*) FROM ' . tablename('tiny_wmall_goods_category') . ' WHERE ' . $condition, $params);
-	$lists = pdo_fetchall('SELECT * FROM ' . tablename('tiny_wmall_goods_category') . ' WHERE ' . $condition . ' ORDER BY displayorder DESC,id ASC LIMIT '.($pindex - 1) * $psize.','.$psize, $params, 'id');
+	$lists = pdo_fetchall('SELECT * FROM ' . tablename('tiny_wmall_goods_category') . ' WHERE ' . $condition . ' ORDER BY displayorder DESC,id ASC LIMIT '.($pindex - 1) * $psize.','.$psize, $params,'id');
+	// for ($i=0;$i<count($lists);$i++){
+	// 		$pidtitle = pdo_get('tiny_wmall_goods_category',array('id'=>$lists[$i]['pid']),array('title'));
+	// 		if ($pidtitle['title'] == '') {
+	// 			$pidtitle['title'] = '顶级分类';
+	// 		}
+	// 	$lists[$i]['pidtitle'] = $pidtitle['title'];		
+	// }
 	if(!empty($lists)) {
 		$ids = implode(',', array_keys($lists));
 		$nums = pdo_fetchall('SELECT count(*) AS num,cid FROM ' . tablename('tiny_wmall_goods') . " WHERE uniacid = :aid AND cid IN ({$ids}) GROUP BY cid", array(':aid' => $_W['uniacid']), 'cid');
+		$pidtitle = pdo_fetchall("SELECT * FROM " . tablename('tiny_wmall_goods_category') . " WHERE status=:status",array(":status"=>1),'id');
 	}
 	$pager = pagination($total, $pindex, $psize);
 	if(checksubmit('submit')) {

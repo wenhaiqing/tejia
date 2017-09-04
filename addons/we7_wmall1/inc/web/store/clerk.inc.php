@@ -20,7 +20,7 @@ if($op == 'post') {
 	$id = intval($_GPC['id']);
 	$clerk = clerk_fetch($id);
 
-	if($_W['ispost']) {
+		if($_W['ispost']) {
 		$insert['uniacid'] = $_W['uniacid'];
 		$insert['sid'] = $sid;
 		$insert['title'] = trim($_GPC['title']) ? trim($_GPC['title']) : exit('登陆账号不能为空');

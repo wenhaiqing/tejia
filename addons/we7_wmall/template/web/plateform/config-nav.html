@@ -1,5 +1,6 @@
 <ul class="nav nav-tabs">
 	<li {if $op == 'basic'}class="active"{/if}><a href="{php echo $this->createWebUrl('ptfconfig', array('op' => 'basic'));}"> 基础设置</a></li>
+	<li><a href="{php echo $this->createWebUrl('ptfzhan', array('op' => 'list'));}"> 站长报价</a></li>
 	<li {if $op == 'pay'}class="active"{/if}><a href="{php echo $this->createWebUrl('ptfconfig', array('op' => 'pay'));}"> 支付方式设置</a></li>
 	<li {if $op == 'store'}class="active"{/if}><a href="{php echo $this->createWebUrl('ptfconfig', array('op' => 'store'));}"> 商家设置</a></li>
 	<li {if $op == 'order'}class="active"{/if}><a href="{php echo $this->createWebUrl('ptfconfig', array('op' => 'order'));}"> 订单相关设置</a></li>

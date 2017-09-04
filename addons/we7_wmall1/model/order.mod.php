@@ -34,16 +34,17 @@ function order_fetch($id)
 	}
 	return $order;
 }
-function order_fetch_goods($oid, $print_lable = '')
+function order_fetch_goods($oid,$sid, $print_lable = '')
 {
 	global $_W;
 	$oid = intval($oid);
-	$condition = 'WHERE uniacid = :uniacid AND oid = :oid';
+	$condition = 'WHERE uniacid = :uniacid AND oid = :oid AND sid= :sid';
 	if (!empty($print_lable)) {
 		$condition .= " AND print_label in ({$print_lable})";
 	}
-	$params = array(':uniacid' => $_W['uniacid'], ':oid' => $oid);
+	$params = array(':uniacid' => $_W['uniacid'], ':oid' => $oid,':sid'=>$sid);
 	$data = pdo_fetchall('SELECT * FROM ' . tablename('tiny_wmall1_order_stat') . $condition, $params);
+	
 	return $data;
 }
 function order_fetch_discount($id)
@@ -453,6 +454,32 @@ function order_deliveryer_notice($sid, $id, $type, $deliveryer_id = 0, $note = '
 			sms_singlecall($deliveryer['deliveryer']['mobile'], array('name' => $deliveryer['deliveryer']['title'], 'store' => $store['title']), 'deliveryer');
 		}
 		$acc->sendTplNotice($deliveryer['deliveryer']['openid'], $_W['we7_wmall1']['config']['public_tpl'], $send, $url);
+	}
+	return true;
+}
+
+function order_deliveryer_notice_wmall1($sid, $id, $type, $deliveryer_id = 0, $note = '')
+{
+	global $_W;
+	$store = store_fetch($sid, array('title', 'id'));
+	$order = order_fetch($id);
+
+	$wmall1_clerks = pdo_getall('tiny_wmall1_clerk',array('uniacid' => $_W['uniacid'], 'sid' => $sid));
+
+	$acc = WeAccount::create($order['acid']);
+	$type == 'new_delivery';
+		$title = '您有新的配送订单,订单号: ' . $order['ordersn'];
+		$remark = array("门店名称: {$store['title']}", "下单时间: " . date('Y-m-d H:i', $order['addtime']), "支付状态: {$order['pay_type_cn']}", "下单　人: {$order['username']}", "送货地址: {$order['address']}");
+		$remark = implode("\n", $remark);
+		$url = $_W['siteroot'] . 'app' . ltrim(murl('entry', array('do' => 'order', 'm' => 'we7_wmall1', 'op' => 'detail', 'id' => $order['id'])), '.');
+		$title = "店铺{$store['title']}有新的外卖配送订单, 配送地址为{$order['address']}, 快去处理吧";
+		Jpush_deliveryman_send('您有新的外卖配送订单', $title, array('voice_play_nums' => 2, 'voice_text' => $title));
+	
+	$send = tpl_format($title, $order['ordersn'], $order['status_cn'], $remark);
+	mload()->model('sms');
+	foreach ($wmall1_clerks as $deliveryer) {
+		
+		$acc->sendTplNotice($deliveryer['openid'], $_W['we7_wmall1']['config']['public_tpl'], $send, $url);
 	}
 	return true;
 }

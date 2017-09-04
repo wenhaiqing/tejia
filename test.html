@@ -1,0 +1,1637 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title>希财网贷款申请-希财网</title>
+    <meta name="keywords" content="希财网贷款" />
+    <meta name="description" content="将您的贷款需求告诉我们，希财网贷款7*24小时及时地提供贷款撮合，快速找到贷款经理或机构，帮助有贷款需求者快速地获得贷款。" />
+    <link href="http://img.csai.cn/static/css/loan/20170321/base.css?v=127" rel="stylesheet" />
+    <link href="http://img.csai.cn/static/css/loan/20170321/css.css?v=14331" rel="stylesheet" />
+    <script src="http://img.csai.cn/static/js/common/jquery-1.7.2.min.js"></script>
+    <link href="http://img.csai.cn/static/js/common/plug-in/layer_mobile/need/layer.css?2.0"
+        type="text/css" rel="styleSheet" id="layermcss">
+</head>
+<body style="background: #f2f3f8;">
+    <form id="form1" action="">
+        <input type="hidden" name="apply_id" id="apply_id"  value="0" />
+        <input type="hidden" name="manager_id" id="manager_id" value="0" />
+        <input type="hidden" name="pro_id" id="pro_id" value="0" />
+        <input type="hidden" name="path_id" id="path_id" value="2" />
+        <input type="hidden" name="from_id" id="from_id" value="0"/>
+    
+<style>
+    .ty_tk
+    {
+        margin-left: 32px;
+        text-align: left;
+    }
+</style>
+<div class="sqxx_box" id="div_Add1JBXX">
+    <header class="header dk">
+<div class="left_ico">
+    <a href="javascript:history.go(-1);" class="fh01"></a>
+</div>贷款申请</header>
+    <div>
+        <!-- <img src="http://img.csai.cn/static/img/loan/20170321/sq_bg01.png" width="100%" height="auto"></div> -->
+        <div class="sqts_sm">您正在申请贷款，为了提高您申请的成功率，我们将根据您的资质推荐多家贷款机构。</div>
+    <div class="sq_sr_box">
+        <input type="text" name="loan_fee" id="loan_fee" maxlength="7" class="number" placeholder="请输入贷款金额（元）"></div>
+    <div class="sq_sr_box">
+        <input type="text" name="mobile" id="mobile" class="number"maxlength="11" placeholder="请输入手机号码"  value=""></div>
+        <div class="sq_sr_box">
+            <a href="javascript:;" class="fr" style="margin-right: -10px;">
+                <img src="/Comm/VerifyImg" width="auto" height="40" id="VerifyImg"  ></a>
+            <input type="text" name="VerifyCode" id="VerifyCode" placeholder="请输入验证码" class="yzm" style="width: 46%;"></div>
+        <div class="sq_sr_box">
+            <input type="button" name="ipt_getcode" id="ipt_getcode" value="获取验证码" class="dx_yz fr"><input
+                type="text" name="txt_mobilecode" id="txt_mobilecode" placeholder="请输入短信验证码"
+                class="yzm"></div>
+    <input type="button" name="btn_submitAdd1" id="btn_submitAdd1" value="立即申请" class="jq_an">
+    <div class="ty_tk">
+        <input type="checkbox" name="ck_csai_tiaokuan" id="ck_csai_tiaokuan" checked="checked">同意<a
+            href="/about/contract">《服务条款》</a></div>
+    <div class="ty_tk">
+        <input type="checkbox" id="ck_csai_baoxian" name="isacceptbaoxian" checked="checked"
+            value="1">
+        <a class="aHref" href="/Agreement">免费领取最高100万意外险</a></div>
+    <!-- <div class="mt20">
+        <img src="http://img.csai.cn/static/img/loan/20170321/sq_bg02.png?dd" width="100%" height="auto"
+            style="display: block;">
+        <img src="http://img.csai.cn/static/img/loan/20170321/sq_bg03.png" width="100%" height="auto"
+            style="display: block;">
+        <img src="http://img.csai.cn/static/img/loan/20170321/sq_bg04.png" width="100%" height="auto"
+            style="display: block;">
+        <img src="http://img.csai.cn/static/img/loan/20170321/sq_bg05.png" width="100%" height="auto"
+            style="display: block;">
+    </div> -->
+</div>
+<script type="text/javascript">
+
+    var secondsTimeLimit = 60;
+    var time = secondsTimeLimit;
+    var sendcount = 0;
+    var isFromMobile = "";
+    var isApplyID = 0;
+    $(function () {
+        isApplyID = $.trim($("#apply_id").val()) * 1;
+        //获取验证码
+        $("#ipt_getcode").click(function () {
+            if (time == secondsTimeLimit) {
+                SendMsgClick();
+            }
+        });
+        $("#VerifyImg").attr("src", "/Comm/VerifyImg?" + new Date().getTime());
+        $("#VerifyImg").click(function () {
+            $(this).attr("src", "/Comm/VerifyImg?" + new Date().getTime());
+        });
+        //基本信息事件
+        BasicInfoEvent();
+        //财力佐证事件
+        FinancialEvent();
+        //提交第一步
+        $("#btn_submitAdd1").click(function () {
+            AddJBXX();
+        });
+    });
+    //同意服务条款
+    function fuwutiaokuan() {
+        if (!document.getElementById("ck_csai_tiaokuan").checked) {
+            AlertMsg.Info("请仔细阅读并同意希财网服务条款");
+            return false;
+        }
+        return true;
+    }
+
+    //设置发送短信时间
+    function SetSendMsgTime() {
+        if (time > 0) {
+            $("#ipt_getcode").val("" + time + "秒后再次获取");
+            time--;
+            setTimeout(SetSendMsgTime, 1000);
+        } else {
+            time = secondsTimeLimit;
+            $("#ipt_getcode").val("短信获取验证码");
+        }
+    }
+    //发送短信验证码
+    function SendMsgClick() {
+        var _mobile = $.trim($("#mobile").val());
+        var _verify = $.trim($("#VerifyCode").val());
+        if (_mobile == "") {
+            $("#mobile").focus();
+            AlertMsg.Info("请输入您的手机号码");
+            return false;
+        }
+        else if (_mobile.search(/^(13|15|17|18|14)\d{9}$/) == -1) {
+            AlertMsg.Info("请输入正确的手机号码");
+            return false;
+        }
+        if (_verify == "") {
+            AlertMsg.Info("请输入验证码"); return false;
+        }
+        SendMsg(_verify, _mobile);
+    }
+
+    //发送短信
+    function SendMsg(verify, mobile) {
+        var xhrurl = "/Apply/SendCrossDomain?verify=" + verify + "&mobile=" + mobile + "";
+        $.ajax({
+            async: false,
+            url: xhrurl,
+            cache: false,
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "callback",
+            success: function (json) {
+                if (json.status == -1) {
+                    AlertMsg.Info(json.message);
+                } else {
+                    AlertMsg.Info("获取短信验证码成功，请注意查收");
+                    sendcount = sendcount + 1;
+                    secondsTimeLimit = secondsTimeLimit + sendcount * 30;
+                    SetSendMsgTime();
+                    AddApplyLog(0, 0);
+                }
+            },
+            error: function (e) {
+                AlertMsg.Info("系统繁忙，清稍候再试");
+            }
+        });
+    }
+
+    //添加基本详情
+    function AddJBXX() {
+    	 $("#div_Add1JBXX").hide();
+                    $("#div_Add2JBQK").show();
+                    AddApplyLog(json.apply_id, 1);
+                    return false;
+        if (!fuwutiaokuan())
+            return false;
+        var code = $.trim($("#txt_mobilecode").val());
+        var verify = $.trim($("#VerifyCode").val());
+        var mobile = $.trim($("#mobile").val());
+        var loan_fee = $.trim($("#loan_fee").val());
+        if (loan_fee.length == 0) {
+            AlertMsg.Info("请输入贷款金额");
+            return false;
+        }
+        if (loan_fee < 500) {
+            AlertMsg.Info("贷款金额不能小于500元");
+            return false;
+            //                        AlertMsg.Confirm("你确定申请" + loan_fee + "元贷款吗？",function(){
+            //                            return false;
+            //                        },function(){
+            //                            return false;
+            //                        }, "确定","取消");
+        }
+        if (!/^[0-9]+$/.test(loan_fee)) {
+            AlertMsg.Info("请输入正确的贷款金额");
+            return false;
+        }
+        //如果是修改直接下一步
+        if (isApplyID > 0) {
+            $("#div_Add1JBXX").hide();
+            $("#div_Add2JBQK").show();
+            return false;
+        }
+        if (mobile == "") {
+            AlertMsg.Info("请输入您的手机号码");
+            return false;
+        }
+        if (isFromMobile == "" && verify == "") {
+            AlertMsg.Info("请输入图形验证码");
+            return false;
+        }
+        if (mobile.search(/^(13|15|17|18|14)\d{9}$/) == -1) {
+            AlertMsg.Info("请输入正确的手机号码");
+            return false;
+        }
+        if (isFromMobile == "" && code == "") {
+            $("#txt_mobilecode").focus();
+            AlertMsg.Info("请输入短信验证码");
+            return false;
+        }
+        var _manager_id = $("#manager_id").val();
+        var _pro_id = $("#pro_id").val();
+        var _path_id = $("#path_id").val();
+        var _from_id = $("#from_id").val();
+        var _page_url = "";
+        // var layload = layer.open({ type: 2, shadeClose: false, content: '正在保存信息...' });
+        // layer.close(layload);
+
+        $("#btn_submitAdd1").attr("disabled", "disabled");
+        $("#btn_submitAdd1").removeAttr("disabled");
+                   
+
+        // $.ajax({
+        //     url: "/Apply/Add1JBXXApply",
+        //     data: { loan_fee: loan_fee, mobile: mobile, code: code, verify: verify, manager_id: _manager_id, pro_id: _pro_id, path_id: _path_id, from_id: _from_id, page_url: _page_url },
+        //     type: "POST",
+        //     cache: false,
+        //     dataType: "json",
+        //     success: function (json) {
+        //         layer.close(layload);
+        //         $("#btn_submitAdd1").removeAttr("disabled");
+        //         if (json.status == 1) {
+        //             $("#div_Add1JBXX").hide();
+        //             $("#div_Add2JBQK").show();
+        //             AddApplyLog(json.apply_id, 1);
+        //             return false;
+        //         } else {
+        //             AlertMsg.Info(json.errormsg, { icon: 2 });
+        //             return false;
+        //         }
+        //     },
+        //     error: function (e) {
+        //         layer.close(layload);
+        //         AddApplyLog(1, 4);
+        //         $("#btn_submitAdd1").removeAttr("disabled");
+        //         AlertMsg.Info("系统繁忙，请稍候在试", { icon: 2 });
+        //     }
+        // });
+    }
+</script>
+
+    
+<div class="xx_left" id="div_Add2JBQK" style="display: none">
+    <div class="sq_ts">
+        <img src="http://img.csai.cn/static/img/loan/20170321/sqts_ico.png">填写您的基本信息，让我们更了解您</div>
+    <div class="sqxx_tl">
+        基本信息</div>
+    <div class="srbd_box">
+        <dl class="sr_box">
+            <dt>真实姓名</dt>
+            <dd>
+                <input type="text" name="user_name" id="user_name" placeholder="请填写真实姓名" class="srwb"
+                    value=""></dd>
+                    <div class="clear"></div>
+        </dl>
+        <dl class="sr_box">
+            <dt>现居城市</dt>
+            <input type="hidden"  id="city_id" name="district_id" />
+            <input type="hidden"  id="district_name" name="district_name" />
+            <dd>
+                <a href="javascript:;"id="a_city_name" class="xz_tz">请选择现居城市</a></dd>
+                <div class="clear"></div>
+        </dl>
+        <dl class="sr_box">
+            <dt>身份证号</dt>
+            <dd>
+                <input type="text" name="id_card" id="id_card"maxlength="18" placeholder="请填写真实身份证号"value="" class="srwb"></dd>
+                <div class="clear"></div>
+        </dl>
+        <dl class="sr_box">
+            <dt>贷款期限</dt>
+            <dd>
+                <select name="loan_expire" id="loan_expire" class="select">
+                    <option value="">请选择贷款期限</option>
+                    <option value="1" >1个月</option>
+                    <option value="3" >3个月</option>
+                    <option value="6" >6个月</option>
+                    <option value="12" >12个月</option>
+                    <option value="18" >18个月</option>
+                    <option value="24" >24个月</option>
+                    <option value="36" >36个月</option>
+                    <option value="48" >48个月</option>
+                </select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box" style="border-bottom: 0;">
+            <dt>贷款用途</dt>
+            <dd>
+                <select class="select" data-val="true" data-val-number="字段 loan_use 必须是一个数字。" id="loan_use" name="loan_use"><option value="">请选择</option>
+<option value="1">经营贷款</option>
+<option value="2">购房贷款</option>
+<option value="3">购车贷款</option>
+<option value="4">装修贷款</option>
+<option value="5">消费贷款</option>
+<option value="6">教育贷款</option>
+<option value="7">旅游贷款</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <div class="sqxx_tl mt10">
+            职业身份</div>
+        <dl class="sr_box">
+            <dt>职业身份</dt>
+            <dd>
+                <select class="select" data-val="true" data-val-number="字段 profession 必须是一个数字。" data-val-range="请选择职业身份" data-val-range-max="5" data-val-range-min="1" id="profession" name="profession"><option value="">请选择</option>
+<option value="1">上班族</option>
+<option value="2">个体工商户</option>
+<option value="3">企业主</option>
+<option value="4">学生</option>
+<option value="5">自由职业者</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" v1="1" style="display: none">
+            <dt>单位类型</dt>
+            <dd>
+                <select class="select" data-val="true" data-val-number="字段 com_type 必须是一个数字。" id="com_type" name="com_type"><option value="">请选择</option>
+<option value="1">政府机关</option>
+<option value="2">事业单位</option>
+<option value="3">国资企业</option>
+<option value="4">外资企业</option>
+<option value="5">民营企业</option>
+<option value="6">其他</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" v1="1" style="display: none">
+            <dt class="yyzz">当前单位工作时间(月)</dt>
+            <dd class="yyzz_b">
+                <input type="text" name="work_month" id="work_month" maxlength="3" class="srwb number">
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" v1="1" style="display: none">
+            <dt class="yyzz">工资发放形式</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 salary_type 必须是一个数字。" id="salary_type" name="salary_type"><option value="">请选择</option>
+<option value="1">银行卡</option>
+<option value="2">现金</option>
+<option value="3">银行卡和现金</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" v2="1" v3="1" style="display: none">
+            <dt class="yyzz">是否有营业执照</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 is_cert 必须是一个数字。" id="is_cert" name="is_cert"><option value="">请选择</option>
+<option value="1">是</option>
+<option value="2">否</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" id="dl_iscert_name" style="display: none">
+            <dt class="yyzz" id="iscert_name_dt">法人代表姓名是否与申请者一致</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 iscert_name 必须是一个数字。" id="iscert_name" name="iscert_name"><option value="">请选择</option>
+<option value="1">是</option>
+<option value="2">否</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" id="dl_boss_city" style="display: none">
+            <dt class="yyzz">营业执照是否在本地</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 boss_city 必须是一个数字。" id="boss_city" name="boss_city"><option value="">请选择</option>
+<option value="1">是</option>
+<option value="2">否</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" v2="1" v3="1" style="display: none">
+            <dt class="yyzz">经营时间(月)</dt>
+            <dd class="yyzz_b">
+                <input type="text" name="boss_month" id="boss_month" class="srwb number"maxlength="4">
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" v1="1" v2="1" v3="1" v5="1" style="display: none">
+            <dt class="yyzz" id="dt_moneylabel">每月收入(元)</dt>
+            <dd class="yyzz_b">
+                <input type="text" name="month_av" id="month_av"  class="srwb number"maxlength="7">
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" v1="1" v5="1" style="display: none">
+            <dt class="yyzz">近六个月是否有连续购买本地社保</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 is_social 必须是一个数字。" id="is_social" name="is_social"><option value="">请选择</option>
+<option value="1">是</option>
+<option value="2">否</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" v1="1" v5="1" style="display: none">
+            <dt class="yyzz">近六个月是否有连续购买公积金</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 is_fund 必须是一个数字。" id="is_fund" name="is_fund"><option value="">请选择</option>
+<option value="1">是</option>
+<option value="2">否</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box ">
+            <dt class="yyzz">信用情况</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 credit_info 必须是一个数字。" id="credit_info" name="credit_info"><option value="">请选择</option>
+<option value="1">无信用卡或贷款</option>
+<option value="2">信用良好</option>
+<option value="3">逾期超过90天或呆账</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box profbian" style="display: none" id="dl_is_over">
+            <dt class="yyzz">您是否正在逾期</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 is_over 必须是一个数字。" id="is_over" name="is_over"><option value="">请选择</option>
+<option value="1">是</option>
+<option value="2">否</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+    </div>
+    <input type="button" name="button" id="btn_Add2JBQK" value="下一步" class="bdtj_an_b">
+</div>
+<div style="display: none" id="Citys">
+    <header class="header dk">
+<div class="left_ico">
+    <a href="javascript:;" id="closecity" class="fh01"></a>
+</div>定位城市：<span class="red">长沙</span></header>
+    <dl class="csxz_box mt10">
+        <dt><span class="tl">热门城市</span></dt>
+        <dd>
+            <a class="rm colf57 city" href="javascript:;" v="2">北京市</a> <a class="rm colf57 city"
+                href="javascript:;" v="23">上海市</a> <a class="rm colf57 city" href="javascript:;"
+                    v="2957">广州市</a> <a class="rm colf57 city" href="javascript:;" v="2960">深圳市</a>
+            <a class="rm colf57 city" href="javascript:;" v="3">天津市</a> <a class="rm colf57 city"
+                href="javascript:;" v="9">重庆市</a> <a class="rm colf57 city" href="javascript:;" v="2599">
+                    长沙市</a>
+        </dd>
+    </dl>
+
+    <dl class="csxz_box mt10">
+        <dt><span class="tl">全部城市</span></dt>
+        <dd>
+                <a href="#csA" class="qb ">A</a>
+                <a href="#csB" class="qb ">B</a>
+                <a href="#csC" class="qb ">C</a>
+                <a href="#csD" class="qb ">D</a>
+                <a href="#csE" class="qb ">E</a>
+                <a href="#csF" class="qb ">F</a>
+                <a href="#csG" class="qb ">G</a>
+                <a href="#csH" class="qb ">H</a>
+                <a href="#csJ" class="qb ">J</a>
+                <a href="#csK" class="qb ">K</a>
+                <a href="#csL" class="qb ">L</a>
+                <a href="#csM" class="qb ">M</a>
+                <a href="#csN" class="qb ">N</a>
+                <a href="#csP" class="qb ">P</a>
+                <a href="#csQ" class="qb ">Q</a>
+                <a href="#csR" class="qb ">R</a>
+                <a href="#csS" class="qb ">S</a>
+                <a href="#csT" class="qb ">T</a>
+                <a href="#csW" class="qb ">W</a>
+                <a href="#csX" class="qb ">X</a>
+                <a href="#csY" class="qb ">Y</a>
+                <a href="#csZ" class="qb ">Z</a>
+        </dd>
+    </dl>
+        <dl class="csxz_box mt10" id="csA">
+            <dt><span class="tl">A</span><span class="fon12 col999">（以A为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="505">安庆市</a>
+                    <a href="javascript:;" class="rm col666 city" v="901">阿拉善盟</a>
+                    <a href="javascript:;" class="rm col666 city" v="1029">阿坝</a>
+                    <a href="javascript:;" class="rm col666 city" v="1336">鞍山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1447">安顺市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1940">安阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2258">阿里</a>
+                    <a href="javascript:;" class="rm col666 city" v="2489">安康市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3307">阿勒泰</a>
+                    <a href="javascript:;" class="rm col666 city" v="3310">阿克苏</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csB">
+            <dt><span class="tl">B</span><span class="fon12 col999">（以B为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="2">北京市</a>
+                    <a href="javascript:;" class="rm col666 city" v="176">保定市</a>
+                    <a href="javascript:;" class="rm col666 city" v="495">蚌埠市</a>
+                    <a href="javascript:;" class="rm col666 city" v="502">亳州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="898">包头市</a>
+                    <a href="javascript:;" class="rm col666 city" v="906">巴彦淖尔市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1025">巴中市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1340">本溪市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1450">毕节</a>
+                    <a href="javascript:;" class="rm col666 city" v="1571">滨州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1730">白山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1793">保山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2483">宝鸡市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2860">白银市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3180">北海市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3186">百色市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3308">博尔塔拉</a>
+                    <a href="javascript:;" class="rm col666 city" v="3309">巴音郭楞</a>
+                    <a href="javascript:;" class="rm col666 city" v="3437">白城市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csC">
+            <dt><span class="tl">C</span><span class="fon12 col999">（以C为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="9">重庆市</a>
+                    <a href="javascript:;" class="rm col666 city" v="178">承德市</a>
+                    <a href="javascript:;" class="rm col666 city" v="179">沧州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="504">池州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="508">滁州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="618">长治市</a>
+                    <a href="javascript:;" class="rm col666 city" v="902">赤峰市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1010">成都市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1339">朝阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1725">长春市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1802">楚雄</a>
+                    <a href="javascript:;" class="rm col666 city" v="2254">昌都</a>
+                    <a href="javascript:;" class="rm col666 city" v="2599">长沙市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2609">常德市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2612">郴州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2741">常州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2971">潮州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3181">崇左市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3306">昌吉</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csD">
+            <dt><span class="tl">D</span><span class="fon12 col999">（以D为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="615">大同市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1018">德阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1021">达州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1334">大连市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1342">丹东市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1568">东营市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1569">德州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1794">大理</a>
+                    <a href="javascript:;" class="rm col666 city" v="1796">德宏</a>
+                    <a href="javascript:;" class="rm col666 city" v="1800">迪庆</a>
+                    <a href="javascript:;" class="rm col666 city" v="2111">大兴安岭</a>
+                    <a href="javascript:;" class="rm col666 city" v="2113">大庆市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2869">定西市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3435">东莞市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3446">儋州市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csE">
+            <dt><span class="tl">E</span><span class="fon12 col999">（以E为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="904">鄂尔多斯市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2339">恩施</a>
+                    <a href="javascript:;" class="rm col666 city" v="2341">鄂州市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csF">
+            <dt><span class="tl">F</span><span class="fon12 col999">（以F为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="494">阜阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="803">福州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1233">抚州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1338">抚顺市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1345">阜新市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2966">佛山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3182">防城港市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csG">
+            <dt><span class="tl">G</span><span class="fon12 col999">（以G为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="1019">广安市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1022">广元市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1030">甘孜</a>
+                    <a href="javascript:;" class="rm col666 city" v="1230">赣州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1444">贵阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2863">甘南</a>
+                    <a href="javascript:;" class="rm col666 city" v="2957">广州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3110">果洛</a>
+                    <a href="javascript:;" class="rm col666 city" v="3176">桂林市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3184">贵港市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3412">固原市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csH">
+            <dt><span class="tl">H</span><span class="fon12 col999">（以H为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="69">杭州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="74">湖州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="172">衡水市</a>
+                    <a href="javascript:;" class="rm col666 city" v="174">邯郸市</a>
+                    <a href="javascript:;" class="rm col666 city" v="487">海口市</a>
+                    <a href="javascript:;" class="rm col666 city" v="492">合肥市</a>
+                    <a href="javascript:;" class="rm col666 city" v="497">淮南市</a>
+                    <a href="javascript:;" class="rm col666 city" v="501">淮北市</a>
+                    <a href="javascript:;" class="rm col666 city" v="507">黄山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="897">呼和浩特市</a>
+                    <a href="javascript:;" class="rm col666 city" v="905">呼伦贝尔市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1341">葫芦岛市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1573">菏泽市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1803">红河</a>
+                    <a href="javascript:;" class="rm col666 city" v="1942">鹤壁市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2105">哈尔滨市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2107">黑河市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2110">鹤岗市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2334">黄石市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2345">黄冈市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2487">汉中市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2603">怀化市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2604">衡阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2745">淮安市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2959">惠州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2965">河源市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3106">海东市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3107">海北</a>
+                    <a href="javascript:;" class="rm col666 city" v="3108">黄南</a>
+                    <a href="javascript:;" class="rm col666 city" v="3109">海南</a>
+                    <a href="javascript:;" class="rm col666 city" v="3112">海西</a>
+                    <a href="javascript:;" class="rm col666 city" v="3175">贺州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3177">河池市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3301">和田</a>
+                    <a href="javascript:;" class="rm col666 city" v="3304">哈密</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csJ">
+            <dt><span class="tl">J</span><span class="fon12 col999">（以J为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="73">嘉兴市</a>
+                    <a href="javascript:;" class="rm col666 city" v="76">金华市</a>
+                    <a href="javascript:;" class="rm col666 city" v="620">晋中市</a>
+                    <a href="javascript:;" class="rm col666 city" v="624">晋城市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1224">景德镇市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1227">九江市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1231">吉安市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1343">锦州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1561">济南市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1574">济宁市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1726">吉林市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1946">焦作市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2108">鸡西市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2115">佳木斯市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2342">荆门市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2344">荆州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2858">金昌市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2867">酒泉市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2968">江门市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2973">揭阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3442">嘉峪关市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csK">
+            <dt><span class="tl">K</span><span class="fon12 col999">（以K为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="1788">昆明市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1934">开封市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3300">克拉玛依市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3311">克孜勒苏</a>
+                    <a href="javascript:;" class="rm col666 city" v="3312">喀什</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csL">
+            <dt><span class="tl">L</span><span class="fon12 col999">（以L为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="71">丽水市</a>
+                    <a href="javascript:;" class="rm col666 city" v="180">廊坊市</a>
+                    <a href="javascript:;" class="rm col666 city" v="500">六安市</a>
+                    <a href="javascript:;" class="rm col666 city" v="622">临汾市</a>
+                    <a href="javascript:;" class="rm col666 city" v="623">吕梁市</a>
+                    <a href="javascript:;" class="rm col666 city" v="810">龙岩市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1015">凉山</a>
+                    <a href="javascript:;" class="rm col666 city" v="1016">泸州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1028">乐山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1346">辽阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1445">六盘水市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1565">莱芜市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1567">临沂市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1575">聊城市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1728">辽源市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1797">丽江市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1801">临沧市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1935">漯河市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1936">洛阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2253">拉萨市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2259">林芝</a>
+                    <a href="javascript:;" class="rm col666 city" v="2605">娄底市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2744">连云港市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2857">兰州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2859">陇南市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2861">临夏</a>
+                    <a href="javascript:;" class="rm col666 city" v="3174">柳州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3179">来宾市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csM">
+            <dt><span class="tl">M</span><span class="fon12 col999">（以M为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="499">马鞍山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1014">眉山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1020">绵阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2117">牡丹江市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2961">梅州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2972">茂名市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csN">
+            <dt><span class="tl">N</span><span class="fon12 col999">（以N为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="70">宁波市</a>
+                    <a href="javascript:;" class="rm col666 city" v="809">南平市</a>
+                    <a href="javascript:;" class="rm col666 city" v="811">宁德市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1012">南充市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1026">内江市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1223">南昌市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1798">怒江</a>
+                    <a href="javascript:;" class="rm col666 city" v="1939">南阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2257">那曲</a>
+                    <a href="javascript:;" class="rm col666 city" v="2735">南京市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2743">南通市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3173">南宁市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csP">
+            <dt><span class="tl">P</span><span class="fon12 col999">（以P为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="805">莆田市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1013">攀枝花市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1226">萍乡市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1335">盘锦市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1938">平顶山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1948">濮阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2866">平凉市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3440">普洱市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csQ">
+            <dt><span class="tl">Q</span><span class="fon12 col999">（以Q为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="77">衢州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="173">秦皇岛市</a>
+                    <a href="javascript:;" class="rm col666 city" v="807">泉州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1449">黔西南</a>
+                    <a href="javascript:;" class="rm col666 city" v="1451">黔东南</a>
+                    <a href="javascript:;" class="rm col666 city" v="1452">黔南</a>
+                    <a href="javascript:;" class="rm col666 city" v="1562">青岛市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1789">曲靖市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2106">齐齐哈尔市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2116">七台河市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2868">庆阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2969">清远市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3183">钦州市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csR">
+            <dt><span class="tl">R</span><span class="fon12 col999">（以R为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="1563">日照市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2256">日喀则</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csS">
+            <dt><span class="tl">S</span><span class="fon12 col999">（以S为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="23">上海市</a>
+                    <a href="javascript:;" class="rm col666 city" v="75">绍兴市</a>
+                    <a href="javascript:;" class="rm col666 city" v="170">石家庄市</a>
+                    <a href="javascript:;" class="rm col666 city" v="496">宿州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="619">朔州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="806">三明市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1024">遂宁市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1225">上饶市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1333">沈阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1727">四平市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1731">松原市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1937">三门峡市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1941">商丘市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2109">绥化市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2112">双鸭山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2255">山南</a>
+                    <a href="javascript:;" class="rm col666 city" v="2336">十堰市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2337">随州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2490">商洛市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2606">邵阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2738">宿迁市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2742">苏州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2958">韶关市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2960">深圳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2963">汕尾市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2964">汕头市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3410">石嘴山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3443">三亚市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3463">三沙市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csT">
+            <dt><span class="tl">T</span><span class="fon12 col999">（以T为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="3">天津市</a>
+                    <a href="javascript:;" class="rm col666 city" v="79">台州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="171">唐山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="503">铜陵市</a>
+                    <a href="javascript:;" class="rm col666 city" v="614">太原市</a>
+                    <a href="javascript:;" class="rm col666 city" v="903">通辽市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1337">铁岭市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1507">铜仁市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1576">泰安市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1729">通化市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2482">铜川市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2736">泰州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2862">天水市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3302">吐鲁番</a>
+                    <a href="javascript:;" class="rm col666 city" v="3305">塔城</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csW">
+            <dt><span class="tl">W</span><span class="fon12 col999">（以W为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="72">温州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="493">芜湖市</a>
+                    <a href="javascript:;" class="rm col666 city" v="900">乌海市</a>
+                    <a href="javascript:;" class="rm col666 city" v="907">乌兰察布市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1572">潍坊市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1577">威海市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1790">文山</a>
+                    <a href="javascript:;" class="rm col666 city" v="2333">武汉市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2485">渭南市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2737">无锡市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2864">武威市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3178">梧州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3299">乌鲁木齐市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3411">吴忠市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csX">
+            <dt><span class="tl">X</span><span class="fon12 col999">（以X为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="175">邢台市</a>
+                    <a href="javascript:;" class="rm col666 city" v="506">宣城市</a>
+                    <a href="javascript:;" class="rm col666 city" v="621">忻州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="804">厦门市</a>
+                    <a href="javascript:;" class="rm col666 city" v="899">锡林郭勒盟</a>
+                    <a href="javascript:;" class="rm col666 city" v="908">兴安盟</a>
+                    <a href="javascript:;" class="rm col666 city" v="1228">新余市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1792">西双版纳</a>
+                    <a href="javascript:;" class="rm col666 city" v="1943">信阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1944">新乡市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1949">许昌市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2335">咸宁市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2343">孝感市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2481">西安市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2484">咸阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2602">湘潭市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2607">湘西</a>
+                    <a href="javascript:;" class="rm col666 city" v="2739">徐州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3105">西宁市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3436">襄阳市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csY">
+            <dt><span class="tl">Y</span><span class="fon12 col999">（以Y为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="616">运城市</a>
+                    <a href="javascript:;" class="rm col666 city" v="617">阳泉市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1017">宜宾市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1023">雅安市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1229">鹰潭市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1232">宜春市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1344">营口市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1570">烟台市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1732">延边</a>
+                    <a href="javascript:;" class="rm col666 city" v="1791">玉溪市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2114">伊春市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2338">宜昌市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2486">延安市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2488">榆林市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2601">永州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2608">岳阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2611">益阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2740">盐城市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2746">扬州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2967">阳江市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2975">云浮市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3111">玉树</a>
+                    <a href="javascript:;" class="rm col666 city" v="3185">玉林市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3303">伊犁</a>
+                    <a href="javascript:;" class="rm col666 city" v="3409">银川市</a>
+            </dd>
+        </dl>
+        <dl class="csxz_box mt10" id="csZ">
+            <dt><span class="tl">Z</span><span class="fon12 col999">（以Z为开头的城市名）</span>
+            </dt>
+            <dd>
+                    <a href="javascript:;" class="rm col666 city" v="78">舟山市</a>
+                    <a href="javascript:;" class="rm col666 city" v="177">张家口市</a>
+                    <a href="javascript:;" class="rm col666 city" v="808">漳州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1011">自贡市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1027">资阳市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1446">遵义市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1564">淄博市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1566">枣庄市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1795">昭通市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1933">郑州市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1945">周口市</a>
+                    <a href="javascript:;" class="rm col666 city" v="1947">驻马店市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2600">株洲市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2610">张家界市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2747">镇江市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2865">张掖市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2962">珠海市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2970">湛江市</a>
+                    <a href="javascript:;" class="rm col666 city" v="2974">肇庆市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3413">中卫市</a>
+                    <a href="javascript:;" class="rm col666 city" v="3461">中山市</a>
+            </dd>
+        </dl>
+</div>
+<div style="display: none">
+    <header class="header dk">
+<div class="left_ico">
+    <a href="javascript:;" class="fh01"></a>
+</div>选择学校</header>
+    <aside class="mechanism-search-wr">
+        <input type="text" name="" class="input-ct bb">
+        <input type="submit" name="" value="提交" class="submit">
+    </aside>
+    <section class="mechanism-ct">
+        <p class="col999 notice-info">
+            请输入所在机构名称</p>
+        <div class="search-ct">
+            <p>
+                <a href="javascript:;">北京恒昌惠城信息咨询有限公司</a></p>
+            <p>
+                <a href="javascript:;">北京恒昌惠城信息咨询有限公司</a></p>
+            <p>
+                <a href="javascript:;">北京恒昌惠城信息咨询有限公司</a></p>
+        </div>
+        <section>
+</div>
+<script type="text/javascript">
+    /*基本信息逻辑*/
+    function BasicInfoEvent() {
+        /*弹出城市选择框*/
+        $("#a_city_name").click(function () {
+            $("#div_Add2JBQK").hide();
+            $("#div_Add1JBXX").hide();
+            $("#Citys").show();
+        });
+        /*选择城市*/
+        $(".city").click(function () {
+            $("#city_id").val($(this).attr("v"));
+            $("#district_name").val($.trim($(this).text()));
+            $("#a_city_name").html($.trim($(this).text()));
+            $("#Citys").hide();
+            $("#div_Add2JBQK").show();
+        });
+        /*取消选择城市*/
+        $("#closecity").click(function () {
+            $("#Citys").hide();
+            $("#div_Add2JBQK").show();
+        });
+
+        /*信用情况改变*/
+        $("#credit_info").change(function () {
+            var _type = $.trim($(this).val()) * 1;
+            $("#is_over").val(0);
+            if (_type == 2 || _type == 3) {
+                $("#dl_is_over").show();
+            } else {
+                $("#dl_is_over").hide();
+            }
+        });
+
+        //改变是否有营业执照
+        $("#is_cert").change(function () {
+            $("#iscert_name").val(0);
+            $("#boss_city").val(0);
+            var _type = $.trim($(this).val()) * 1;
+            if (_type == 1) {
+                $("#dl_iscert_name").show();
+                $("#dl_boss_city").show();
+            } else {
+                $("#dl_iscert_name").hide();
+                $("#dl_boss_city").hide();
+            }
+        });
+        //职业类型
+        $("#profession").change(function () {
+            var _v = $.trim($(this).val());
+            if (_v != "") {
+                switch (_v) {
+                    case "1": //上班族1
+                        $("#dt_moneylabel").text("每月工资(元)");
+                        $("#div_Add2JBQK dl.profbian").hide().siblings("dl.profbian[v1=1]").show();
+                        break;
+                    case "2": //个体工商户
+                        $("#dt_moneylabel").text("月销售额(元)");
+                        $("#div_Add2JBQK dl.profbian").hide().siblings("dl.profbian[v2=1]").show();
+                        $("#dl_iscert_name").hide();
+                        $("#dl_boss_city").hide();
+                        $("#is_cert").val(0);
+                        $("#iscert_name").val(0);
+                        $("#boss_city").val(0);
+                        $("#iscert_name_dt").text("经营者姓名是否与申请者一致");
+                        break;
+                    case "3": //企业主
+                        $("#dt_moneylabel").text("月销售额(元)");
+                        $("#div_Add2JBQK dl.profbian").hide().siblings("dl.profbian[v3=1]").show();
+                        $("#dl_iscert_name").hide();
+                        $("#dl_boss_city").hide();
+                        $("#is_cert").val(0);
+                        $("#iscert_name").val(0);
+                        $("#boss_city").val(0);
+                        $("#iscert_name_dt").text("法人代表姓名是否与申请者一致");
+                        break;
+                    case "4": //学生
+                        $("#div_Add2JBQK dl.profbian").hide().siblings("dl.profbian[v4=1]").show();
+                        break;
+                    case "5":  //自由职业者
+                        $("#dt_moneylabel").text("每月平均收入(元)");
+                        $("#div_Add2JBQK dl.profbian").hide().siblings("dl.profbian[v5=1]").show();
+                        break;
+                }
+            } else {
+                $("#div_Add2JBQK dl.profbian").hide();
+            }
+        });
+        /*提交表单*/
+        $("#btn_Add2JBQK").click(function () {
+            SubmitBasicInfo();
+        });
+    }
+
+    //提交基本信息
+    function SubmitBasicInfo() {
+        //提交信息
+        if (IsBasicValidate()) {
+            var layload = layer.open({ type: 2, shadeClose: false, content: '正在保存信息...' });
+            $("#btn_Add2JBQK").attr("disabled", "disabled");
+            $.ajax({
+                url: "/Apply/Add2JBQKApply",
+                data: $("#form1").serialize(),
+                type: "POST",
+                cache: false,
+                dataType: "json",
+                success: function (json) {
+                    layer.close(layload);
+                    $("#btn_Add2JBQK").removeAttr("disabled");
+                    if (json.status == 1) {
+                        $("#div_Add2JBQK").hide();
+                        $("#div_Add3CLZZ").show();
+                        AddApplyLog(json.apply_id,2);
+                        return false;
+                    } else {
+                        AlertMsg.Info(json.errormsg, { icon: 2 });
+                        return false;
+                    }
+                },
+                error: function (e) {
+                    layer.close(layload);
+                    $("#btn_Add2JBQK").removeAttr("disabled");
+                    AlertMsg.Info("系统繁忙，请稍候在试", { icon: 2 });
+                    AddApplyLog(1, 4);
+                }
+            });
+        }
+    }
+
+    //基本信息录入验证
+    function IsBasicValidate() {
+        var name = $.trim($("#user_name").val());
+        if (name == "") {
+            $("#user_name").focus();
+            AlertMsg.Info("请输入您的姓名");
+            return false;
+        }
+        if (name.search(/^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]){2,15}$/) == -1) {
+            $("#user_name").focus();
+            AlertMsg.Info("姓名输入有误，2到15个汉字");
+            return false;
+        }
+        var cityid = $.trim($("#city_id").val());
+        if (cityid == "" || cityid == "0") {
+            $("#city_id").focus();
+            AlertMsg.Info("贷款城市不能为空");
+            return false;
+        }
+        var IDCard = $.trim($("#id_card").val());
+        if (IDCard == "") {
+            $("#id_card").focus();
+            AlertMsg.Info("请输入您的身份证信息");
+            return false;
+        }
+        if (!IdentityCodeValid(IDCard)) {
+            AlertMsg.Info("请输入正确的身份证信息");
+            return false;
+        }
+        var _loanexpire = $.trim($("#loan_expire").val());
+        if (!isNum(_loanexpire, "贷款期限")) {
+            AlertMsg.Info("请输入正确的贷款期限");
+            return false;
+        }
+        var _loan_use = $.trim($("#loan_use").val());
+        if (_loan_use == "") {
+            AlertMsg.Info("请选择您的贷款用途");
+            return false;
+        }
+        var _profession = $.trim($("#profession").val());
+        if (_profession == "") {
+            AlertMsg.Info("请选择您的职业身份");
+            return false;
+        }
+        _profession = _profession * 1;
+        switch (_profession) {
+            case 1: //上班族
+                var company = $("#com_type").val() * 1;
+                if (company <= 0) {
+                    AlertMsg.Info("请选择您的单位类型");
+                    return false;
+                }
+                var work_month = $.trim($("#work_month").val());
+                if (!isNum(work_month, "当前工作时间")) {
+                    return false;
+                }
+                var _salary_type = $("#salary_type").val();
+                if (_salary_type == "") {
+                    AlertMsg.Info("请选择工资发放形式");
+                    return false;
+                }
+                var _month_av = $.trim($("#month_av").val());
+                if (_month_av == "") {
+                    AlertMsg.Info("请输入您的每月工资");
+                    return false;
+                }
+                if (isNaN(_month_av)) {
+                    AlertMsg.Info("每月工资只能是数字");
+                    return false;
+                }
+                if ($("#is_social").val() == "") {
+                    AlertMsg.Info("请选择近六个月是否有连续购买本地社保");
+                    return false;
+                }
+                if ($("#is_fund").val() == "") {
+                    AlertMsg.Info("请选择近六个月是否有连续购买公积金");
+                    return false;
+                }
+                break;
+            case 2: //个体工商户
+                if ($("#is_cert").val() == "") {
+                    AlertMsg.Info("请选择是否有营业执照");
+                    return false;
+                } else if ($("#is_cert").val() == "1") {
+                    if ($("#iscert_name").val() == "") {
+                        AlertMsg.Info("请选择营业执照上的经营者姓名与申请者是否一致");
+                        return false;
+                    }
+                    if ($("#boss_city").val() == "") {
+                        AlertMsg.Info("请选择营业执照是否在本地");
+                        return false;
+                    }
+                }
+                var _boss_month = $.trim($("#boss_month").val());
+                if (!isNum(_boss_month, "请输入您的经营时间")) {
+                    return false;
+                }
+                var _month_av = $.trim($("#month_av").val());
+                if (_month_av == "") {
+                    AlertMsg.Info("请输入您的月销售额");
+                    return false;
+                }
+                if (isNaN(_month_av)) {
+                    AlertMsg.Info("月销售额只能是数字");
+                    return false;
+                }
+                break;
+            case 3:
+                if ($("#is_cert").val() == "") {
+                    AlertMsg.Info("请选择是否有营业执照");
+                    return false;
+                } else if ($("#is_cert").val() == "1") {
+                    if ($("#iscert_name").val() == "") {
+                        AlertMsg.Info("请选择营业执照上的经营者姓名与申请者是否一致");
+                        return false;
+                    }
+                    if ($("#boss_city").val() == "") {
+                        AlertMsg.Info("请选择营业执照是否在本地");
+                        return false;
+                    }
+                }
+                var _boss_month = $.trim($("#boss_month").val());
+                if (!isNum(_boss_month, "请输入您的经营时间")) {
+                    return false;
+                }
+                var _month_av = $.trim($("#month_av").val());
+                if (_month_av == "") {
+                    AlertMsg.Info("请输入您的月销售额");
+                    return false;
+                }
+                if (isNaN(_month_av)) {
+                    AlertMsg.Info("月销售额只能是数字");
+                    return false;
+                }
+                break;
+            case 4: //学生
+                break;
+            case 5: //
+                if ($("#is_social").val() == "") {
+                    AlertMsg.Info("请选择近六个月是否有连续购买本地社保");
+                    return false;
+                }
+                if ($("#is_fund").val() == "") {
+                    AlertMsg.Info("请选择近六个月是否有连续购买公积金");
+                    return false;
+                }
+                var _month_av = $.trim($("#month_av").val());
+                if (_month_av == "") {
+                    AlertMsg.Info("请输入您的每月平均收入");
+                    return false;
+                }
+                if (isNaN(_month_av)) {
+                    AlertMsg.Info("每月平均收入只能是数字");
+                    return false;
+                }
+                break;
+        }
+        var _credit_info = $.trim($("#credit_info").val());
+        if (_credit_info == "") {
+            AlertMsg.Info("请选择您的信用情况");
+            return false;
+        }
+        if (_credit_info == 2 || _credit_info == 3) {
+            if ($("#is_over").val() == "") {
+                AlertMsg.Info("请选择您是否正在逾期");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /*数字验证*/
+    function isNum(s, msg) {//是否为正整数
+        if (s == "") {
+            AlertMsg.Info("请输入" + msg);
+        } else {
+            var re = /^[0-9]*[1-9][0-9]*$/;
+            if (re.test(s)) {
+                return parseInt(s) > 0;
+            } else {
+                AlertMsg.Info(msg + "为大于0的正整数");
+            }
+        }
+        return false;
+    }
+
+    //身份证号合法性验证 
+    //支持地址编码、出生日期、校验位验证
+    function IdentityCodeValid(code) {
+        if (code == "" || code.length != 18)
+            return false;
+        var city = { 11: "北京", 12: "天津", 13: "河北", 14: "山西", 15: "内蒙古", 21: "辽宁", 22: "吉林", 23: "黑龙江 ", 31: "上海", 32: "江苏", 33: "浙江", 34: "安徽", 35: "福建", 36: "江西", 37: "山东", 41: "河南", 42: "湖北 ", 43: "湖南", 44: "广东", 45: "广西", 46: "海南", 50: "重庆", 51: "四川", 52: "贵州", 53: "云南", 54: "西藏 ", 61: "陕西", 62: "甘肃", 63: "青海", 64: "宁夏", 65: "新疆", 71: "台湾", 81: "香港", 82: "澳门", 91: "国外 " };
+        var tip = "";
+        var pass = true;
+        //18位身份证需要验证最后一位校验位
+        if (code.length == 18) {
+            code = code.split('');
+            //∑(ai×Wi)(mod 11)
+            //加权因子
+            var factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+            //校验位
+            var parity = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2];
+            var sum = 0;
+            var ai = 0;
+            var wi = 0;
+            for (var i = 0; i < 17; i++) {
+                ai = code[i];
+                wi = factor[i];
+                sum += ai * wi;
+            }
+            if (parity[sum % 11] != code[17]) {
+                tip = "校验位错误";
+                pass = false;
+            }
+        }
+        return pass;
+    }
+</script>
+
+    
+<div class="xx_left" id="div_Add3CLZZ" style="display: none;">
+    <header class="header dk">
+<div class="left_ico">
+    <a href="javascript:;" id="back" class="fh01"></a>
+</div>贷款申请</header>
+    <div class="sq_ts">
+        <img src="http://img.csai.cn/static/img/loan/20170321/sqts_ico.png">选填（非必填）您的信用佐证，让您的贷款成功率更高哦</div>
+    <div class="sqxx_tl">
+        财力佐证</div>
+    <div class="srbd_box">
+        <dl class="sr_box">
+            <dt class="yyzz">是否有商品房</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 is_house 必须是一个数字。" id="is_house" name="is_house"><option value="">请选择</option>
+<option value="1">是</option>
+<option value="2">否</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box housebuy" style="display: none;">
+            <dt class="yyzz">商品房房龄(月)</dt>
+            <dd class="yyzz_b">
+                <input type="text" name="house_time" id="house_time" maxlength="4" class="srwb number">
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box housebuy" style="display: none;">
+            <dt class="yyzz">商品房购买价格(万元)</dt>
+            <dd class="yyzz_b">
+                <input type="text" name="house_value" id="house_value"maxlength="4"  class="srwb number">
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box">
+            <dt class="yyzz">您名下是否有车</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 is_car 必须是一个数字。" id="is_car" name="is_car"><option value="">请选择</option>
+<option value="1">是</option>
+<option value="2">否</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box carbuy" style="display: none;">
+            <dt class="yyzz ">车龄(月)</dt>
+            <dd  class="yyzz_b">
+                <input type="text" name="car_time" id="car_time" maxlength="4" class="srwb number">
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box carbuy" style="display: none;">
+            <dt class="yyzz">车辆购买价格(万元)</dt>
+            <dd class="yyzz_b">
+                <input type="text" name="car_value" id="car_value" maxlength="4" class="srwb number">
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box">
+            <dt class="yyzz">您本人是否购买了保险</dt>
+            <dd class="yyzz_b">
+                <select class="select" data-val="true" data-val-number="字段 is_insur 必须是一个数字。" id="is_insur" name="is_insur"><option value="">请选择</option>
+<option value="1">是</option>
+<option value="2">否</option>
+</select>
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box insurbuy" style="display: none;">
+            <dt class="yyzz">已连续缴纳时间(月)</dt>
+            <dd class="yyzz_b">
+                <input type="text" name="insur_month" id="insur_month" maxlength="4" class="srwb number">
+            </dd>
+            <div class="clear"></div>
+        </dl>
+        <dl class="sr_box insurbuy" style="display: none;">
+            <dt class="yyzz">年缴纳金额(元)</dt>
+            <dd class="yyzz_b">
+                <input type="text" name="insur_fee" id="insur_fee" maxlength="7" class="srwb number">
+            </dd>
+            <div class="clear"></div>
+        </dl>
+    </div>
+    <input type="button" name="btn_Add3CLZZ" id="btn_Add3CLZZ" value="提交" class="bdtj_an_b">
+</div>
+<script type="text/javascript">
+    ///财力佐证事件
+    function FinancialEvent() {
+        //房子
+        $("#is_house").change(function () {
+            $("#house_time").val("");
+            $("#house_value").val("");
+            if ($(this).val() == "1") {
+                $("#div_Add3CLZZ .housebuy").show();
+            } else {
+                $("#div_Add3CLZZ .housebuy").hide();
+            }
+        });
+        //车子
+        $("#is_car").change(function () {
+            $("#car_time").val("");
+            $("#car_value").val("");
+            if ($(this).val() == "1") {
+                $("#div_Add3CLZZ .carbuy").show();
+            } else {
+                $("#div_Add3CLZZ .carbuy").hide();
+            }
+        });
+        //保险
+        $("#is_insur").change(function () {
+            $("#insur_month").val("");
+            $("#insur_fee").val("");
+            if ($(this).val() == "1") {
+                $("#div_Add3CLZZ .insurbuy").show();
+            } else {
+                $("#div_Add3CLZZ .insurbuy").hide();
+            }
+        });
+        //添加财力信息
+        $("#btn_Add3CLZZ").click(function () {
+            SubmiFinancial();
+        });
+    }
+
+    //提交基本信息
+    function SubmiFinancial() {
+        //提交信息
+        if (IsValidateAdd3CLZZ()) {
+            var layload = layer.open({ type: 2, shadeClose: false, content: '正在为您提交申请...' });
+            $("#btn_Add3CLZZ").attr("disabled", "disabled");
+            $.ajax({
+                url: "/Apply/Add2JBQKApply?step=3",
+                data: $("#form1").serialize(),
+                type: "POST",
+                cache: false,
+                dataType: "json",
+                success: function (json) {
+                    layer.close(layload);
+                    $("#btn_Add3CLZZ").removeAttr("disabled");
+                    if (json.status == 1) {
+                        AddApplyLog(json.apply_id, 3, function () {
+                            document.location.href = "/Apply/AddSucceed/";
+                        });
+                        return false;
+                    } else {
+                        AlertMsg.Info(json.errormsg, { icon: 2 });
+                        return false;
+                    }
+                },
+                error: function (e) {
+                    layer.close(layload);
+                    $("#btn_Add3CLZZ").removeAttr("disabled");
+                    AlertMsg.Info("系统繁忙，请稍候在试", { icon: 2 });
+                }
+            });
+        }
+    }
+    function IsValidateAdd3CLZZ() {
+
+        //        if ($("#is_house").val() == "") {
+        //            AlertMsg.Info("请选择您是否有房");
+        //            return false;
+        //        } else 
+        if ($("#is_house").val() == "1") {
+            var _house_time = $.trim($("#house_time").val());
+            if (!isNum(_house_time, "商品房房龄")) {
+                return false;
+            }
+            var _house_value = $.trim($("#house_value").val());
+            if (!isNum(_house_value, "商品房购买价格")) {
+                return false;
+            }
+        }
+        //        if ($("#is_car").val() == "") {
+        //            AlertMsg.Info("请选择您是否有车");
+        //            return false;
+        //        } else 
+        if ($("#is_car").val() == "1") {
+            var _car_time = $.trim($("#car_time").val());
+            if (!isNum(_car_time, "车龄")) {
+                return false;
+            }
+            var _car_value = $.trim($("#car_value").val());
+            if (!isNum(_car_value, "车辆购买价格")) {
+                return false;
+            }
+        }
+        //        if ($("#is_insur").val() == "") {
+        //            AlertMsg.Info("请选择您是否缴纳保险");
+        //            return false;
+        //        } else 
+        if ($("#is_insur").val() == "1") {
+            var _insur_fee = $.trim($("#insur_fee").val());
+            if (!isNum(_insur_fee, "年缴纳金额")) {
+                return false;
+            }
+            var _insur_month = $.trim($("#insur_month").val());
+            if (!isNum(_insur_month, "已连续缴纳时间")) {
+                return false;
+            }
+        }
+        return true;
+    }
+    $(function () {
+        $("#back").click(function () {
+            $("#div_Add3CLZZ").hide();
+            $("#div_Add2JBQK").show();
+        });
+    });
+
+</script>
+
+    </form>
+    <script type="text/javascript" >
+        //添加申请日志
+        function AddApplyLog(apply_id, apply_state, fun) {
+            var _applymobile = $.trim($("#mobile").val());
+            var _reqPrePageUrl = '';
+            _reqPrePageUrl = _reqPrePageUrl == "" ? document.location.href : _reqPrePageUrl;
+            $.ajax({
+                type: "POST",
+                url: "/Comm/AddApplyLog",
+                dataType: "json",
+                data: { apply_id: apply_id, apply_state: apply_state, mobile: _applymobile, pageUrl: _reqPrePageUrl },
+                success: function (result) {
+                    if (typeof (fun) == "function") { fun(); }
+                },
+                error: function () {
+                },
+                cache: false
+            });
+        }
+    </script>
+    <script type="text/javascript" src="http://img.csai.cn/static/js/common/plug-in/layer_mobile/layer.js"></script>
+    
+    <div class="footer">
+            <a href="/about/about">关于我们</a>&nbsp;&nbsp;丨&nbsp;&nbsp;<a href="/about/business">商务合作</a>&nbsp;&nbsp;丨&nbsp;&nbsp;&nbsp;<a href="/about/contract">服务协议</a>&nbsp;&nbsp;丨&nbsp;&nbsp;&nbsp;<a href="/about/contact">联系我们</a><br />
+            希财金融超市&nbsp;版权所有&nbsp;©&nbsp;2014-2017&nbsp;湘ICP备10026015号</div>
+    <div class="float_menu" bosszone="xfdh" style="border-top: 0;">
+        <ul id="rNav" class="rNav">
+            <li id="f-top" style="display: none;"><a href="javascript:void()"><span></span>返回顶部</a></li>
+        </ul>
+    </div>
+<!--百度统计-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5fcaa9f0ea88bddef2d43708795e5138";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $(".number").keyup(function () {
+            var tmptxt = $(this).val();
+            $(this).val(tmptxt.replace(/\D|^0/g, ''));
+        }).bind("paste", function () {
+            var tmptxt = $(this).val();
+            $(this).val(tmptxt.replace(/\D|^0/g, ''));
+        }).css("ime-mode", "disabled");
+    });
+    var AlertMsg = {
+        Alert: function (msg, btn, fun) {
+            layer.open({ content: msg, btn: btn != undefined ? btn : "确定", yes: function (index) { if (typeof (okfun) == "function") { okfun(); } layer.close(index); } });
+        },
+        Info: function (msg) { layer.open({ content: msg, btn: "关闭", time: 3 }); },
+        Remind: function (msg) { layer.open({ content: msg, time: 3 }); },
+        Confirm: function (msg, okfun, canclefun, but1, btn2) {
+            if (typeof (but1) != "string") { btn1 = "确定" }
+            if (typeof (btn2) != "string") { btn2 = "取消" }
+            layer.open({
+                content: msg,
+                btn: [but1, btn2],
+                shadeClose: false,
+                yes: function (index) {
+                    if (typeof (okfun) == "function") {
+                        okfun();
+                    }
+                    layer.close(index);
+                }, no: function (index) {
+                    if (typeof (canclefun) == "function") {
+                        canclefun();
+                    }
+                    layer.close(index);
+                }
+            });
+        }
+    }
+</script>
+
+</body>
+</html>

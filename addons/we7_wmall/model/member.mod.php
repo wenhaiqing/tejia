@@ -29,6 +29,31 @@ function member_fetchall_address($filter = array()) {
 	return $data;
 }
 
+function member_fetchall_address_app($uid,$filter = array()) {
+	global $_W;
+
+	$data = pdo_fetchall("SELECT * FROM " . tablename('tiny_wmall_address') . ' WHERE uniacid = :uniacid AND uid = :uid AND type = 1 ORDER BY is_default DESC,id DESC', array(':uniacid' => $_W['uniacid'], ':uid' => $uid));
+	
+	if(!empty($filter['serve_radius']) && !empty($filter['location_x']) && $filter['location_y']) {
+		$available = array();
+		$dis_available = array();
+		foreach($data as $li) {
+			if(!empty($li['location_x']) && !empty($li['location_y'])) {
+				$dist = distanceBetween($li['location_y'], $li['location_x'], $filter['location_y'], $filter['location_x']);
+				if($dist > ($filter['serve_radius'] * 1000)) {
+					$dis_available[] = $li;
+				} else {
+					$available[] = $li;
+				}
+			} else {
+				$dis_available[] = $li;
+			}
+		}
+		return array('available' => $available, 'dis_available' => $dis_available);
+	}
+	return $data;
+}
+
 //member_fetch_address
 function member_fetch_address($id) {
 	global $_W;
@@ -73,6 +98,70 @@ function member_fetch_available_address($sid) {
 		}
 		if(empty($address)) {
 			$addresses = member_fetchall_address();
+			foreach($addresses as $li) {
+				if(!empty($li['location_x']) && !empty($li['location_y'])) {
+					$dist = distanceBetween($li['location_y'], $li['location_x'], $store['location_y'], $store['location_x']);
+					if($dist <= ($store['serve_radius'] * 1000)) {
+						$address = $li;
+						break;
+					}
+				}
+			}
+		}
+	} else {
+		$address_id = intval($_GPC['address_id']);
+		$temp = member_fetch_address($address_id);
+		if($init_hide == 1) {
+			if(!empty($temp['location_y']) && !empty($temp['location_x'])) {
+				$dist = distanceBetween($temp['location_y'], $temp['location_x'], $store['location_y'], $store['location_x']);
+				if($dist <= ($store['serve_radius'] * 1000)) {
+					$address = $temp;
+				}
+			}
+		} else {
+			$address = $temp;
+		}
+	}
+	return $address;
+}
+
+function member_fetch_available_address_app($sid,$uid) {
+	global $_W, $_GPC;
+	$store = store_fetch($sid);
+	$init_hide = 0;
+	if(!$store['not_in_serve_radius'] && !empty($store['location_x']) && !empty($store['location_y']) && $store['serve_radius'] > 0 && $store['auto_get_address'] == 1) {
+		$init_hide = 1;
+	}
+	$address = array();
+	if(!$_GPC['r']) {
+		if($_GPC['__aid'] > 0) {
+			$temp = pdo_get('tiny_wmall_address', array('uniacid' => $_W['uniacid'], 'uid' => $uid, 'id' => intval($_GPC['__aid'])));
+			if($init_hide == 1) {
+				if(!empty($temp['location_y']) && !empty($temp['location_x'])) {
+					$dist = distanceBetween($temp['location_y'], $temp['location_x'], $store['location_y'], $store['location_x']);
+					if($dist <= ($store['serve_radius'] * 1000)) {
+						$address = $temp;
+					}
+				}
+			} else {
+				$address = $temp;
+			}
+		}
+		if(empty($address)) {
+			$temp = pdo_get('tiny_wmall_address', array('uniacid' => $_W['uniacid'], 'uid' => $uid, 'type' => 1, 'is_default' => 1));
+			if($init_hide == 1) {
+				if(!empty($temp['location_y']) && !empty($temp['location_x'])) {
+					$dist = distanceBetween($temp['location_y'], $temp['location_x'], $store['location_y'], $store['location_x']);
+					if($dist <= ($store['serve_radius'] * 1000)) {
+						$address = $temp;
+					}
+				}
+			} else {
+				$address = $temp;
+			}
+		}
+		if(empty($address)) {
+			$addresses = member_fetchall_address_app($uid);
 			foreach($addresses as $li) {
 				if(!empty($li['location_x']) && !empty($li['location_y'])) {
 					$dist = distanceBetween($li['location_y'], $li['location_x'], $store['location_y'], $store['location_x']);

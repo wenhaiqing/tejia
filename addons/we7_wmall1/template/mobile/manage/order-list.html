@@ -7,7 +7,7 @@
 	{template 'manage/nav'}
 	<div class="content infinite-scroll" data-distance="50" data-min="{$min}">
 		<div class="buttons-tab">
-			<a href="{php echo $this->createMobileUrl('mgorder', array('status' => 1));}" class="button {if $status == 1}active{/if}">待确认</a>
+			<!-- <a href="{php echo $this->createMobileUrl('mgorder', array('status' => 1));}" class="button {if $status == 1}active{/if}">待确认</a> -->
 			<a href="{php echo $this->createMobileUrl('mgorder', array('status' => 2));}" class="button {if $status == 2}active{/if}">处理中</a>
 			<a href="{php echo $this->createMobileUrl('mgorder', array('status' => 3));}" class="button {if $status == 3}active{/if}">待配送</a>
 			<a href="{php echo $this->createMobileUrl('mgorder', array('status' => 4));}" class="button {if $status == 4}active{/if}">配送中</a>
@@ -31,19 +31,20 @@
 								<div class="row">
 									<div class="col-60">{$good['goods_title']}</div>
 									<div class="col-20 align-right">X {$good['goods_num']}</div>
-									<div class="col-20 align-right">¥{$good['goods_price']}</div>
+									<div class="col-20 align-right">/{$good['unitname']}</div>
+									<!-- <div class="col-20 align-right">¥{$good['goods_price']}</div> -->
 								</div>
 								{/loop}
-								<div class="row">
+								<!-- <div class="row">
 									<div class="col-60">配送费¥{$order['delivery_fee']} + 包装费¥{$order['pack_fee']}</div>
 									<div class="col-40 align-right">¥{$order['total_fee']}元</div>
-								</div>
+								</div> -->
 							</div>
-							<div class="order-ls-sum">
+							<!-- <div class="order-ls-sum">
 								共{$order['num']}件，合计：¥{$order['final_fee']}
 								<span class="color-danger">(已优惠¥{$order['discount_fee']})</span>
 								<span class="pull-right color-primary order-ls-dist hide" data-lat="{$order['location_x']}" data-lng="{$order['location_y']}"></span>
-							</div>
+							</div> -->
 						</a>
 						<div class="order-ls-btn">
 							{if $order['status'] < 5}
@@ -51,10 +52,10 @@
 									<a href="javascript:;" class="order-status" data-id="{$order['id']}" data-status="2" data-type="handel"><i class="fa fa-selected"></i> 确认接单</a>
 									<a href="javascript:;" class="order-cancel" data-id="{$order['id']}" data-status="6" data-pay="{$order['is_pay']}" data-pay-type="{$order['pay_type']}"><i class="fa fa-selected"></i> 取消订单</a>
 								{elseif $order['status'] == 2 || $order['status'] == 3}
-									<a href="javascript:;" class="order-status" data-id="{$order['id']}" data-status="3" data-type="delivery_wait"><i class="fa fa-selected"></i> 通知配送员配送</a>
+									<!-- <a href="javascript:;" class="order-status" data-id="{$order['id']}" data-status="3" data-type="delivery_wait"><i class="fa fa-selected"></i> 通知配送员配送</a>
 									{if $account['delivery_type'] == 1}
 										<a href="javascript:;" class="order-delivery" data-id="{$order['id']}"><i class="fa fa-selected"></i> 指定配送员配送</a>
-									{/if}
+									{/if} -->
 									<a href="javascript:;" class="order-status" data-id="{$order['id']}" data-status="4" data-type="delivery_ing"><i class="fa fa-selected"></i> 设为配送中</a>
 								{elseif $order['status'] == 4}
 									<a href="javascript:;" class="order-status" data-id="{$order['id']}" data-status="5" data-type="end"><i class="fa fa-selected"></i> 订单完成</a>
